@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:home_rental_app/model/home_rental_model.dart';
 import 'package:home_rental_app/view/details_page.dart';
@@ -22,7 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
         rent: 5900,
         noOfBathRooms: 6,
         noOfBedRooms: 5,
-        sqFit: 7000),
+        sqFit: 7000,
+        rate: 4.9),
     const HomeRentalModel(
         name: "Night Villa",
         image: "assets/images/home2.png",
@@ -32,7 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
         rent: 4900,
         noOfBathRooms: 4,
         noOfBedRooms: 3,
-        sqFit: 5000),
+        sqFit: 5000,
+        rate: 4.8),
     const HomeRentalModel(
         name: "Jumeriah Golf Estates Villa",
         image: "assets/images/nearby.png",
@@ -42,7 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
         rent: 4500,
         noOfBathRooms: 5,
         noOfBedRooms: 4,
-        sqFit: 6000)
+        sqFit: 6000,
+        rate: 4.7)
   ];
 
   @override
@@ -57,20 +59,21 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 Text(
-                  "Hey Dravid,",
+                  "Hey Ankita,",
                   style: GoogleFonts.poppins(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                       color: const Color.fromRGBO(101, 101, 101, 1)),
                 ),
                 const Spacer(),
-                Container(
-                  height: 48,
-                  width: 48,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      border: Border.all(
-                          color: const Color.fromRGBO(101, 101, 101, 1))),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
+                  child: Image.asset(
+                    "assets/images/profile.png",
+                    fit: BoxFit.cover,
+                    height: 48,
+                    width: 48,
+                  ),
                 ),
               ],
             ),
@@ -112,7 +115,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Expanded(
               child: ListView(
-                // shrinkWrap: true,
                 children: [
                   Row(
                     children: [
@@ -143,8 +145,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         itemCount: homeRentalList.length,
                         itemBuilder: ((context, index) {
                           return GestureDetector(
-                            onTap:(){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailsPage(homeDetails:homeRentalList[index])));
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => DetailsPage(
+                                      homeDetails: homeRentalList[index])));
                             },
                             child: Container(
                               width: 205,
@@ -158,34 +162,72 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(15),
-                                    child: Image.asset(
-                                      homeRentalList[index].image,
-                                      fit: BoxFit.cover,
-                                      height: 196,
-                                    ),
+                                  Stack(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Image.asset(
+                                          homeRentalList[index].image,
+                                          fit: BoxFit.cover,
+                                          height: 196,
+                                        ),
+                                      ),
+                                      Positioned(
+                                        right: 12,
+                                        top: 12,
+                                        child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 5, vertical: 2),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                              color: Colors.blue.shade200),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              const Icon(
+                                                Icons.star,
+                                                color: Color.fromRGBO(
+                                                    251, 227, 12, 1),
+                                                size: 13,
+                                              ),
+                                              Text(
+                                                "${homeRentalList[index].rate}",
+                                                style: GoogleFonts.poppins(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: const Color.fromRGBO(
+                                                        255, 255, 255, 1)),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
                                   ),
                                   Text(
                                     homeRentalList[index].name,
                                     style: GoogleFonts.poppins(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
-                                        color: const Color.fromRGBO(0, 0, 0, 1)),
+                                        color:
+                                            const Color.fromRGBO(0, 0, 0, 1)),
                                   ),
                                   Text(
                                     homeRentalList[index].location,
                                     style: GoogleFonts.poppins(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w500,
-                                        color:
-                                            const Color.fromRGBO(72, 72, 72, 1)),
+                                        color: const Color.fromRGBO(
+                                            72, 72, 72, 1)),
                                   ),
                                   Text.rich(TextSpan(children: [
                                     TextSpan(
-                                      text: "${homeRentalList[index].rent}",
+                                      text: "\$${homeRentalList[index].rent}",
                                       style: GoogleFonts.poppins(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w600,
@@ -229,128 +271,149 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
-                  GestureDetector(
-                    onTap:(){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailsPage(homeDetails:homeRentalList[2])));
-                            },
-                    child: Container(
-                      height: 108,
-                      width: MediaQuery.sizeOf(context).width,
-                      padding: const EdgeInsets.all(8),
-                      margin: const EdgeInsets.only(top: 15, bottom: 20),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: const Color.fromRGBO(255, 255, 255, 1),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(15),
-                            child: Image.asset(
-                              homeRentalList[2].image,
-                              fit: BoxFit.cover,
-                              height: 90,
-                              width: 90,
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: homeRentalList.length,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DetailsPage(
+                                    homeDetails: homeRentalList[2])));
+                          },
+                          child: Container(
+                            height: 108,
+                            width: MediaQuery.sizeOf(context).width,
+                            padding: const EdgeInsets.all(8),
+                            margin: const EdgeInsets.only(
+                              top: 20,
                             ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Expanded(
-                            child: Column(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                            ),
+                            child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  homeRentalList[2].name,
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      color: const Color.fromRGBO(0, 0, 0, 1)),
-                                ),
-                                Row(
-                                  children: [
-                                    const Icon(Icons.location_on,
-                                        size: 14,
-                                        color:  Color.fromRGBO(90, 90, 90, 1)),
-                                    Text(
-                                      homeRentalList[2].location,
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w600,
-                                          color:
-                                              const Color.fromRGBO(90, 90, 90, 1)),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: MediaQuery.sizeOf(context).width/2,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Image.asset(
-                                        "assets/images/bed.png",
-                                        height: 15,
-                                        width: 15,
-                                      ),
-                                      Text(
-                                        "${homeRentalList[2].noOfBedRooms} Bedrooms",
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w600,
-                                            color:
-                                                const Color.fromRGBO(90, 90, 90, 1)),
-                                      ),
-                                      Image.asset(
-                                        "assets/images/bath.png",
-                                        height: 13,
-                                        width: 15,
-                                      ),
-                                      Text(
-                                        "${homeRentalList[2].noOfBathRooms} Bathrooms",
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w600,
-                                            color:
-                                                const Color.fromRGBO(90, 90, 90, 1)),
-                                      ),
-                                    ],
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(15),
+                                  child: Image.asset(
+                                    homeRentalList[2].image,
+                                    fit: BoxFit.cover,
+                                    height: 90,
+                                    width: 90,
                                   ),
                                 ),
-                                SizedBox(
-                                  width: MediaQuery.sizeOf(context).width/1.7,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text.rich(TextSpan(children: [
-                                        TextSpan(
-                                          text: "${homeRentalList[2].rent}",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w600,
-                                              color: const Color.fromRGBO(
-                                                  32, 169, 247, 1)),
+                                      Text(
+                                        homeRentalList[2].name,
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w600,
+                                            color: const Color.fromRGBO(
+                                                0, 0, 0, 1)),
+                                      ),
+                                      Row(
+                                        children: [
+                                          const Icon(Icons.location_on,
+                                              size: 14,
+                                              color: Color.fromRGBO(
+                                                  90, 90, 90, 1)),
+                                          Text(
+                                            homeRentalList[2].location,
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.w600,
+                                                color: const Color.fromRGBO(
+                                                    90, 90, 90, 1)),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        width:
+                                            MediaQuery.sizeOf(context).width /
+                                                2,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Image.asset(
+                                              "assets/images/bed.png",
+                                              height: 15,
+                                              width: 15,
+                                            ),
+                                            Text(
+                                              "${homeRentalList[2].noOfBedRooms} Bedrooms",
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 11,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: const Color.fromRGBO(
+                                                      90, 90, 90, 1)),
+                                            ),
+                                            Image.asset(
+                                              "assets/images/bath.png",
+                                              height: 13,
+                                              width: 15,
+                                            ),
+                                            Text(
+                                              "${homeRentalList[2].noOfBathRooms} Bathrooms",
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 11,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: const Color.fromRGBO(
+                                                      90, 90, 90, 1)),
+                                            ),
+                                          ],
                                         ),
-                                        TextSpan(
-                                          text: "/Month",
-                                          style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.w500,
-                                              color: const Color.fromRGBO(
-                                                  72, 72, 72, 1)),
-                                        )
-                                      ])),
+                                      ),
+                                      SizedBox(
+                                        width:
+                                            MediaQuery.sizeOf(context).width /
+                                                1.7,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Text.rich(TextSpan(children: [
+                                              TextSpan(
+                                                text:
+                                                    "\$${homeRentalList[2].rent}",
+                                                style: GoogleFonts.poppins(
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: const Color.fromRGBO(
+                                                        32, 169, 247, 1)),
+                                              ),
+                                              TextSpan(
+                                                text: "/Month",
+                                                style: GoogleFonts.poppins(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: const Color.fromRGBO(
+                                                        72, 72, 72, 1)),
+                                              )
+                                            ])),
+                                          ],
+                                        ),
+                                      ),
                                     ],
                                   ),
-                                ),
+                                )
                               ],
                             ),
-                          )
-                        ],
-                      ),
-                    ),
-                  )
+                          ),
+                        );
+                      })
                 ],
               ),
             )
