@@ -7,6 +7,8 @@ class HomeRentalModel {
   final int noOfBedRooms;
   final int noOfBathRooms;
   final int sqFit;
+  final double rate;
+
 
   const HomeRentalModel({
     required this.name,
@@ -17,5 +19,7 @@ class HomeRentalModel {
     required this.noOfBathRooms,
     required this.noOfBedRooms,
     required this.sqFit,
+    required this.rate,
+
   });
 }
