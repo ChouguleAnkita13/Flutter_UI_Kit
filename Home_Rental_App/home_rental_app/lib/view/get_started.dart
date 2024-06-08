@@ -15,31 +15,33 @@ class GetStarted extends StatelessWidget {
             fit: BoxFit.cover,
             height: MediaQuery.sizeOf(context).height / 1.36,
           ),
-          Expanded(child: Padding(
+          Expanded(
+              child: Padding(
             padding: const EdgeInsets.only(bottom: 80),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-            Text("Lets find your Paradise",style: GoogleFonts.poppins(
-              fontSize:22,
-              fontWeight:FontWeight.w600,
-              color:const Color.fromRGBO(0, 0, 0, 1)
-            ),),
-            
-             SizedBox(
-              width: 240,
-               child: Text("Find your perfect dream space with just a few clicks",
-               textAlign: TextAlign.center,
-               style: GoogleFonts.poppins(
-                fontSize:15,
-                fontWeight:FontWeight.w400,
-                color:const Color.fromRGBO(101, 101, 101, 1)
-                         ),),
-             ),
+                Text(
+                  "Lets find your Paradise",
+                  style: GoogleFonts.poppins(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromRGBO(0, 0, 0, 1)),
+                ),
+                SizedBox(
+                  width: 240,
+                  child: Text(
+                    "Find your perfect dream space with just a few clicks",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: const Color.fromRGBO(101, 101, 101, 1)),
+                  ),
+                ),
               ],
             ),
           )),
-          
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -50,15 +52,17 @@ class GetStarted extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pushNamed("/home");
           },
-          backgroundColor:const Color.fromRGBO(32, 169, 247, 1) ,
+          backgroundColor: const Color.fromRGBO(32, 169, 247, 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(40),
           ),
-          child: Text("Get Started",style: GoogleFonts.poppins(
-            fontSize:22,
-            fontWeight:FontWeight.w400,
-            color:const Color.fromRGBO(255, 255, 255, 1)
-          ),),
+          child: Text(
+            "Get Started",
+            style: GoogleFonts.poppins(
+                fontSize: 22,
+                fontWeight: FontWeight.w400,
+                color: const Color.fromRGBO(255, 255, 255, 1)),
+          ),
         ),
       ),
     );
