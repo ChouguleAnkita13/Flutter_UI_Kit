@@ -186,7 +186,7 @@ class DetailsPage extends StatelessWidget {
                           children: [
                             Image.asset(
                               "assets/images/bath.png",
-                              height: 18,
+                              height: 26,
                               width: 30,
                             ),
                             Text(
@@ -218,11 +218,10 @@ class DetailsPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Image.asset(
-                              "assets/images/square.png",
-                              height: 18,
-                              width: 30,
-                            ),
+                            Image.asset("assets/images/square.png",
+                                height: 30,
+                                width: 30,
+                                color: const Color.fromRGBO(90, 90, 90, 1)),
                             Text(
                               "Square ft",
                               style: GoogleFonts.poppins(
