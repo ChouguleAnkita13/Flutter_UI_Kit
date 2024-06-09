@@ -267,7 +267,7 @@ class DetailsPage extends StatelessWidget {
           ),
           Positioned(
             top: 20,
-            left: 85,
+            left: 76,
             width: 220,
             child: FloatingActionButton(
               onPressed: () {
