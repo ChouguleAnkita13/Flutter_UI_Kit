@@ -257,26 +257,36 @@ class DetailsPage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: SizedBox(
-        height: 55,
-        width: 220,
-        child: FloatingActionButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed("/home");
-          },
-          backgroundColor: const Color.fromRGBO(32, 169, 247, 1),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(40),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Stack(
+        children: [
+          Container(
+            color: Colors.white,
+            width: MediaQuery.sizeOf(context).width,
+            height: 100,
           ),
-          child: Text(
-            "Rent Now",
-            style: GoogleFonts.poppins(
-                fontSize: 22,
-                fontWeight: FontWeight.w400,
-                color: const Color.fromRGBO(255, 255, 255, 1)),
+          Positioned(
+            top: 20,
+            left: 85,
+            width: 220,
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed("/home");
+              },
+              backgroundColor: const Color.fromRGBO(32, 169, 247, 1),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40),
+              ),
+              child: Text(
+                "Rent Now",
+                style: GoogleFonts.poppins(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w400,
+                    color: const Color.fromRGBO(255, 255, 255, 1)),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
