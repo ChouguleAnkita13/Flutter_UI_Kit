@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
-import "package:music_app/view/gallary_page.dart";
+import "package:music_app/view/screens/gallary_page.dart";
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

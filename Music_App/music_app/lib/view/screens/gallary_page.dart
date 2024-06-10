@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_app/model/music_model.dart';
+import 'package:music_app/view/widget/bottomnavigation.dart';
 
 class Gallary extends StatefulWidget {
   const Gallary({super.key});
@@ -10,7 +11,6 @@ class Gallary extends StatefulWidget {
 }
 
 class _GallaryState extends State<Gallary> {
-  int _selectedIndex=0;
   final List<MusicModel> musicModelList = [
     const MusicModel(
         name: "Dead inside",
@@ -280,31 +280,7 @@ class _GallaryState extends State<Gallary> {
           ))
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        iconSize: 26,
-        unselectedItemColor: const Color.fromRGBO(157, 178, 206, 1),
-        backgroundColor: const Color.fromRGBO(19, 19, 19, 0.9),
-        selectedItemColor: const Color.fromRGBO(230, 154, 21, 1),
-        items:const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border), label: "Favorite"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.search_outlined), label: "Search"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.delete_outline_outlined), label: "Cart"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_2_rounded), label: "Profile"),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: (index){
-           setState(() {
-      _selectedIndex = index;
-    });
-        },
-      ),
+      bottomNavigationBar: const BottomNavigation()
     );
   }
 }
