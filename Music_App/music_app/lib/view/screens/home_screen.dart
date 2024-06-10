@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           Positioned(
-              bottom: 20,
+              bottom: 2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
