@@ -119,7 +119,7 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
-            Category(),
+           const Category(),
             Expanded(
               child: ListView(
                 children: [
