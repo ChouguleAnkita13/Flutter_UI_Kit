@@ -85,7 +85,7 @@ final List trainingList=[
     "rate":"4.9",
     "views":"335"
   }, {
-    "imgUrl":"assets/images/training/specialty.png",
+    "imgUrl":"assets/images/training/speciality.png",
     "course":"Specialty Classes & Workshops",
     "author":"By Duke Fuzzington",
     "rate":"5.0",

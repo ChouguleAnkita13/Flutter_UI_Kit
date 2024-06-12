@@ -80,12 +80,15 @@ class TrainingScreen extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                trainingList[index]["course"],
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    color: const Color.fromRGBO(0, 0, 0, 1),
-                                    fontSize: 14),
+                              SizedBox(
+                                width: 190,
+                                child: Text(
+                                  trainingList[index]["course"],
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w500,
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
+                                      fontSize: 14),
+                                ),
                               ),
                               const SizedBox(
                                 height: 2,
