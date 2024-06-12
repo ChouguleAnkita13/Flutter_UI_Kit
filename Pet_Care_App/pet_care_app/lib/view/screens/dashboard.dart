@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_care_app/view/widgets/bottomnavigation.dart';
-import 'package:pet_care_app/view/widgets/category.dart';
+import 'package:pet_care_app/view/widgets/category_services.dart';
 import 'package:pet_care_app/view/widgets/custom.dart';
 import 'package:pet_care_app/view/widgets/floatingaction.dart';
 import 'package:pet_care_app/view/widgets/search_container.dart';
+import 'package:pet_care_app/items/itemlists.dart';
+
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -119,7 +121,7 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
-           const Category(),
+           CategoryServices(text:"Category",itemList: categoriesList,),
             Expanded(
               child: ListView(
                 children: [
