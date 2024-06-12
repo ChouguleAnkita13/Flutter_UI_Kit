@@ -75,3 +75,38 @@ final List<DoctorModel> doctorList = [
       days: ["Fri,6", "Mon,9"],
       time: 9),
 ];
+
+
+final List trainingList=[
+  {
+    "imgUrl":"assets/images/training/obedience.png",
+    "course":"Obedience Courses",
+    "author":"By Jhon Smith",
+    "rate":"4.9",
+    "views":"335"
+  }, {
+    "imgUrl":"assets/images/training/specialty.png",
+    "course":"Specialty Classes & Workshops",
+    "author":"By Duke Fuzzington",
+    "rate":"5.0",
+    "views":"500"
+  }, {
+    "imgUrl":"assets/images/training/puppy.png",
+    "course":"Puppy Kinderganten and Playgroups",
+    "author":"By Sir Fluffington",
+    "rate":"5.0",
+    "views":"500"
+  }, {
+    "imgUrl":"assets/images/training/pexels.png",
+    "course":"Canine Good Citizen Test",
+    "author":"By Baron Fuzzypaws",
+    "rate":"4.8",
+    "views":"220"
+  }, {
+    "imgUrl":"assets/images/training/theraphy.png",
+    "course":"Theraphy Dogs",
+    "author":"By Duke Fuzzington",
+    "rate":"5.0",
+    "views":"500"
+  },
+];
