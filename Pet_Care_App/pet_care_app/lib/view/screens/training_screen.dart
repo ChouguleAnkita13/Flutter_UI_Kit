@@ -53,7 +53,7 @@ class TrainingScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Container(
                       padding: const EdgeInsets.all(15),
-                      margin: const EdgeInsets.only(top: 15, bottom: 18),
+                      margin: const EdgeInsets.only(bottom: 15),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           color: const Color.fromRGBO(255, 255, 255, 1),
