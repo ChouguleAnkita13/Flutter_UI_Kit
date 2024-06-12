@@ -122,7 +122,7 @@ class TrainingScreen extends StatelessWidget {
                                  
                                   
                                   Text(
-                                    "(${trainingList[index]["rate"]})",
+                                    "(${trainingList[index]["views"]})",
                                     style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.w400,
                                         color: const Color.fromRGBO(
