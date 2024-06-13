@@ -116,27 +116,35 @@ final List trainingList = [
 
 final List groomingList = [
   {
-    "imgUrl": "assets/images/gromming/bath.png",
+    "imgUrl": "assets/images/grooming/bath.png",
     "title": "Bathing & Drying",
   },
   {
-    "imgUrl": "assets/images/gromming/hair.png",
+    "imgUrl": "assets/images/grooming/hair.png",
     "title": "Hair Triming",
   },
   {
-    "imgUrl": "assets/images/gromming/nail.png",
+    "imgUrl": "assets/images/grooming/nail.png",
     "title": "Nail Trimming",
   },
   {
-    "imgUrl": "assets/images/gromming/ear.png",
+    "imgUrl": "assets/images/grooming/ear.png",
     "title": "Ear Cleaning",
   },
   {
-    "imgUrl": "assets/images/gromming/teeth.png",
+    "imgUrl": "assets/images/grooming/teeth.png",
     "title": "Teeth Brushing",
   },
   {
-    "imgUrl": "assets/images/gromming/flea.png",
+    "imgUrl": "assets/images/grooming/flea.png",
     "title": "Flea Treatment",
-  }
+  },
+  {
+    "imgUrl": "assets/images/grooming/bath.png",
+    "title": "Bathing & Drying",
+  },
+  {
+    "imgUrl": "assets/images/grooming/ear.png",
+    "title": "Ear Cleaning",
+  },
 ];
