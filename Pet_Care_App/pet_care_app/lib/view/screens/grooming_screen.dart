@@ -14,7 +14,7 @@ class GroomingScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(
-            width: MediaQuery.sizeOf(context).width / 1.6,
+            width: MediaQuery.sizeOf(context).width / 1.7,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -13,7 +13,7 @@ class TrainingScreen extends StatelessWidget {
         padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           SizedBox(
-            width: MediaQuery.sizeOf(context).width / 1.6,
+            width: MediaQuery.sizeOf(context).width / 1.7,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -77,61 +77,63 @@ class TrainingScreen extends StatelessWidget {
                           const SizedBox(
                             width: 20,
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 190,
-                                child: Text(
-                                  trainingList[index]["course"],
-                                  style: GoogleFonts.poppins(
-                                      fontWeight: FontWeight.w500,
-                                      color: const Color.fromRGBO(0, 0, 0, 1),
-                                      fontSize: 14),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 190,
+                                  child: Text(
+                                    trainingList[index]["course"],
+                                    style: GoogleFonts.poppins(
+                                        fontWeight: FontWeight.w500,
+                                        color: const Color.fromRGBO(0, 0, 0, 1),
+                                        fontSize: 14),
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              Text(
-                                trainingList[index]["author"],
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w400,
-                                    color:
-                                        const Color.fromRGBO(0, 0, 0, 1),
-                                    fontSize: 12),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.star_border,
-                                    color: Color.fromRGBO(245, 146, 69, 1),
-                                    size: 16,
-                                  ),
-                                  Text(
-                                    " ${trainingList[index]["rate"]}  ",
-                                    style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.w400,
-                                        color: const Color.fromRGBO(
-                                            194, 195, 204, 1),
-                                        fontSize: 12),
-                                  ),
-                                 
-                                  
-                                  Text(
-                                    "(${trainingList[index]["views"]})",
-                                    style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.w400,
-                                        color: const Color.fromRGBO(
-                                            194, 195, 204, 1),
-                                        fontSize: 12),
-                                  ),
-                                ],
-                              )
-                            ],
+                                const SizedBox(
+                                  height: 2,
+                                ),
+                                Text(
+                                  trainingList[index]["author"],
+                                  style: GoogleFonts.poppins(
+                                      fontWeight: FontWeight.w400,
+                                      color:
+                                          const Color.fromRGBO(0, 0, 0, 1),
+                                      fontSize: 12),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.star_border,
+                                      color: Color.fromRGBO(245, 146, 69, 1),
+                                      size: 16,
+                                    ),
+                                    Text(
+                                      " ${trainingList[index]["rate"]}  ",
+                                      style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w400,
+                                          color: const Color.fromRGBO(
+                                              194, 195, 204, 1),
+                                          fontSize: 12),
+                                    ),
+                                   
+                                    
+                                    Text(
+                                      "(${trainingList[index]["views"]})",
+                                      style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w400,
+                                          color: const Color.fromRGBO(
+                                              194, 195, 204, 1),
+                                          fontSize: 12),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ],
                       ),
