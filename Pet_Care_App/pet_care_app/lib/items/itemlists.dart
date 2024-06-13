@@ -76,37 +76,67 @@ final List<DoctorModel> doctorList = [
       time: 9),
 ];
 
-
-final List trainingList=[
+final List trainingList = [
   {
-    "imgUrl":"assets/images/training/obedience.png",
-    "course":"Obedience Courses",
-    "author":"By Jhon Smith",
-    "rate":"4.9",
-    "views":"335"
-  }, {
-    "imgUrl":"assets/images/training/speciality.png",
-    "course":"Specialty Classes & Workshops",
-    "author":"By Duke Fuzzington",
-    "rate":"5.0",
-    "views":"500"
-  }, {
-    "imgUrl":"assets/images/training/puppy.png",
-    "course":"Puppy Kinderganten and Playgroups",
-    "author":"By Sir Fluffington",
-    "rate":"5.0",
-    "views":"500"
-  }, {
-    "imgUrl":"assets/images/training/pexels.png",
-    "course":"Canine Good Citizen Test",
-    "author":"By Baron Fuzzypaws",
-    "rate":"4.8",
-    "views":"220"
-  }, {
-    "imgUrl":"assets/images/training/theraphy.png",
-    "course":"Theraphy Dogs",
-    "author":"By Duke Fuzzington",
-    "rate":"5.0",
-    "views":"500"
+    "imgUrl": "assets/images/training/obedience.png",
+    "course": "Obedience Courses",
+    "author": "By Jhon Smith",
+    "rate": "4.9",
+    "views": "335"
   },
+  {
+    "imgUrl": "assets/images/training/speciality.png",
+    "course": "Specialty Classes & Workshops",
+    "author": "By Duke Fuzzington",
+    "rate": "5.0",
+    "views": "500"
+  },
+  {
+    "imgUrl": "assets/images/training/puppy.png",
+    "course": "Puppy Kinderganten and Playgroups",
+    "author": "By Sir Fluffington",
+    "rate": "5.0",
+    "views": "500"
+  },
+  {
+    "imgUrl": "assets/images/training/pexels.png",
+    "course": "Canine Good Citizen Test",
+    "author": "By Baron Fuzzypaws",
+    "rate": "4.8",
+    "views": "220"
+  },
+  {
+    "imgUrl": "assets/images/training/theraphy.png",
+    "course": "Theraphy Dogs",
+    "author": "By Duke Fuzzington",
+    "rate": "5.0",
+    "views": "500"
+  },
+];
+
+final List groomingList = [
+  {
+    "imgUrl": "assets/images/gromming/bath.png",
+    "title": "Bathing & Drying",
+  },
+  {
+    "imgUrl": "assets/images/gromming/hair.png",
+    "title": "Hair Triming",
+  },
+  {
+    "imgUrl": "assets/images/gromming/nail.png",
+    "title": "Nail Trimming",
+  },
+  {
+    "imgUrl": "assets/images/gromming/ear.png",
+    "title": "Ear Cleaning",
+  },
+  {
+    "imgUrl": "assets/images/gromming/teeth.png",
+    "title": "Teeth Brushing",
+  },
+  {
+    "imgUrl": "assets/images/gromming/flea.png",
+    "title": "Flea Treatment",
+  }
 ];
