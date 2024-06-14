@@ -49,7 +49,7 @@ class TrainingScreen extends StatelessWidget {
           ),
           Expanded(
               child: ListView.builder(
-                  itemCount:trainingList.length,
+                  itemCount: trainingList.length,
                   itemBuilder: (context, index) {
                     return Container(
                       padding: const EdgeInsets.all(15),
@@ -66,14 +66,27 @@ class TrainingScreen extends StatelessWidget {
                           ]),
                       child: Row(
                         children: [
-                          ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                trainingList[index]["imgUrl"],
-                                width: 90,
-                                height: 90,
-                                fit: BoxFit.cover,
-                              )),
+                          Stack(
+                            children: [
+                              ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    trainingList[index]["imgUrl"],
+                                    width: 90,
+                                    height: 90,
+                                    fit: BoxFit.cover,
+                                  )),
+                              const Positioned(
+                                top: 30,
+                                left: 30,
+                                child: Icon(
+                                  Icons.play_circle_outline,
+                                  color: Color.fromRGBO(255, 255, 255, 0.8),
+                                  size: 35,
+                                ),
+                              )
+                            ],
+                          ),
                           const SizedBox(
                             width: 20,
                           ),
@@ -98,8 +111,7 @@ class TrainingScreen extends StatelessWidget {
                                   trainingList[index]["author"],
                                   style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.w400,
-                                      color:
-                                          const Color.fromRGBO(0, 0, 0, 1),
+                                      color: const Color.fromRGBO(0, 0, 0, 1),
                                       fontSize: 12),
                                 ),
                                 const SizedBox(
@@ -120,8 +132,6 @@ class TrainingScreen extends StatelessWidget {
                                               194, 195, 204, 1),
                                           fontSize: 12),
                                     ),
-                                   
-                                    
                                     Text(
                                       "(${trainingList[index]["views"]})",
                                       style: GoogleFonts.poppins(
