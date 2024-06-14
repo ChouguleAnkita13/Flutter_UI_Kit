@@ -117,34 +117,58 @@ final List trainingList = [
 final List groomingList = [
   {
     "imgUrl": "assets/images/grooming/bath.png",
-    "title": "Bathing & Drying",
+    "title": "Bathing & Drying"
   },
   {
     "imgUrl": "assets/images/grooming/hair.png",
-    "title": "Hair Triming",
+    "title": "Hair Triming"
   },
   {
     "imgUrl": "assets/images/grooming/nail.png",
-    "title": "Nail Trimming",
+    "title": "Nail Trimming"
   },
   {
     "imgUrl": "assets/images/grooming/ear.png",
-    "title": "Ear Cleaning",
+    "title": "Ear Cleaning"
   },
   {
     "imgUrl": "assets/images/grooming/teeth.png",
-    "title": "Teeth Brushing",
+    "title": "Teeth Brushing"
   },
   {
     "imgUrl": "assets/images/grooming/flea.png",
-    "title": "Flea Treatment",
+    "title": "Flea Treatment"
   },
   {
     "imgUrl": "assets/images/grooming/bath.png",
-    "title": "Bathing & Drying",
+    "title": "Bathing & Drying"
   },
   {
     "imgUrl": "assets/images/grooming/ear.png",
-    "title": "Ear Cleaning",
+    "title": "Ear Cleaning"
   },
+];
+
+final List shopList = [
+  {
+    "imgUrl": "assets/images/shop/pets.png",
+    "title": "Pets"
+  },
+   {
+    "imgUrl": "assets/images/shop/food.png",
+    "title": "Foods"
+  }, {
+    "imgUrl": "assets/images/shop/health.png",
+    "title": "Healthy"
+  }, {
+    "imgUrl": "assets/images/shop/toys.png",
+    "title": "Toys"
+  }, {
+    "imgUrl": "assets/images/shop/accessories.png",
+    "title": "Accessories"
+  }, {
+    "imgUrl": "assets/images/shop/cloths.png",
+    "title": "Cloths"
+  },
+ 
 ];
