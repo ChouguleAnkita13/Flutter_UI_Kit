@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_care_app/items/itemlists.dart';
+import 'package:pet_care_app/view/widgets/bottomnavigation.dart';
+import 'package:pet_care_app/view/widgets/floatingaction.dart';
 
 class ShopPage extends StatelessWidget {
   const ShopPage({super.key});
@@ -116,6 +118,9 @@ class ShopPage extends StatelessWidget {
               );
             })),
       ),
+        bottomNavigationBar: const BottomNavigation(),
+      floatingActionButton: const FloatingAction(text: "Shop"),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
