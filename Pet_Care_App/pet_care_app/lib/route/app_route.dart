@@ -3,6 +3,7 @@ import 'package:pet_care_app/view/screens/dashboard.dart';
 import 'package:pet_care_app/view/screens/grooming_screen.dart';
 import 'package:pet_care_app/view/screens/login.dart';
 import 'package:pet_care_app/view/screens/notification_screen.dart';
+import 'package:pet_care_app/view/screens/shop_page.dart';
 import 'package:pet_care_app/view/screens/splash_screen.dart';
 import 'package:pet_care_app/view/screens/training_screen.dart';
 import 'package:pet_care_app/view/screens/veterinary_page.dart';
@@ -16,4 +17,5 @@ Map<String,Widget Function(BuildContext)> appRoutes={
   "/veterinary":(context)=> const VeterinaryPage(),
   "/training":(context)=> const TrainingScreen(),
   "/grooming":(context)=> const GroomingScreen(),
+  "/pet store":(context)=> const ShopPage(),
 };
