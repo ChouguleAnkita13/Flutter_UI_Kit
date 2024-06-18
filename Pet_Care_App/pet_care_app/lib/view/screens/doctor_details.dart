@@ -131,6 +131,7 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                 ),
                 Expanded(
                   child: ListView(
+                    shrinkWrap: true,
                     children: [
                       Text(
                         "About",
