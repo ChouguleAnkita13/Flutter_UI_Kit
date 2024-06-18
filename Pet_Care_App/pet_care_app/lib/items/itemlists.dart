@@ -36,7 +36,7 @@ final List<DoctorModel> doctorList = [
       price: 250,
       about:
           "Dr. Anna Johanson is a highly experienced veterinarian with 11 years of dedicated practice, showcasing a pro...about",
-      days: ["Sun,8", "Tue,10"],
+      days: ["8", "10"],
       time: 9),
   const DoctorModel(
       name: "Dr. Vernon Chwe",
@@ -48,7 +48,7 @@ final List<DoctorModel> doctorList = [
       price: 270,
       about:
           "Dr. Vernon Chwe is a highly experienced veterinarian with 12 years of dedicated practice, showcasing a pro...about",
-      days: ["Fri,6", "Mon,9"],
+      days: ["6" , "9"],
       time: 9),
   const DoctorModel(
       name: "Dr. Anna Johanson",
@@ -60,7 +60,7 @@ final List<DoctorModel> doctorList = [
       price: 250,
       about:
           "Dr. Anna Johanson is a highly experienced veterinarian with 11 years of dedicated practice, showcasing a pro...about",
-      days: ["Sun,8", "Tue,10"],
+      days: ["8" , "10"],
       time: 9),
   const DoctorModel(
       name: "Dr. Vernon Chwe",
@@ -72,7 +72,7 @@ final List<DoctorModel> doctorList = [
       price: 270,
       about:
           "Dr. Vernon Chwe is a highly experienced veterinarian with 12 years of dedicated practice, showcasing a pro...about",
-      days: ["Fri,6", "Mon,9"],
+      days: ["6", "9"],
       time: 9),
 ];
 
