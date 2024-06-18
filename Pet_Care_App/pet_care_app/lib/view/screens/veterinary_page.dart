@@ -13,7 +13,6 @@ class VeterinaryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(0, 0, 0, 0.03),
       body: Padding(
         padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
         child: Column(

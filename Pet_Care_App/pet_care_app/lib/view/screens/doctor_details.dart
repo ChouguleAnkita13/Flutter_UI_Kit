@@ -13,7 +13,6 @@ class DoctorDetails extends StatefulWidget {
 }
 
 class _DoctorDetailsState extends State<DoctorDetails> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,73 +129,86 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  "About",
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      color: const Color.fromRGBO(0, 0, 0, 1),
-                      fontSize: 14),
-                ),
-                SizedBox(
-                  height: 40,
-                  child: Text(
-                    widget.doctorModel.about,
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w400,
-                        color: const Color.fromRGBO(194, 195, 204, 1),
-                        fontSize: 12),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-//Available date&time
-                AvailableDateTime(days:widget.doctorModel.days,time:widget.doctorModel.time),
-                const Spacer(),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(MediaQuery.sizeOf(context).width, 32),
-                    backgroundColor: const Color.fromRGBO(252, 219, 193, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                Expanded(
+                  child: ListView(
                     children: [
-                      const Icon(Icons.map_outlined,size: 14, color: Color.fromRGBO(163, 97, 46, 1),),
                       Text(
-                        " See Location",
+                        "About",
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
-                            color: const Color.fromRGBO(163, 97, 46, 1),
-                            fontSize: 12),
+                            color: const Color.fromRGBO(0, 0, 0, 1),
+                            fontSize: 14),
+                      ),
+                      SizedBox(
+                        height: 40,
+                        child: SingleChildScrollView(
+                          child: Text(
+                            widget.doctorModel.about,
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w400,
+                                color: const Color.fromRGBO(194, 195, 204, 1),
+                                fontSize: 12),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+//Available date&time
+                      AvailableDateTime(
+                          days: widget.doctorModel.days,
+                          time: widget.doctorModel.time),
+                      const Spacer(),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          fixedSize: Size(MediaQuery.sizeOf(context).width, 32),
+                          backgroundColor:
+                              const Color.fromRGBO(252, 219, 193, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.map_outlined,
+                              size: 14,
+                              color: Color.fromRGBO(163, 97, 46, 1),
+                            ),
+                            Text(
+                              " See Location",
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w500,
+                                  color: const Color.fromRGBO(163, 97, 46, 1),
+                                  fontSize: 12),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          fixedSize: Size(MediaQuery.sizeOf(context).width, 32),
+                          backgroundColor:
+                              const Color.fromRGBO(245, 146, 69, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: Text(
+                          "Book Now",
+                          style: GoogleFonts.poppins(
+                              fontWeight: FontWeight.w500,
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              fontSize: 12),
+                        ),
                       ),
                     ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(MediaQuery.sizeOf(context).width, 32),
-                    backgroundColor: const Color.fromRGBO(245, 146, 69, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: Text(
-                    "Book Now",
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        color: const Color.fromRGBO(255, 255, 255, 1),
-                        fontSize: 12),
                   ),
                 ),
               ],

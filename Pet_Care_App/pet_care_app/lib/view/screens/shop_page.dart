@@ -10,7 +10,6 @@ class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(0, 0, 0, 0.03),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         shape: const RoundedRectangleBorder(
