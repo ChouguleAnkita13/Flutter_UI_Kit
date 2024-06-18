@@ -153,6 +153,7 @@ class _DoctorDetailsState extends State<DoctorDetails> {
                 const SizedBox(
                   height: 10,
                 ),
+//Available date&time
                 AvailableDateTime(days:widget.doctorModel.days,time:widget.doctorModel.time),
                 const Spacer(),
                 ElevatedButton(
