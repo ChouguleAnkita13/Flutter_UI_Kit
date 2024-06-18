@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pet_care_app/models/doctor_model.dart';
+import 'package:pet_care_app/view/widgets/available_date_time.dart';
+import 'package:pet_care_app/view/widgets/infocard.dart';
 
-class DoctorDetails extends StatelessWidget {
+class DoctorDetails extends StatefulWidget {
   const DoctorDetails({super.key, required this.doctorModel});
   final DoctorModel doctorModel;
+
+  @override
+  State<DoctorDetails> createState() => _DoctorDetailsState();
+}
+
+class _DoctorDetailsState extends State<DoctorDetails> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +61,7 @@ class DoctorDetails extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.asset(
-                  doctorModel.imgUrl,
+                  widget.doctorModel.imgUrl,
                   height: 152,
                   width: MediaQuery.sizeOf(context).width,
                   fit: BoxFit.cover,
@@ -80,14 +89,14 @@ class DoctorDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  doctorModel.name,
+                  widget.doctorModel.name,
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w600,
                       color: const Color.fromRGBO(0, 0, 0, 1),
                       fontSize: 24),
                 ),
                 Text(
-                  doctorModel.behavior,
+                  widget.doctorModel.behavior,
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       color: const Color.fromRGBO(194, 195, 204, 1),
@@ -100,119 +109,23 @@ class DoctorDetails extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
-                      Container(
-                        width: 98,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromRGBO(255, 255, 255, 1),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color.fromRGBO(22, 34, 51, 0.08),
-                                  blurRadius: 16,
-                                  offset: Offset(0, 8),
-                                  spreadRadius: -4)
-                            ]),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Experience",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color.fromRGBO(0, 0, 0, 1),
-                                  fontSize: 12),
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            Text(
-                              "${doctorModel.experience} years",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w600,
-                                  color: const Color.fromRGBO(245, 146, 69, 1),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
+                      InfoCard(
+                        title: "Experience",
+                        content: "${widget.doctorModel.experience} years",
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      Container(
-                        width: 98,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromRGBO(255, 255, 255, 1),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color.fromRGBO(22, 34, 51, 0.08),
-                                  blurRadius: 16,
-                                  offset: Offset(0, 8),
-                                  spreadRadius: -4)
-                            ]),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Price",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color.fromRGBO(0, 0, 0, 1),
-                                  fontSize: 12),
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            Text(
-                              "\$${doctorModel.price}",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w600,
-                                  color: const Color.fromRGBO(245, 146, 69, 1),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
+                      InfoCard(
+                        title: "Price",
+                        content: "\$${widget.doctorModel.price}",
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      Container(
-                        width: 98,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromRGBO(255, 255, 255, 1),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color.fromRGBO(22, 34, 51, 0.08),
-                                  blurRadius: 16,
-                                  offset: Offset(0, 8),
-                                  spreadRadius: -4)
-                            ]),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Location",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
-                                  color: const Color.fromRGBO(0, 0, 0, 1),
-                                  fontSize: 12),
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            Text(
-                              "${doctorModel.distance} Km",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w600,
-                                  color: const Color.fromRGBO(245, 146, 69, 1),
-                                  fontSize: 16),
-                            ),
-                          ],
-                        ),
+                      InfoCard(
+                        title: "Location",
+                        content: "${widget.doctorModel.distance} Km",
                       ),
                     ],
                   ),
@@ -230,7 +143,7 @@ class DoctorDetails extends StatelessWidget {
                 SizedBox(
                   height: 40,
                   child: Text(
-                    doctorModel.about,
+                    widget.doctorModel.about,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         color: const Color.fromRGBO(194, 195, 204, 1),
@@ -240,45 +153,7 @@ class DoctorDetails extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  children: [
-                    Text(
-                      "Available Days",
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          color: const Color.fromRGBO(0, 0, 0, 1),
-                          fontSize: 14),
-                    ),
-                    const SizedBox(
-                      width: 40,
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.calendar_today_outlined,
-                        color: Color.fromRGBO(245, 146, 69, 1),
-                        size: 15,
-                      ),
-                    ),
-                    Text(
-                      "October, 2023",
-                      style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
-                          color: const Color.fromRGBO(194, 195, 204, 1),
-                          fontSize: 12),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Available Time",
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      color: const Color.fromRGBO(0, 0, 0, 1),
-                      fontSize: 14),
-                ),
+                AvailableDateTime(days:widget.doctorModel.days,time:widget.doctorModel.time),
                 const Spacer(),
                 ElevatedButton(
                   onPressed: () {},
@@ -289,12 +164,18 @@ class DoctorDetails extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  child: Text(
-                    "See Location",
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        color: const Color.fromRGBO(163, 97, 46, 1),
-                        fontSize: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.map_outlined,size: 14, color: Color.fromRGBO(163, 97, 46, 1),),
+                      Text(
+                        " See Location",
+                        style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w500,
+                            color: const Color.fromRGBO(163, 97, 46, 1),
+                            fontSize: 12),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(
