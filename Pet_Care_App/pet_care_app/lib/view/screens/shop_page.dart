@@ -55,10 +55,39 @@ class ShopPage extends StatelessWidget {
         bottom: PreferredSize(
             preferredSize:
                 const Size.fromHeight(60.0), // Set the desired height
-            child: Container()),
+            child: Transform.translate(
+                    offset:const Offset(0.0, 20.0),
+              child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: Colors.white,
+        border:
+            Border.all(color: const Color.fromRGBO(250, 200, 162, 1), width: 2),
+      ),
+      margin: const EdgeInsets.symmetric(horizontal: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      height: 40,
+      child: TextFormField(
+        cursorColor: const Color.fromRGBO(250, 200, 162, 1),
+        style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w400,
+            color: const Color.fromRGBO(194, 195, 204, 1),
+            fontSize: 12),
+        decoration: const InputDecoration(
+            border: InputBorder.none,
+            hintText: " Search Something Here...",
+            suffixIcon: Icon(
+              Icons.search,
+              size: 24,
+              color: Color.fromRGBO(245, 146, 69, 1),
+            )),
+      ),
+    )
+            ),
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
+        padding: const EdgeInsets.only(top: 50, left: 25, right: 25),
         child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -118,7 +147,7 @@ class ShopPage extends StatelessWidget {
               );
             })),
       ),
-        bottomNavigationBar: const BottomNavigation(),
+      bottomNavigationBar: const BottomNavigation(),
       floatingActionButton: const FloatingAction(text: "Shop"),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
