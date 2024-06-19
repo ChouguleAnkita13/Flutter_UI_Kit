@@ -9,7 +9,6 @@ class DetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(101, 101, 101, 0.08),
       body: Padding(
         padding: const EdgeInsets.all(22),
         child: Column(

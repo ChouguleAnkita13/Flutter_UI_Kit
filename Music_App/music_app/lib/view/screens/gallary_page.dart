@@ -229,7 +229,7 @@ class _GallaryState extends State<Gallary> {
                       ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 6,
                     ),
                     Expanded(
                       child: ListView.builder(

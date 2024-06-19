@@ -50,7 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(101, 101, 101, 0.08),
       body: Padding(
         padding: const EdgeInsets.only(left: 22, right: 22, top: 40),
         child: Column(
