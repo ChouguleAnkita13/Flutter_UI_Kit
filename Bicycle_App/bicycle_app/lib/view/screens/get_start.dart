@@ -18,7 +18,14 @@ class GetStart extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 stops: [0.5, 0.5]),),
-         
+         child: Stack(
+          children: [
+            Column(
+              children: [
+              ],
+            )
+          ],
+         ),
       ),
 
     );
