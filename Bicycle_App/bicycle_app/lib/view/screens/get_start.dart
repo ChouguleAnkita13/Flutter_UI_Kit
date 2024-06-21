@@ -22,6 +22,7 @@ class GetStart extends StatelessWidget {
           children: [
             Column(
               children: [
+                
               ],
             )
           ],
