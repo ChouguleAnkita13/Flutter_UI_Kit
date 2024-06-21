@@ -35,7 +35,42 @@ class GetStart extends StatelessWidget {
                             fontSize: 150,
                             fontWeight: FontWeight.w400,
                             color: const Color.fromRGBO(255, 255, 255, 0.5)),
-                      ))
+                      )),
+                  Container(
+                    width: 315,
+                    height: 75,
+                    decoration: const BoxDecoration(
+                        color: Color.fromRGBO(36, 44, 59, 1),
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(38),
+                            topRight: Radius.circular(38))),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 70,
+                          height: 70,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(100),
+                              color: const Color.fromRGBO(75, 76, 237, 1),
+                              border: Border.all(
+                                  color: const Color.fromRGBO(239, 186, 51, 1),
+                                  width: 5)),
+                          child: const Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            size: 30,
+                          ),
+                        ),
+                        Text(
+                          "Get Start",
+                          style: GoogleFonts.poppins(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                              color: const Color.fromRGBO(255, 255, 255, 1)),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
               Positioned(
