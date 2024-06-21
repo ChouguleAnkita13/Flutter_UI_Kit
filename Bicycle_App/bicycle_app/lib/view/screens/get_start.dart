@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GetStart extends StatelessWidget {
   const GetStart({super.key});
@@ -10,25 +11,39 @@ class GetStart extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                colors: [
-                  Color.fromRGBO(53, 63, 84, 1),
-                  Color.fromRGBO(75, 76, 237, 1),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                stops: [0.5, 0.5]),),
-         child: Stack(
-          children: [
-            Column(
-              children: [
-                
+          gradient: LinearGradient(
+              colors: [
+                Color.fromRGBO(53, 63, 84, 1),
+                Color.fromRGBO(75, 76, 237, 1),
               ],
-            )
-          ],
-         ),
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              stops: [0.5, 0.5]),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 50),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Image.asset("assets/images/image1.png"),
+                  Transform.rotate(
+                      angle: 1.5708,
+                      child: Text(
+                        "EXTREME",
+                        style: GoogleFonts.poppins(
+                            fontSize: 150,
+                            fontWeight: FontWeight.w400,
+                            color: const Color.fromRGBO(255, 255, 255, 0.5)),
+                      ))
+                ],
+              ),
+              Positioned(
+                  top: 280, child: Image.asset("assets/images/pngwing.png"))
+            ],
+          ),
+        ),
       ),
-
     );
   }
 }
