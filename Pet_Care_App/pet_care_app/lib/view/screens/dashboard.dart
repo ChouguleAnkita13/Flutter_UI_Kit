@@ -7,7 +7,6 @@ import 'package:pet_care_app/view/widgets/floatingaction.dart';
 import 'package:pet_care_app/view/widgets/search_container.dart';
 import 'package:pet_care_app/items/itemlists.dart';
 
-
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
@@ -20,8 +19,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:
-            const EdgeInsets.only(top: 30, left: 25, right: 25),
+        padding: const EdgeInsets.only(top: 30, left: 25, right: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -85,7 +83,6 @@ class _DashboardState extends State<Dashboard> {
                         spreadRadius: -4)
                   ]),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,7 +104,9 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ],
                   ),
-                  const Spacer(),
+                  const SizedBox(
+                    width: 20,
+                  ),
                   Expanded(
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
@@ -115,12 +114,16 @@ class _DashboardState extends State<Dashboard> {
                           "assets/images/dashboard/image.png",
                           width: 76,
                           height: 67,
-                        )),
+                          fit: BoxFit.cover,
+                        ),),
                   ),
                 ],
               ),
             ),
-           CategoryServices(text:"Category",itemList: categoriesList,),
+            CategoryServices(
+              text: "Category",
+              itemList: categoriesList,
+            ),
             Expanded(
               child: ListView(
                 children: [

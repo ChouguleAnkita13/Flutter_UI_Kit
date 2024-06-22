@@ -59,7 +59,6 @@ class GroomingScreen extends StatelessWidget {
                       spreadRadius: -4)
                 ]),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   width: 195,
@@ -73,7 +72,7 @@ class GroomingScreen extends StatelessWidget {
                             color: const Color.fromRGBO(255, 255, 255, 1),
                             fontSize: 24),
                       ),
-                       Text(
+                      Text(
                         "On hair & spa treatment",
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
@@ -83,7 +82,9 @@ class GroomingScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Spacer(),
+                const SizedBox(
+                  width: 20,
+                ),
                 Expanded(
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
@@ -91,6 +92,7 @@ class GroomingScreen extends StatelessWidget {
                         "assets/images/grooming/image.png",
                         width: 76,
                         height: 67,
+                        fit: BoxFit.cover,
                       )),
                 ),
               ],
@@ -130,7 +132,8 @@ class GroomingScreen extends StatelessWidget {
                 itemBuilder: ((context, index) {
                   return Container(
                     width: 154,
-                    padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 10),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         color: const Color.fromRGBO(255, 255, 255, 1),

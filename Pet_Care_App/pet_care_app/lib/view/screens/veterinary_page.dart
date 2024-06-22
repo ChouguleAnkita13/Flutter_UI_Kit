@@ -52,7 +52,6 @@ class VeterinaryPage extends StatelessWidget {
                         spreadRadius: -4)
                   ]),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
                     width: 195,
@@ -64,7 +63,9 @@ class VeterinaryPage extends StatelessWidget {
                           fontSize: 16),
                     ),
                   ),
-                  const Spacer(),
+                  const SizedBox(
+                    width: 20,
+                  ),
                   Expanded(
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
@@ -72,6 +73,7 @@ class VeterinaryPage extends StatelessWidget {
                           "assets/images/veterinary/doctor.png",
                           width: 76,
                           height: 67,
+                          fit: BoxFit.cover,
                         )),
                   ),
                 ],

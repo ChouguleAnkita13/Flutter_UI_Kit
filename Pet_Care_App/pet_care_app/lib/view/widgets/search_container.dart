@@ -20,7 +20,7 @@ class _SearchContainerState extends State<SearchContainer> {
             Border.all(color: const Color.fromRGBO(250, 200, 162, 1), width: 2),
       ),
       margin: const EdgeInsets.only(top: 20, bottom: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 14),
       height: 40,
       child: TextFormField(
         controller: _searchController,

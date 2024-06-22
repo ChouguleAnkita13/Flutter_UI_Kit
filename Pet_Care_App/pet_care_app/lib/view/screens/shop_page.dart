@@ -64,7 +64,7 @@ class ShopPage extends StatelessWidget {
             Border.all(color: const Color.fromRGBO(250, 200, 162, 1), width: 2),
       ),
       margin: const EdgeInsets.symmetric(horizontal: 40),
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       height: 40,
       child: TextFormField(
         cursorColor: const Color.fromRGBO(250, 200, 162, 1),
