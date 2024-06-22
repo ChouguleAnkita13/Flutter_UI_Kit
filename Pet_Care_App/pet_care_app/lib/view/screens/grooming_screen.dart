@@ -133,7 +133,7 @@ class GroomingScreen extends StatelessWidget {
                   return Container(
                     width: 154,
                     padding: const EdgeInsets.symmetric(
-                        vertical: 15, horizontal: 10),
+                        vertical: 10, horizontal: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         color: const Color.fromRGBO(255, 255, 255, 1),
