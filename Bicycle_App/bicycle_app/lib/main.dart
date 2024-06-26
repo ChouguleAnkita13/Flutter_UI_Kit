@@ -1,4 +1,5 @@
 import 'package:bicycle_app/view/screens/get_start.dart';
+import 'package:bicycle_app/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bicycle_app/theme/app_theme.dart';
 
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      home: const GetStart(),
+      home: const HomeScreen(),
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
     );
