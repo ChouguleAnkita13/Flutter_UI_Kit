@@ -38,7 +38,7 @@ class GetStart extends StatelessWidget {
                       width: 270,
                       height: 75,
                       margin: const EdgeInsets.only(
-                        bottom: 50,
+                        bottom: 30,
                       ),
                       decoration: const BoxDecoration(
                           color: Color.fromRGBO(36, 44, 59, 1),
