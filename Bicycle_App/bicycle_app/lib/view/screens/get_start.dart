@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:bicycle_app/theme/app_theme.dart';
 
 class GetStart extends StatelessWidget {
   const GetStart({super.key});
@@ -11,70 +11,77 @@ class GetStart extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-                Color.fromRGBO(53, 63, 84, 1),
-                Color.fromRGBO(75, 76, 237, 1),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              stops: [0.5, 0.5]),
+          gradient: AppTheme.primaryGradient,
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(top: 30),
           child: Stack(
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Image.asset("assets/images/image1.png"),
-                  Transform.rotate(
-                      angle: 1.5708,
+                  Center(child: Image.asset("assets/images/image1.png")),
+                  RotatedBox(
+                    quarterTurns: 1,
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.width,
                       child: Text(
                         "EXTREME",
-                        style: GoogleFonts.poppins(
-                            fontSize: 150,
-                            fontWeight: FontWeight.w400,
-                            color: const Color.fromRGBO(255, 255, 255, 0.5)),
-                      )),
-                  Container(
-                    width: 315,
-                    height: 75,
-                    decoration: const BoxDecoration(
-                        color: Color.fromRGBO(36, 44, 59, 1),
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(38),
-                            topRight: Radius.circular(38))),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 70,
-                          height: 70,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              color: const Color.fromRGBO(75, 76, 237, 1),
-                              border: Border.all(
-                                  color: const Color.fromRGBO(239, 186, 51, 1),
-                                  width: 5)),
-                          child: const Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            size: 30,
+                        style: Theme.of(context).textTheme.displayLarge,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Container(
+                      width: 270,
+                      height: 75,
+                      margin: const EdgeInsets.only(
+                        bottom: 50,
+                      ),
+                      decoration: const BoxDecoration(
+                          color: Color.fromRGBO(36, 44, 59, 1),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(38),
+                              bottomLeft: Radius.circular(38))),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 70,
+                            height: 70,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                color: const Color.fromRGBO(75, 76, 237, 1),
+                                border: Border.all(
+                                    color:
+                                        const Color.fromRGBO(239, 186, 51, 1),
+                                    width: 5)),
+                            child: const Icon(
+                              Icons.arrow_forward_ios_outlined,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "Get Start",
-                          style: GoogleFonts.poppins(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500,
-                              color: const Color.fromRGBO(255, 255, 255, 1)),
-                        ),
-                      ],
+                          const SizedBox(
+                            width: 50,
+                          ),
+                          Text(
+                            "Get Start",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(fontSize: 25),
+                          ),
+                        ],
+                      ),
                     ),
                   )
                 ],
               ),
               Positioned(
-                  top: 280, child: Image.asset("assets/images/pngwing.png"))
+                  top: 280,
+                  child: Transform.translate(
+                      offset: const Offset(10, 0),
+                      child: Image.asset("assets/images/pngwing.png")))
             ],
           ),
         ),
