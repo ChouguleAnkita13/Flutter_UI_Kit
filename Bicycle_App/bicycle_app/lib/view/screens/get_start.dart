@@ -1,3 +1,4 @@
+import 'package:bicycle_app/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bicycle_app/theme/app_theme.dart';
 
@@ -33,7 +34,9 @@ class GetStart extends StatelessWidget {
                   ),
                   const Spacer(),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                    },
                     child: Container(
                       width: 270,
                       height: 75,
