@@ -37,8 +37,8 @@ class AppTheme {
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
       ),
-      borderRadius: BorderRadius.circular(10));
-  static BoxDecoration contDecoration = BoxDecoration(
+      borderRadius: BorderRadius.circular(20));
+  static BoxDecoration smallContDecoration = BoxDecoration(
       gradient: const LinearGradient(
         colors: [
           Color.fromRGBO(72, 92, 236, 1),
@@ -48,6 +48,17 @@ class AppTheme {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         stops: [0.9, 0.0, 0.0],
+      ),
+      borderRadius: BorderRadius.circular(10));
+static BoxDecoration smallContDecoration1 = BoxDecoration(
+      gradient: const LinearGradient(
+        colors: [
+          Color.fromRGBO(255,255,255,1),
+          Color.fromRGBO(161, 161, 161, 1),
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        stops: [0.9, 0.0],
       ),
       borderRadius: BorderRadius.circular(10));
 
