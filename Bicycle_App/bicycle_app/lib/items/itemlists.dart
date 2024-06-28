@@ -46,5 +46,14 @@ List bicycles = [
                     rerum cupiditate qui dolores consequatur et 
                     asperiores sunt ea magnam dolorem qui consectetur omnis. Ut error voluptas qui tempora provident 
                     aut necessitatibus voluptas rem eveniet nulla ut cusantium dignissimos aut facilis perspiciatis anatus quia.'''
+  }, {
+    'img':"assets/images/ross.png",
+    'type': 'Road Bike',
+    'name': 'Ross',
+    'price': 1999.99,
+    'description': '''Lorem ipsum dolor sit amet. Ab tenetur molestias vel 
+                    rerum cupiditate qui dolores consequatur et 
+                    asperiores sunt ea magnam dolorem qui consectetur omnis. Ut error voluptas qui tempora provident 
+                    aut necessitatibus voluptas rem eveniet nulla ut cusantium dignissimos aut facilis perspiciatis anatus quia.'''
   }
 ];
