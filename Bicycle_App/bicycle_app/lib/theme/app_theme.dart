@@ -41,13 +41,13 @@ class AppTheme {
   static BoxDecoration smallContDecoration = BoxDecoration(
       gradient: const LinearGradient(
         colors: [
+          Color.fromRGBO(55, 182, 233, 1),
           Color.fromRGBO(72, 92, 236, 1),
           Color.fromRGBO(75, 76, 237, 1),
-          Color.fromRGBO(55, 182, 233, 1),
         ],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        stops: [0.9, 0.0, 0.0],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        stops: [0.9, 0.1, 0.0],
       ),
       borderRadius: BorderRadius.circular(10));
 static BoxDecoration smallContDecoration1 = BoxDecoration(
