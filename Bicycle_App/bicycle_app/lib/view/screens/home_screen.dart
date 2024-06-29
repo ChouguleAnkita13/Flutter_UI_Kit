@@ -1,3 +1,4 @@
+import 'package:bicycle_app/view/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bicycle_app/theme/app_theme.dart';
 
@@ -10,11 +11,14 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
 
   BoxDecoration chooseItem(int idx) {
-    return selectedIndex == idx ? AppTheme.smallContDecoration : AppTheme.smallContDecoration1;
+    return selectedIndex == idx
+        ? AppTheme.smallContDecoration
+        : AppTheme.smallContDecoration1;
   }
 
   @override
@@ -92,8 +96,10 @@ class _HomeScreenState extends State<HomeScreen> {
         height: MediaQuery.of(context).size.width,
         child: Text(
           "EXTREME",
-          style: Theme.of(context).textTheme.displayLarge!.copyWith(
-              color: const Color.fromRGBO(255, 255, 255, 0.08)),
+          style: Theme.of(context)
+              .textTheme
+              .displayLarge!
+              .copyWith(color: const Color.fromRGBO(255, 255, 255, 0.08)),
         ),
       ),
     );
@@ -118,16 +124,18 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   "EXTREME",
-                  style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                      fontSize: 32,
-                      color: AppTheme.textColor),
+                  style: Theme.of(context)
+                      .textTheme
+                      .displayLarge!
+                      .copyWith(fontSize: 32, color: AppTheme.textColor),
                 ),
                 const Spacer(),
                 Text(
                   "30% OFF",
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w600),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: 32, fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -165,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildGridView() {
     return SizedBox(
-      height: MediaQuery.of(context).size.height/2,
+      height: MediaQuery.of(context).size.height / 2,
       child: GridView.builder(
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -177,16 +185,20 @@ class _HomeScreenState extends State<HomeScreen> {
         itemCount: bicycles.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) =>
+                      DetailScreen(bicyleMap: bicycles[index])));
+            },
             child: Container(
               width: 181,
               height: 100,
               decoration: AppTheme.contDecoration1,
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(bicycles[index]['img'], height: 140, width: 170),
+                  Image.asset(bicycles[index]['img'], height: 140, width: 170,fit: BoxFit.cover,),
                   Text(
                     bicycles[index]['type'],
                     style: Theme.of(context).textTheme.bodyLarge,
