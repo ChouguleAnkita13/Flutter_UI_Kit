@@ -31,8 +31,8 @@ class AppTheme {
   static BoxDecoration contDecoration1 = BoxDecoration(
       gradient: const LinearGradient(
         colors: [
-          Color.fromRGBO(53, 63, 84, 0.5),
-          Color.fromRGBO(34, 40, 52, 0.5),
+          Color.fromRGBO(53, 63, 84, 0.6),
+          Color.fromRGBO(34, 40, 52, 0.6),
         ],
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
