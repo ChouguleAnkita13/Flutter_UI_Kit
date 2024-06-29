@@ -13,7 +13,7 @@ class BottomNavigation extends StatelessWidget {
           BottomNavigationBarItem(
               icon: Container(
                   decoration: AppTheme.smallContDecoration,
-                  height: 0,
+                padding: const EdgeInsets.only(bottom: 20),
                   child: Image.asset("assets/images/house.png")),
               label: ""),
           BottomNavigationBarItem(
