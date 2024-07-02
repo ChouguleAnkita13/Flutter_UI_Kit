@@ -1,6 +1,7 @@
 import 'package:bicycle_app/view/screens/shopping_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:bicycle_app/theme/app_theme.dart';
+import 'package:intl/intl.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -38,10 +39,10 @@ class DetailScreen extends StatelessWidget {
                           width: 45,
                           decoration: AppTheme.smallContDecoration,
                           child: GestureDetector(
-                            onTap: (){
-                              Navigator.of(context).pop();
-                            },
-                            child: const Icon(Icons.arrow_back_ios_sharp)),
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Icon(Icons.arrow_back_ios_sharp)),
                         ),
                       ],
                     ),
@@ -185,11 +186,14 @@ class DetailScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("\$ ${bicyleMap["price"]}",
+            Text(
+                "\$${NumberFormat('#,##0.00', 'en_US').format(bicyleMap["price"])}",
                 style: Theme.of(context).textTheme.titleLarge),
             GestureDetector(
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: ((context) => ShoppingCart(bicyleMap:bicyleMap))));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: ((context) =>
+                        ShoppingCart(bicyleMap: bicyleMap))));
               },
               child: Container(
                 width: 180,

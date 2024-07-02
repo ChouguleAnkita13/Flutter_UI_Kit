@@ -1,13 +1,13 @@
 import 'package:bicycle_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:intl/intl.dart';
 
 class Cart extends StatelessWidget {
   const Cart(
       {super.key, required this.img, required this.name, required this.price});
   final String img;
   final String name;
-  final String price;
+  final double price;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class Cart extends StatelessWidget {
                        const SizedBox(
             height: 35,
           ),
-              Text("\$ $price",
+              Text("\$${NumberFormat('#,##0.00', 'en_US').format(price)}",
                   style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                       fontSize: 18,
                       color: const Color.fromRGBO(55, 182, 233, 1))),

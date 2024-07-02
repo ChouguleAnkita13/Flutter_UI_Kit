@@ -1,7 +1,7 @@
 import 'package:bicycle_app/view/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bicycle_app/theme/app_theme.dart';
-
+import 'package:intl/intl.dart';
 import '../../items/itemlists.dart';
 import '../widgets/bottom_navigation.dart';
 
@@ -208,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Text(
-                    "\$ ${bicycles[index]['price']}",
+                    "\$${NumberFormat('#,##0.00', 'en_US').format(bicycles[index]['price'])}",
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ],
