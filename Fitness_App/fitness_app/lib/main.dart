@@ -1,4 +1,6 @@
+import 'package:fitness_app/route/app_route.dart';
 import 'package:fitness_app/theme/app_theme.dart';
+import 'package:fitness_app/view/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,9 +13,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: 
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme
+      theme: AppTheme.lightTheme,
+      routes: appRoutes,
     );
   }
 }
