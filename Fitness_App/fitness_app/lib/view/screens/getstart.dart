@@ -1,5 +1,4 @@
 import 'package:fitness_app/theme/app_theme.dart';
-import 'package:fitness_app/view/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -49,7 +48,7 @@ class GetStart extends StatelessWidget {
       ),
       floatingActionButton: GestureDetector(
         onTap: (){
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
+          Navigator.of(context).pushNamed("/home");
         },
         child: Container(
           height: 56,
