@@ -100,6 +100,8 @@ class TodayPlan extends StatelessWidget {
                             LinearPercentIndicator(
                                 lineHeight: 16.0,
                                 percent: planList[index]["percent"]/100,
+                                animation: true,
+                                animationDuration: 1000,
                                 padding: const EdgeInsets.only(right: 10),
                                 backgroundColor:
                                     const Color.fromRGBO(242, 242, 242, 1),
