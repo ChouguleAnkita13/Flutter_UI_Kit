@@ -44,6 +44,6 @@ class AppTheme {
         bodySmall: lato(
             fontWeight: FontWeight.w500, fontSize: 13, color: primaryColor),
       ),
-      iconTheme: const IconThemeData(size: 30, color: textColor)
+      iconTheme: const IconThemeData(size: 24, color: textColor)
       );
 }
