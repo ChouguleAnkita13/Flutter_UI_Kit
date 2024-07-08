@@ -101,7 +101,7 @@ class TodayPlan extends StatelessWidget {
                                 lineHeight: 16.0,
                                 percent: planList[index]["percent"]/100,
                                 animation: true,
-                                animationDuration: 1000,
+                                animationDuration: 1200,
                                 padding: const EdgeInsets.only(right: 10),
                                 backgroundColor:
                                     const Color.fromRGBO(242, 242, 242, 1),
