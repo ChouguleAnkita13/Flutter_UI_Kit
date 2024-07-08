@@ -15,10 +15,10 @@ class PopularWorkout extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => const WorkoutDetail(
-                  title: "Lower Body Training",
-                  kcal: "500 Kcal",
-                  time: "50 min",
+            builder: (context) => WorkoutDetail(
+                  title: title,
+                  kcal: kcal,
+                  time: time,
                 )));
       },
       child: Stack(children: [
