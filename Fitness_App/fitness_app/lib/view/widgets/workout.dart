@@ -1,6 +1,5 @@
 import 'package:fitness_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Workout extends StatelessWidget {
   const Workout(
