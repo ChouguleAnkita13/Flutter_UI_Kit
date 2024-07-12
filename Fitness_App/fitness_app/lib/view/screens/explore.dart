@@ -1,7 +1,9 @@
 import 'package:fitness_app/theme/app_theme.dart';
+import 'package:fitness_app/view/widgets/best_for_you.dart';
 import 'package:fitness_app/view/widgets/bottom_navigation.dart';
+import 'package:fitness_app/view/widgets/challenge.dart';
+import 'package:fitness_app/view/widgets/fast_warmup.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Explore extends StatelessWidget {
   const Explore({super.key});
@@ -9,6 +11,7 @@ class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(0, 0, 0, 0.04),
       body: Padding(
           padding: const EdgeInsets.only(left: 20, top: 30),
           child: Column(
@@ -69,6 +72,24 @@ class Explore extends StatelessWidget {
                   ),
                 ))
               ]),
+              const SizedBox(
+                height: 15,
+              ),
+              Expanded(
+                child: ListView(
+                  children: const [
+                    BestForYou(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Challenge(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    FastWarmUp()
+                  ],
+                ),
+              )
             ],
           )),
       bottomNavigationBar: const BottomNavigation(
