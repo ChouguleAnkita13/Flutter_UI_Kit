@@ -22,9 +22,8 @@ class Analytics extends StatelessWidget {
               "Today Report",
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            const SizedBox(height: 15),
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 20,top: 15),
               child: SizedBox(
                 height: MediaQuery.sizeOf(context).height / 1.52,
                 child: ListView(
