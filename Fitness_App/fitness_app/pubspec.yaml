@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
+  intl: ^0.19.0
   percent_indicator: ^4.2.3
 
 dev_dependencies:
@@ -23,4 +24,6 @@ flutter:
     - assets/images/
     - assets/images/details/
     - assets/images/explore/
+    - assets/images/analytics/
+
 
