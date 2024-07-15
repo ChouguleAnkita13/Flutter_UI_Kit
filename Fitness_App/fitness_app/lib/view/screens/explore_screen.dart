@@ -11,7 +11,7 @@ class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(0, 0, 0, 0.04),
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 0.95),
       body: Padding(
           padding: const EdgeInsets.only(left: 20, top: 30),
           child: Column(

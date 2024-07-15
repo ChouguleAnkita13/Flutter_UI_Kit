@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(0, 0, 0, 0.03),
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 0.95),
       body: Padding(
         padding: const EdgeInsets.only(left: 20, top: 30),
         child: Column(
@@ -57,18 +57,16 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 children: [
                   PopularWorkout(
-                    title: "Lower Body Training",
-                    kcal: "500 Kcal",
-                    time: "50 min",
-                    imgUrl:"assets/images/popular.png"
-                  ),
+                      title: "Lower Body Training",
+                      kcal: "500 Kcal",
+                      time: "50 min",
+                      imgUrl: "assets/images/popular.png"),
                   SizedBox(width: 20),
                   PopularWorkout(
-                    title: "Hand Training",
-                    kcal: "600 Kcal",
-                    time: "40 min",
-                    imgUrl:"assets/images/hand_training.png"
-                  ),
+                      title: "Hand Training",
+                      kcal: "600 Kcal",
+                      time: "40 min",
+                      imgUrl: "assets/images/hand_training.png"),
                 ],
               ),
             ),
@@ -79,12 +77,15 @@ class HomeScreen extends StatelessWidget {
               "Today Plan",
               style: Theme.of(context).textTheme.titleMedium,
             ),
-           const Expanded(
+            const Expanded(
               child: TodayPlan(),
-             )     ],
+            )
+          ],
         ),
       ),
-      bottomNavigationBar: const BottomNavigation(selectedIndex: 0,),
+      bottomNavigationBar: const BottomNavigation(
+        selectedIndex: 0,
+      ),
     );
   }
 }

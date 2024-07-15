@@ -1,4 +1,4 @@
-import 'package:fitness_app/view/widgets/home/analytics_screen.dart';
+import 'package:fitness_app/view/screens/analytics_screen.dart';
 import 'package:fitness_app/view/screens/explore_screen.dart';
 import 'package:fitness_app/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';

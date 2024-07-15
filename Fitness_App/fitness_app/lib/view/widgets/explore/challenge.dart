@@ -26,6 +26,7 @@ class Challenge extends StatelessWidget {
                     width: 110,
                     height: 110,
                     padding: const EdgeInsets.all(5),
+                    alignment: Alignment.bottomRight,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(9),
                       color: AppTheme.primaryLightColor,
@@ -40,7 +41,7 @@ class Challenge extends StatelessWidget {
                       bottom: 20,
                       left: 10,
                       child: SizedBox(
-                        width: 67,
+                        width: 68,
                         child: Text(
                           "Plank Challenge",
                           style: Theme.of(context).textTheme.labelMedium,
@@ -70,7 +71,7 @@ class Challenge extends StatelessWidget {
                       bottom: 20,
                       left: 10,
                       child: SizedBox(
-                        width: 67,
+                        width: 68,
                         child: Text(
                           "Sprint Challenge",
                           style: Theme.of(context)
@@ -103,7 +104,7 @@ class Challenge extends StatelessWidget {
                       bottom: 20,
                       left: 10,
                       child: SizedBox(
-                        width: 67,
+                        width: 68,
                         child: Text(
                           "Squat Challenge",
                           style: Theme.of(context).textTheme.labelMedium,

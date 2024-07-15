@@ -9,7 +9,6 @@ class GetStart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Stack(
             children: [
@@ -36,29 +35,40 @@ class GetStart extends StatelessWidget {
                   ))
             ],
           ),
-          SizedBox(
-            width: 260,
-            child: Text(
-              "Wherever You Are Health Is Number One",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.displayLarge,
+          Expanded(
+            child: Container(
+              color: AppTheme.textColor,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: 260,
+                    child: Text(
+                      "Wherever You Are Health Is Number One",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.displayLarge,
+                    ),
+                  ),
+                  Text(
+                    "There is no instant way to a healthy life",
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  SizedBox(
+                    width: 75,
+                    child: LinearPercentIndicator(
+                        lineHeight: 5.0,
+                        percent: 0.4,
+                        backgroundColor: AppTheme.primaryColor,
+                        barRadius: const Radius.circular(5),
+                        progressColor: AppTheme.primaryLightColor),
+                  ),
+                  const SizedBox(
+                    height: 80,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Text(
-            "There is no instant way to a healthy life",
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-          SizedBox(
-            width: 75,
-            child: LinearPercentIndicator(
-                lineHeight: 5.0,
-                percent: 0.4,
-                backgroundColor: AppTheme.primaryColor,
-                barRadius: const Radius.circular(5),
-                progressColor: AppTheme.primaryLightColor),
-          ),
-          const SizedBox(
-            height: 80,
           ),
         ],
       ),

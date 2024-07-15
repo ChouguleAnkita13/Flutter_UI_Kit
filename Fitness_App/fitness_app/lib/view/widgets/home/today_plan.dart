@@ -2,29 +2,30 @@ import 'package:fitness_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-List planList=[
+List planList = [
   {
-    "imgUrl":"assets/images/push_up.png",
-    "plan":"Push Up",
-    "content":"100 Push up a day",
-    "status":"Intermediate",
-    "percent":45,
-  },
-   {
-    "imgUrl":"assets/images/sit.png",
-    "plan":"Sit Up",
-    "content":"20 Sit up a day",
-    "status":"Beginner",
-    "percent":75,
+    "imgUrl": "assets/images/push_up.png",
+    "plan": "Push Up",
+    "content": "100 Push up a day",
+    "status": "Intermediate",
+    "percent": 45,
   },
   {
-    "imgUrl":"assets/images/knee_push.png",
-    "plan":"Knee Push Up",
-    "content":"40 Knee Push Up a day",
-    "status":"Beginner",
-    "percent":65,
+    "imgUrl": "assets/images/sit.png",
+    "plan": "Sit Up",
+    "content": "20 Sit up a day",
+    "status": "Beginner",
+    "percent": 75,
+  },
+  {
+    "imgUrl": "assets/images/knee_push.png",
+    "plan": "Knee Push Up",
+    "content": "40 Knee Push Up a day",
+    "status": "Beginner",
+    "percent": 65,
   }
 ];
+
 class TodayPlan extends StatelessWidget {
   const TodayPlan({super.key});
 
@@ -99,7 +100,7 @@ class TodayPlan extends StatelessWidget {
                             ),
                             LinearPercentIndicator(
                                 lineHeight: 16.0,
-                                percent: planList[index]["percent"]/100,
+                                percent: planList[index]["percent"] / 100,
                                 animation: true,
                                 animationDuration: 1200,
                                 padding: const EdgeInsets.only(right: 10),

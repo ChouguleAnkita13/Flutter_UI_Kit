@@ -1,10 +1,10 @@
 import 'package:fitness_app/view/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
-import '../activity/calender.dart';
-import '../activity/cycling.dart';
-import '../activity/health_rate.dart';
-import '../activity/sleep_water.dart';
+import '../widgets/activity/calender.dart';
+import '../widgets/activity/cycling.dart';
+import '../widgets/activity/health_rate.dart';
+import '../widgets/activity/sleep_water.dart';
 
 class Analytics extends StatelessWidget {
   const Analytics({super.key});
@@ -23,7 +23,7 @@ class Analytics extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 20,top: 15),
+              padding: const EdgeInsets.only(right: 20,top: 10),
               child: SizedBox(
                 height: MediaQuery.sizeOf(context).height / 1.52,
                 child: ListView(

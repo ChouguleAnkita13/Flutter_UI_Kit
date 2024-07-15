@@ -43,7 +43,7 @@ class WorkoutDetail extends StatelessWidget {
           ),
           const SizedBox(height: 30),
           Workout(title: title, kcal: kcal, time: time, imgUrl: imgUrl),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -61,7 +61,7 @@ class WorkoutDetail extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(height: 10),
+          // const SizedBox(height: 10),
           const Expanded(child: Rounds())
         ]),
       ),
