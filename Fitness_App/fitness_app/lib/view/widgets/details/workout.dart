@@ -3,10 +3,15 @@ import 'package:flutter/material.dart';
 
 class Workout extends StatelessWidget {
   const Workout(
-      {super.key, required this.title, required this.kcal, required this.time});
+      {super.key,
+      required this.title,
+      required this.kcal,
+      required this.time,
+      required this.imgUrl});
   final String title;
   final String kcal;
   final String time;
+  final String imgUrl;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,7 +20,7 @@ class Workout extends StatelessWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(23),
           child: Image.asset(
-            "assets/images/popular.png",
+            imgUrl,
             height: 230,
             width: MediaQuery.sizeOf(context).width,
             fit: BoxFit.cover,
@@ -142,8 +147,12 @@ class Workout extends StatelessWidget {
         SingleChildScrollView(
           child: SizedBox(
             height: 88,
-            child: Text("The lower abdomen and hips are the most difficult areas of the body to reduce when we are on a diet. Even so, in this area, especially the legs as a whole, you can reduce weight even if you don't use tools.",
-             style: Theme.of(context).textTheme.labelLarge!.copyWith(color: const Color.fromRGBO(255, 255, 255, 0.5))),
+            child: Text(
+                "The lower abdomen and hips are the most difficult areas of the body to reduce when we are on a diet. Even so, in this area, especially the legs as a whole, you can reduce weight even if you don't use tools.",
+                style: Theme.of(context)
+                    .textTheme
+                    .labelLarge!
+                    .copyWith(color: const Color.fromRGBO(255, 255, 255, 0.5))),
           ),
         ),
       ],

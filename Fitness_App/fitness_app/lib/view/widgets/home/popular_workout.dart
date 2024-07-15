@@ -5,10 +5,15 @@ import '../../../theme/app_theme.dart';
 
 class PopularWorkout extends StatelessWidget {
   const PopularWorkout(
-      {super.key, required this.title, required this.kcal, required this.time});
+      {super.key,
+      required this.title,
+      required this.kcal,
+      required this.time,
+      required this.imgUrl});
   final String title;
   final String kcal;
   final String time;
+  final String imgUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +24,14 @@ class PopularWorkout extends StatelessWidget {
                   title: title,
                   kcal: kcal,
                   time: time,
+                  imgUrl:imgUrl
                 )));
       },
       child: Stack(children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(23),
           child: Image.asset(
-            "assets/images/popular.png",
+            imgUrl,
             height: 174,
             width: 280,
             fit: BoxFit.cover,

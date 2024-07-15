@@ -60,12 +60,14 @@ class HomeScreen extends StatelessWidget {
                     title: "Lower Body Training",
                     kcal: "500 Kcal",
                     time: "50 min",
+                    imgUrl:"assets/images/popular.png"
                   ),
                   SizedBox(width: 20),
                   PopularWorkout(
                     title: "Hand Training",
                     kcal: "600 Kcal",
                     time: "40 min",
+                    imgUrl:"assets/images/hand_training.png"
                   ),
                 ],
               ),

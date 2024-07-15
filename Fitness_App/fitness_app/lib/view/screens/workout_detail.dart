@@ -5,10 +5,15 @@ import 'package:fitness_app/theme/app_theme.dart';
 
 class WorkoutDetail extends StatelessWidget {
   const WorkoutDetail(
-      {super.key, required this.title, required this.kcal, required this.time});
+      {super.key,
+      required this.title,
+      required this.kcal,
+      required this.time,
+      required this.imgUrl});
   final String title;
   final String kcal;
   final String time;
+  final String imgUrl;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +42,7 @@ class WorkoutDetail extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
-          Workout(
-            title: title,
-            kcal: kcal,
-            time: time,
-          ),
+          Workout(title: title, kcal: kcal, time: time, imgUrl: imgUrl),
           const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
