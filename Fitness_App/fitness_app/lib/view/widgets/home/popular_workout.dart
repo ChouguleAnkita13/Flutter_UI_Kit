@@ -1,7 +1,7 @@
 import 'package:fitness_app/view/screens/workout_detail.dart';
 import 'package:flutter/material.dart';
 
-import '../../theme/app_theme.dart';
+import '../../../theme/app_theme.dart';
 
 class PopularWorkout extends StatelessWidget {
   const PopularWorkout(

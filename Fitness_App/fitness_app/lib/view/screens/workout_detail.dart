@@ -1,5 +1,5 @@
-import 'package:fitness_app/view/widgets/rounds.dart';
-import 'package:fitness_app/view/widgets/workout.dart';
+import 'package:fitness_app/view/widgets/details/rounds.dart';
+import 'package:fitness_app/view/widgets/details/workout.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/theme/app_theme.dart';
 

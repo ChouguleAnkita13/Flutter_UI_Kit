@@ -1,10 +1,10 @@
 import 'package:fitness_app/view/widgets/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/activity/calender.dart';
-import '../widgets/activity/cycling.dart';
-import '../widgets/activity/health_rate.dart';
-import '../widgets/activity/sleep_water.dart';
+import '../activity/calender.dart';
+import '../activity/cycling.dart';
+import '../activity/health_rate.dart';
+import '../activity/sleep_water.dart';
 
 class Analytics extends StatelessWidget {
   const Analytics({super.key});

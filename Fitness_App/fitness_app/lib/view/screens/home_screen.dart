@@ -1,7 +1,7 @@
 import 'package:fitness_app/theme/app_theme.dart';
 import 'package:fitness_app/view/widgets/bottom_navigation.dart';
-import 'package:fitness_app/view/widgets/popular_workout.dart';
-import 'package:fitness_app/view/widgets/today_plan.dart';
+import 'package:fitness_app/view/widgets/home/popular_workout.dart';
+import 'package:fitness_app/view/widgets/home/today_plan.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

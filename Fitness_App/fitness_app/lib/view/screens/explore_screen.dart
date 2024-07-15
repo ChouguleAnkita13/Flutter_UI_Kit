@@ -1,8 +1,8 @@
 import 'package:fitness_app/theme/app_theme.dart';
-import 'package:fitness_app/view/widgets/best_for_you.dart';
+import 'package:fitness_app/view/widgets/explore/best_for_you.dart';
 import 'package:fitness_app/view/widgets/bottom_navigation.dart';
-import 'package:fitness_app/view/widgets/challenge.dart';
-import 'package:fitness_app/view/widgets/fast_warmup.dart';
+import 'package:fitness_app/view/widgets/explore/challenge.dart';
+import 'package:fitness_app/view/widgets/explore/fast_warmup.dart';
 import 'package:flutter/material.dart';
 
 class Explore extends StatelessWidget {
