@@ -11,11 +11,30 @@ class GetStart extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            "assets/images/getstart.png",
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: MediaQuery.sizeOf(context).height / 1.5,
+          Stack(
+            children: [
+              Image.asset(
+                "assets/images/getstart.png",
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: MediaQuery.sizeOf(context).height / 1.5,
+              ),
+              Positioned(
+                  bottom: 0,
+                  child: Container(
+                    height: 193,
+                    width: MediaQuery.sizeOf(context).width,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [
+                            Color.fromRGBO(255, 255, 255, 0),
+                            Color.fromRGBO(255, 255, 255, 1),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter),
+                    ),
+                  ))
+            ],
           ),
           SizedBox(
             width: 260,
@@ -32,14 +51,11 @@ class GetStart extends StatelessWidget {
           SizedBox(
             width: 75,
             child: LinearPercentIndicator(
-              lineHeight: 5.0,
-              percent: 0.4,
-              backgroundColor:AppTheme.primaryColor,
-              barRadius: const Radius.circular(5),
-              progressColor:AppTheme.primaryLightColor
-
-            
-            ),
+                lineHeight: 5.0,
+                percent: 0.4,
+                backgroundColor: AppTheme.primaryColor,
+                barRadius: const Radius.circular(5),
+                progressColor: AppTheme.primaryLightColor),
           ),
           const SizedBox(
             height: 80,
@@ -47,7 +63,7 @@ class GetStart extends StatelessWidget {
         ],
       ),
       floatingActionButton: GestureDetector(
-        onTap: (){
+        onTap: () {
           Navigator.of(context).pushNamed("/home");
         },
         child: Container(
