@@ -11,76 +11,81 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 0.95),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, top: 30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Good Morning 🔥",
-              style: Theme.of(context).textTheme.labelMedium,
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.sizeOf(context).height,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, top: 30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Good Morning 🔥",
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+                Text(
+                  "Pramuditya Uzumaki",
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(right: 20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: AppTheme.textColor,
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: "Search",
+                        hintStyle: Theme.of(context).textTheme.labelLarge,
+                        prefixIcon: const Icon(Icons.search_rounded),
+                        prefixIconColor: AppTheme.textColorLight,
+                        border: InputBorder.none),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Popular Workouts",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      PopularWorkout(
+                          title: "Lower Body Training",
+                          kcal: "500 Kcal",
+                          time: "50 min",
+                          imgUrl: "assets/images/popular.png"),
+                      SizedBox(width: 20),
+                      PopularWorkout(
+                          title: "Hand Training",
+                          kcal: "600 Kcal",
+                          time: "40 min",
+                          imgUrl: "assets/images/hand_training.png"),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "Today Plan",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                const Expanded(
+                  child: TodayPlan(),
+                )
+              ],
             ),
-            Text(
-              "Ankita Chougule",
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              margin: const EdgeInsets.only(right: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: AppTheme.textColor,
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: "Search",
-                    hintStyle: Theme.of(context).textTheme.labelLarge,
-                    prefixIcon: const Icon(Icons.search_rounded),
-                    prefixIconColor: AppTheme.textColorLight,
-                    border: InputBorder.none),
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Popular Workouts",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  PopularWorkout(
-                      title: "Lower Body Training",
-                      kcal: "500 Kcal",
-                      time: "50 min",
-                      imgUrl: "assets/images/popular.png"),
-                  SizedBox(width: 20),
-                  PopularWorkout(
-                      title: "Hand Training",
-                      kcal: "600 Kcal",
-                      time: "40 min",
-                      imgUrl: "assets/images/hand_training.png"),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Text(
-              "Today Plan",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const Expanded(
-              child: TodayPlan(),
-            )
-          ],
+          ),
         ),
       ),
       bottomNavigationBar: const BottomNavigation(
