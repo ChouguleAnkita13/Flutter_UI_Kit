@@ -35,7 +35,7 @@ class TodayPlan extends StatelessWidget {
         itemCount: planList.length,
         itemBuilder: ((context, index) {
           return Container(
-            margin: const EdgeInsets.only(right: 20, top: 15),
+            margin: const EdgeInsets.only(right: 20,top: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(23),
               color: AppTheme.textColor,
