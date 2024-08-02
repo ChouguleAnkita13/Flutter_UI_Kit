@@ -1,5 +1,5 @@
 import 'package:fashion_app/theme/app_theme.dart';
-import 'package:fashion_app/view/screens/home_screen.dart';
+import 'package:fashion_app/view/screens/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutScreen extends StatefulWidget {
@@ -17,6 +17,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
         padding:
             const EdgeInsets.only(top: 30, left: 30, right: 30, bottom: 30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               width: MediaQuery.sizeOf(context).width/2,
@@ -41,7 +42,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
              Center(
                child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const CustomBottomNavigation()));
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(

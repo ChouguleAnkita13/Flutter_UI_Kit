@@ -17,7 +17,7 @@ class _CartScreenState extends State<CartScreen> {
         padding:
             const EdgeInsets.only(top: 30, left: 30, right: 30, bottom: 30),
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               width: MediaQuery.sizeOf(context).width/2,
