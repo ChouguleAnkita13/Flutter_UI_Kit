@@ -1,6 +1,8 @@
 import 'package:fashion_app/model/fashion_model.dart';
 import 'package:fashion_app/theme/app_theme.dart';
+import 'package:fashion_app/view/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class DetailsScreen extends StatefulWidget {
   const DetailsScreen({super.key, required this.fashionItem});
@@ -11,8 +13,10 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  final _controller = PageController();
   List sizeList = ["S", "M", "L", "XL", "XXL"];
   int selectedSizeIndex = 0;
+  int index = 0;
 
   BoxDecoration? selectedSize(int idx) {
     if (selectedSizeIndex == idx) {
@@ -23,6 +27,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     return null;
   }
 
+  List pages = ["", "assets/images/slider.png", "assets/images/slider1.png"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,24 +60,69 @@ class _DetailsScreenState extends State<DetailsScreen> {
               height: 20,
             ),
             //Image
-            ClipRRect(
-              borderRadius: BorderRadius.circular(30),
-              child: Image.asset(widget.fashionItem.imgUrl,
-                  width: MediaQuery.sizeOf(context).width,
-                  height: MediaQuery.sizeOf(context).height / 2,
-                  fit: BoxFit.cover),
-            ),
-            const SizedBox(height: 15),
-            Row(
+            Stack(
               children: [
                 SizedBox(
-                  width: 210,
-                  child: Text("Premium Tagerine Shirt",
-                      style: Theme.of(context).textTheme.titleLarge),
+                  height: MediaQuery.sizeOf(context).height / 2,
+                  child: PageView.builder(
+                    controller: _controller,
+                    onPageChanged: (newIndex) {
+                      setState(() {
+                        index = newIndex;
+                      });
+                    },
+                    itemCount: pages.length,
+                    itemBuilder: (context, pageIndex) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: Image.asset(
+                            index == 0
+                                ? widget.fashionItem.fullImgUrl
+                                : pages[index],
+                            width: MediaQuery.sizeOf(context).width,
+                            height: MediaQuery.sizeOf(context).height / 2,
+                            fit: BoxFit.cover),
+                      );
+                    },
+                  ),
+                ),
+                Positioned(
+                  bottom: 10,
+                  left: 130,
+                  child: SmoothPageIndicator(
+                    controller: _controller,
+                    count: pages.length,
+                    effect: const ExpandingDotsEffect(
+                        spacing: 5.0,
+                        radius: 4.0,
+                        dotWidth: 6.0,
+                        dotHeight: 5.0,
+                        strokeWidth: 1.5,
+                        dotColor: Colors.grey,
+                        activeDotColor: Colors.white),
+                    onDotClicked: (newIndex) => _controller.animateToPage(
+                      newIndex,
+                      duration: const Duration(milliseconds: 350),
+                      curve: Curves.easeIn,
+                    ),
+                  ),
                 )
               ],
             ),
-
+            const SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: 210,
+                  child: Text("Premium ${widget.fashionItem.brandName}",
+                      style: Theme.of(context).textTheme.titleLarge),
+                ),
+                Image.asset("assets/images/choice1.png"),
+                Image.asset("assets/images/choice2.png"),
+                Image.asset("assets/images/choice3.png"),
+              ],
+            ),
             const SizedBox(height: 10),
             //SizeList
             Text("Size", style: Theme.of(context).textTheme.titleMedium),
@@ -113,7 +163,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 Text("\$${widget.fashionItem.price}",
                     style: Theme.of(context).textTheme.displayMedium),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const CartScreen()));
+                  },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 15),
