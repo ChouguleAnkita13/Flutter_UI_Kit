@@ -1,6 +1,7 @@
 import 'package:fashion_app/theme/app_theme.dart';
 import 'package:fashion_app/view/screens/checkout_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../../model/fashion_model.dart';
 
@@ -57,51 +58,96 @@ class _CartScreenState extends State<CartScreen> {
             SizedBox(
               height: 350,
               child: ListView.builder(
-                  itemCount: fashionItemList.length,
+                  itemCount: fashionItemList.length-5,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Row(
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(30),
-                            child: Image.asset(fashionItemList[index].imgUrl,
-                                width: 110, height: 140, fit: BoxFit.cover),
-                          ),
-                          const SizedBox(width: 30),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: 130,
-                                child: Text(
-                                    "Premium ${fashionItemList[index].brandName}",
+                    return Slidable(
+                      closeOnScroll: true,
+                      endActionPane: ActionPane(
+                          extentRatio: 0.23,
+                          motion: const DrawerMotion(),
+                          children: [
+                            Expanded(
+                              child: Container(
+                                padding:const EdgeInsets.all(10),
+                                decoration: const BoxDecoration(
+                                    color: AppTheme.primaryLightColor,
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(40),
+                                        bottomLeft: Radius.circular(40))),
+                                alignment: Alignment.center,
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {},
+                                      child: const Icon(
+                                        Icons.favorite_border,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    GestureDetector(
+                                      onTap: () {},
+                                      child: const Icon(
+                                        Icons.delete_outline,
+                                        color: Colors.white,
+                                        size: 20,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ]),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Row(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.asset(fashionItemList[index].imgUrl,
+                                  width: 110, height: 140, fit: BoxFit.cover),
+                            ),
+                            const SizedBox(width: 30),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 130,
+                                  child: Text(
+                                      "Premium ${fashionItemList[index].brandName}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge),
+                                ),
+                                Text("Yellow",
                                     style:
-                                        Theme.of(context).textTheme.bodyLarge),
-                              ),
-                              Text("Yellow",
-                                  style: Theme.of(context).textTheme.bodySmall),
-                              Text("Size L",
-                                  style: Theme.of(context).textTheme.bodySmall),
-                              const SizedBox(height: 5),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text("\$${fashionItemList[index].price}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium),
-                                  const SizedBox(width: 40),
-                                  Text("1x",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
+                                        Theme.of(context).textTheme.bodySmall),
+                                Text("Size L",
+                                    style:
+                                        Theme.of(context).textTheme.bodySmall),
+                                const SizedBox(height: 5),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text("\$${fashionItemList[index].price}",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium),
+                                    const SizedBox(width: 40),
+                                    Text("1x",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   }),
