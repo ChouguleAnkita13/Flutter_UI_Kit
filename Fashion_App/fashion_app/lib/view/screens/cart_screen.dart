@@ -1,5 +1,6 @@
 import 'package:fashion_app/theme/app_theme.dart';
 import 'package:fashion_app/view/screens/checkout_screen.dart';
+import 'package:fashion_app/view/widget/custom_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
@@ -33,8 +34,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:
-            const EdgeInsets.only(top: 30, left: 30, right: 30, bottom: 30),
+        padding: const EdgeInsets.only(top: 30, left: 30, right: 30, bottom: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -58,127 +58,135 @@ class _CartScreenState extends State<CartScreen> {
             SizedBox(
               height: 350,
               child: ListView.builder(
-                  itemCount: fashionItemList.length-5,
-                  itemBuilder: (context, index) {
-                    return Slidable(
+                itemCount: fashionItemList.length - 5,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Slidable(
                       closeOnScroll: true,
                       endActionPane: ActionPane(
-                          extentRatio: 0.23,
-                          motion: const DrawerMotion(),
-                          children: [
-                            Expanded(
-                              child: Container(
-                                padding:const EdgeInsets.all(10),
-                                decoration: const BoxDecoration(
-                                    color: AppTheme.primaryLightColor,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(40),
-                                        bottomLeft: Radius.circular(40))),
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: const Icon(
-                                        Icons.favorite_border,
-                                        color: Colors.white,
-                                        size: 18,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 10,
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: const Icon(
-                                        Icons.delete_outline,
-                                        color: Colors.white,
-                                        size: 20,
-                                      ),
-                                    )
-                                  ],
+                        extentRatio: 0.23,
+                        motion: const DrawerMotion(),
+                        children: [
+                          Expanded(
+                            child: Container(
+                              height: 140, // Set height to match Slidable child
+                              padding: const EdgeInsets.all(10),
+                              decoration: const BoxDecoration(
+                                color: AppTheme.primaryLightColor,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(40),
+                                  bottomLeft: Radius.circular(40),
                                 ),
                               ),
+                              alignment: Alignment.center,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {},
+                                    child: const Icon(
+                                      Icons.favorite_border,
+                                      color: Colors.white,
+                                      size: 18,
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  GestureDetector(
+                                    onTap: () {},
+                                    child: const Icon(
+                                      Icons.delete_outline,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ]),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: Row(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(30),
-                              child: Image.asset(fashionItemList[index].imgUrl,
-                                  width: 110, height: 140, fit: BoxFit.cover),
-                            ),
-                            const SizedBox(width: 30),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: 130,
-                                  child: Text(
-                                      "Premium ${fashionItemList[index].brandName}",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyLarge),
-                                ),
-                                Text("Yellow",
-                                    style:
-                                        Theme.of(context).textTheme.bodySmall),
-                                Text("Size L",
-                                    style:
-                                        Theme.of(context).textTheme.bodySmall),
-                                const SizedBox(height: 5),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text("\$${fashionItemList[index].price}",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleMedium),
-                                    const SizedBox(width: 40),
-                                    Text("1x",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleMedium),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    );
-                  }),
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset(
+                              fashionItemList[index].imgUrl,
+                              width: 110,
+                              height: 140, // Set height for Slidable child
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          const SizedBox(width: 30),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 130,
+                                child: Text(
+                                  "Premium ${fashionItemList[index].brandName}",
+                                  style: Theme.of(context).textTheme.bodyLarge,
+                                ),
+                              ),
+                              Text("Yellow", style: Theme.of(context).textTheme.bodySmall),
+                              Text("Size L", style: Theme.of(context).textTheme.bodySmall),
+                              const SizedBox(height: 5),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "\$${fashionItemList[index].price}",
+                                    style: Theme.of(context).textTheme.titleMedium,
+                                  ),
+                                  const SizedBox(width: 40),
+                                  Text(
+                                    "1x",
+                                    style: Theme.of(context).textTheme.titleMedium,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
-            //Divder Line
+            // Divider Line
             const SizedBox(height: 20),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(
-                      color: const Color.fromRGBO(227, 227, 227, 1), width: 1)),
+                border: Border.all(
+                  color: const Color.fromRGBO(227, 227, 227, 1),
+                  width: 1,
+                ),
+              ),
             ),
             const SizedBox(height: 30),
-            rowFunction("Total Items (3)", 116.00),
+            const CustomRowWidget(price: 116.00, text: "Total Items (3)"),
             const SizedBox(height: 10),
-            rowFunction("Standard Delivery", 12.00),
+            const CustomRowWidget(price: 12.00, text: "Standard Delivery"),
             const SizedBox(height: 10),
-            rowFunction("Total Payment", 126.00),
-
+            const CustomRowWidget(price: 126.00, text: "Total Payment"),
             const Spacer(),
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const CheckoutScreen()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const CheckoutScreen(),
+                    ),
+                  );
                 },
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
                   decoration: AppTheme.conDecor,
-                  child: Text("Checkout Now",
-                      style: Theme.of(context).textTheme.bodyMedium),
+                  child: Text(
+                    "Checkout Now",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
                 ),
               ),
             ),
