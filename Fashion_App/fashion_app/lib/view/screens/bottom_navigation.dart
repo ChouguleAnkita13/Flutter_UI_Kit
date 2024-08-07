@@ -1,5 +1,8 @@
 import 'package:fashion_app/theme/app_theme.dart';
+import 'package:fashion_app/view/screens/cart_screen.dart';
 import 'package:fashion_app/view/screens/home_screen.dart';
+import 'package:fashion_app/view/screens/search_screen.dart';
+import 'package:fashion_app/view/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
 class CustomBottomNavigation extends StatefulWidget {
   const CustomBottomNavigation({super.key});
@@ -13,8 +16,9 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
 
   static final List<Widget> _widgetOptions = [
     const HomeScreen(),
-    // const OrderScreen(),
-    // const ProfileScreen(),
+    const SearchScreen(),
+    const CartScreen(),
+    const SettingScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -28,7 +32,7 @@ class _CustomBottomNavigationState extends State<CustomBottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      backgroundColor: Colors.white,
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
