@@ -14,6 +14,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding:
             const EdgeInsets.only(top: 30, left: 30, right: 30, bottom: 30),

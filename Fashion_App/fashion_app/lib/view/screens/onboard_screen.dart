@@ -8,13 +8,17 @@ class OnboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
-          Image.asset(
-            "assets/images/onboard.png",
-            width: MediaQuery.sizeOf(context).width,
-            height: MediaQuery.sizeOf(context).height / 1.7,
-            fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius:const BorderRadius.only(bottomLeft:Radius.circular(30),bottomRight:Radius.circular(30)),
+            child: Image.asset(
+              "assets/images/onboard.png",
+              width: MediaQuery.sizeOf(context).width,
+              height: MediaQuery.sizeOf(context).height / 1.7,
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 40, left: 30, right: 30),
