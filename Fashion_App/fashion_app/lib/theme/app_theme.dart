@@ -31,20 +31,20 @@ class AppTheme {
       textTheme: TextTheme(
         displayLarge: imprima(
           fontWeight: FontWeight.w800,
-          fontSize: 42,
+          fontSize: 38,//42
           color: textColor,
         ),
         displayMedium: imprima(
           fontWeight: FontWeight.w600,
-          fontSize: 36,
+          fontSize: 32,//36
           color: textColor,
         ),
         titleLarge: imprima(
-            fontWeight: FontWeight.w600, fontSize: 30, color: textColor),
+            fontWeight: FontWeight.w600, fontSize: 28, color: textColor),//30
         titleMedium: imprima(
-            fontWeight: FontWeight.w600, fontSize: 24, color: textColor),
+            fontWeight: FontWeight.w600, fontSize: 22, color: textColor),//24
         bodyLarge: imprima(
-            fontWeight: FontWeight.w600, fontSize: 18, color: textColor), //
+            fontWeight: FontWeight.w600, fontSize: 18, color: textColor), 
         bodyMedium: imprima(
             fontWeight: FontWeight.w500,
             fontSize: 18,
