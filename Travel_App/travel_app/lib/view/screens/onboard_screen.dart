@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel_app/model/onboardmodel.dart';
+import 'package:travel_app/view/screens/login_screen.dart';
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});
@@ -27,6 +28,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: index < onboardModelList.length
           ? PageView.builder(
               controller: _controller,
@@ -165,76 +167,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 );
               },
             )
-          : Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/onboard3.png"),
-                  const SizedBox(height: 30),
-                  Text(
-                    "Let’s get started!",
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w700,
-                        color: const Color.fromRGBO(34, 31, 31, 1),
-                        fontSize: 22),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    "Login to Stay healthy and fit",
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w400,
-                        color: const Color.fromRGBO(34, 31, 31, 0.6),
-                        fontSize: 16),
-                  ),
-                  const SizedBox(height: 35),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("/login");
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(250, 56),
-                      backgroundColor: const Color.fromRGBO(64, 124, 226, 1),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32),
-                        side: const BorderSide(
-                          color: Color.fromRGBO(64, 124, 226, 1),
-                        ),
-                      ),
-                    ),
-                    child: Text(
-                      "Login",
-                      style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w600,
-                          color: const Color.fromRGBO(255, 255, 255, 1),
-                          fontSize: 16),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("/signup");
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(250, 56),
-                      backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32),
-                        side: const BorderSide(
-                          color: Color.fromRGBO(64, 124, 226, 1),
-                        ),
-                      ),
-                    ),
-                    child: Text(
-                      "Sign Up",
-                      style: GoogleFonts.inter(
-                          fontWeight: FontWeight.w500,
-                          color: const Color.fromRGBO(64, 124, 226, 1),
-                          fontSize: 16),
-                    ),
-                  )
-                ],
-              ),
-            ),
+          : const LoginScreen()
     );
   }
 }
