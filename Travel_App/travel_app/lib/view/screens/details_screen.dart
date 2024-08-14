@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
+import 'package:travel_app/view/screens/view_screen.dart';
 import 'package:travel_app/view/widgets/detailsbar.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -149,12 +150,18 @@ class DetailsScreen extends StatelessWidget {
                             width: Get.width / 9.999 - 10,
                           ),
                       itemBuilder: (context, index) {
-                        return ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            "assets/images/details/d${index + 1}.png",
-                            width: 42,
-                            fit: BoxFit.cover,
+                        return GestureDetector(
+                          onTap:(){
+        //Navigate to view screen
+                            Get.to(const ViewScreen(),arguments: {"destination":Get.arguments,"viewImg":"assets/images/details/d${index + 1}.png"});
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.asset(
+                              "assets/images/details/d${index + 1}.png",
+                              width: 42,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         );
                       }),
