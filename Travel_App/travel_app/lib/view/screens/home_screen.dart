@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/widgets/best_destination.dart';
+import 'package:travel_app/view/widgets/notification.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,13 +41,8 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const CircleAvatar(
-                      backgroundColor:  Color.fromRGBO(255, 255, 255, 1),
-                      child: Icon(
-                        Icons.notifications_none_rounded,
-                        size: 25,
-                      ),
-                    ),
+                //To display notification icon called Notification custom widget
+                    const NotificationWidget()
                   ],
                 ),
               ),
