@@ -21,7 +21,7 @@ final List<Destinationmodel> destinationList = [
       imgUrl: "assets/images/home/niladri.png",
       title: "Niladri Reservoir",
       location: "Tekergat, Sunamgnj",
-      price: 59,
+      price: 559,
       rate: 4.7,
       reviews: 2498),
   const Destinationmodel(
@@ -53,9 +53,9 @@ final List<Destinationmodel> destinationList = [
       rate: 4.9,
       reviews: 6225),
   const Destinationmodel(
-      imgUrl: "assets/images/home/reservior.png",
-      title: "Niladri Reservoir",
-      location: "Tekergat, Sunamgnj",
+      imgUrl: "assets/images/details/d5.png",
+      title: "High Rech Park",
+      location: "Zeero Point, Sylhet",
       price: 864,
       rate: 4.7,
       reviews: 2498),
