@@ -76,7 +76,7 @@ class DestinationContainer extends StatelessWidget {
               ),
                const Spacer(),
               
-             Image.asset("assets/images/details/detail.png"),
+             Image.asset("assets/images/details/detail.png",height: 24,width: 24,),
             ],
           ),
           //3rd Row
