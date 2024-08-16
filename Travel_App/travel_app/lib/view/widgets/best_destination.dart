@@ -29,7 +29,13 @@ class BestDestination extends StatelessWidget {
               width: 250,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
-                  color: const Color.fromRGBO(255, 255, 255, 1)),
+                  color: const Color.fromRGBO(255, 255, 255, 1),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color.fromRGBO(180, 188, 201, 0.12),
+                        offset: Offset(0, 6),
+                        blurRadius: 16)
+                  ]),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
