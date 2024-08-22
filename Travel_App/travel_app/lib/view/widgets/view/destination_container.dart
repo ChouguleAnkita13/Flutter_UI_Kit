@@ -11,7 +11,7 @@ class DestinationContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      height: Get.height / 5,
+      height: Get.height / 4.6,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: const Color.fromRGBO(62, 62, 62, 1).withOpacity(0.9),
