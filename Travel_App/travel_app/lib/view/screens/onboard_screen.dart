@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:travel_app/model/onboardmodel.dart';
+import 'package:travel_app/controller/onboard_controller.dart';
 import 'package:travel_app/view/screens/login_screen.dart';
 
 class OnboardScreen extends StatefulWidget {
@@ -16,6 +16,11 @@ class OnboardScreen extends StatefulWidget {
 
 class _OnboardScreenState extends State<OnboardScreen> {
   final _controller = PageController();
+  //Initialize controller
+  final OnboardController initOnboardController=Get.put(OnboardController());
+  //using Get.find locates the controller that was created
+  final onboardController=Get.find<OnboardController>();
+
 
   int index=0;
   @override
@@ -29,13 +34,13 @@ class _OnboardScreenState extends State<OnboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-      body: index < onboardModelList.length
+      body: index < onboardController.onboardModelList.length
           ? PageView.builder(
               controller: _controller,
               onPageChanged: (newIndex) {
                 index = newIndex;
               },
-              itemCount: onboardModelList.length,
+              itemCount: onboardController.onboardModelList.length,
               itemBuilder: (context, pageIndex) {
                 return Column(
                   children: [
@@ -46,7 +51,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                               bottomLeft: Radius.circular(30),
                               bottomRight: Radius.circular(30)),
                           child: Image.asset(
-                            onboardModelList[pageIndex].imgUrl,
+                            onboardController.onboardModelList[pageIndex].imgUrl,
                             height: Get.height / 1.6,
                             width: Get.width,
                             fit: BoxFit.cover,
@@ -57,7 +62,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                           right: 20,
                           child: GestureDetector(
                             onTap: () {
-                            index=onboardModelList.length;
+                            index=onboardController.onboardModelList.length;
                             setState(() {
                               
                             });
@@ -81,14 +86,14 @@ class _OnboardScreenState extends State<OnboardScreen> {
                             textAlign: TextAlign.center,
                             TextSpan(children: [
                               TextSpan(
-                                text: onboardModelList[pageIndex].title,
+                                text: onboardController.onboardModelList[pageIndex].title,
                                 style: GoogleFonts.aclonica(
                                     fontWeight: FontWeight.w400,
                                     color: const Color.fromRGBO(27, 30, 40, 1),
                                     fontSize: 26),
                               ),
                               TextSpan(
-                                text: onboardModelList[pageIndex].titleLast,
+                                text: onboardController.onboardModelList[pageIndex].titleLast,
                                 style: GoogleFonts.aclonica(
                                     fontWeight: FontWeight.w500,
                                     color:
@@ -101,7 +106,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                             height: 10,
                           ),
                           Text(
-                            onboardModelList[pageIndex].description,
+                            onboardController.onboardModelList[pageIndex].description,
                             textAlign: TextAlign.center,
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w400,
@@ -113,7 +118,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     ),
                     SmoothPageIndicator(
                       controller: _controller,
-                      count: onboardModelList.length,
+                      count: onboardController.onboardModelList.length,
                       effect: const ExpandingDotsEffect(
                         spacing: 6.0,
                         radius: 6.0,
@@ -133,13 +138,13 @@ class _OnboardScreenState extends State<OnboardScreen> {
                       padding: const EdgeInsets.all(20.0),
                       child: GestureDetector(
                         onTap: () {
-                          if (index < onboardModelList.length - 1) {
+                          if (index < onboardController.onboardModelList.length - 1) {
                             _controller.nextPage(
                               duration: const Duration(milliseconds: 350),
                               curve: Curves.easeIn,
                             );
                           } else {
-                            index = onboardModelList.length;
+                            index = onboardController.onboardModelList.length;
                             setState(() {
                               
                             });
@@ -154,7 +159,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Text(
-                            onboardModelList[pageIndex].btnName,
+                            onboardController.onboardModelList[pageIndex].btnName,
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                                 color: const Color.fromRGBO(255, 255, 255, 1),
