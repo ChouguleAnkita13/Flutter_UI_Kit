@@ -97,7 +97,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const BestDestination()
+              BestDestination()
             ],
           ),
         ),

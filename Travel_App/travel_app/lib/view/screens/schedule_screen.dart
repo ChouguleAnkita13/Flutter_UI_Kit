@@ -58,7 +58,7 @@ class ScheduleScreen extends StatelessWidget {
             
             //To display all places called Search Place custom widget
             const SizedBox(height: 20),
-            const Expanded(child: Myschedule())
+            Expanded(child: Myschedule())
           ],
         ),
       ),

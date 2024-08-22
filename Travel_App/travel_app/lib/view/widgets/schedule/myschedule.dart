@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/model/destinationmodel.dart';
+import 'package:travel_app/controller/destination_controller.dart';
 
 class Myschedule extends StatelessWidget {
-  const Myschedule({super.key});
+   Myschedule({super.key});
+
+   //Initialize controller
+  final DestinationController initDestinationController=Get.put(DestinationController());
+  //using Get.find locates the controller that was created
+  final destinationController=Get.find<DestinationController>();
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        itemCount: destinationList.length,
+        itemCount: destinationController.destinationList.length,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: (){},
@@ -24,7 +30,7 @@ class Myschedule extends StatelessWidget {
                   ClipRRect(
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
-                        destinationList[index].imgUrl,
+                        destinationController.destinationList[index].imgUrl,
                         height: 80,
                         fit: BoxFit.cover,
                         width: 80,
@@ -53,7 +59,7 @@ class Myschedule extends StatelessWidget {
                       //Title
                       const SizedBox(height: 4),
                       Text(
-                        destinationList[index].title,
+                        destinationController.destinationList[index].title,
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
                             color: const Color.fromRGBO(27, 30, 40, 1),
@@ -70,7 +76,7 @@ class Myschedule extends StatelessWidget {
                           ),
                           const SizedBox(width: 2),
                           Text(
-                            destinationList[index].location,
+                            destinationController.destinationList[index].location,
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w400,
                                 color: const Color.fromRGBO(125, 132, 141, 1),

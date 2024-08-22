@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/model/destinationmodel.dart';
+import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/screens/details_screen.dart';
 
 class SearchPlaces extends StatelessWidget {
-  const SearchPlaces({super.key});
+   SearchPlaces({super.key});
+
+ //Initialize controller
+  final DestinationController initDestinationController=Get.put(DestinationController());
+  //using Get.find locates the controller that was created
+  final destinationController=Get.find<DestinationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +21,13 @@ class SearchPlaces extends StatelessWidget {
             crossAxisSpacing: 10,
             childAspectRatio: 0.84,
             mainAxisSpacing: 20),
-        itemCount: destinationList.length,
+        itemCount:destinationController.destinationList.length,
         // reverse: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              Get.to(const DetailsScreen(), arguments: destinationList[index]);
+              Get.to(const DetailsScreen(), arguments: destinationController.destinationList[index]);
             },
             child: Container(
               //white Container
@@ -44,14 +49,14 @@ class SearchPlaces extends StatelessWidget {
                       //Image
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
-                        destinationList[index].imgUrl,
+                        destinationController.destinationList[index].imgUrl,
                         height: Get.height / 7.96,
                         fit: BoxFit.cover,
                         width: Get.width / 2,
                       )),
                   //Title
                   Text(
-                    destinationList[index].title,
+                    destinationController.destinationList[index].title,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w600,
                         color: const Color.fromRGBO(27, 30, 40, 1),
@@ -69,7 +74,7 @@ class SearchPlaces extends StatelessWidget {
                       const SizedBox(width: 2),
                       Expanded(
                         child: Text(
-                          destinationList[index].location,
+                          destinationController.destinationList[index].location,
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w400,
                               color: const Color.fromRGBO(125, 132, 141, 1),
@@ -81,7 +86,7 @@ class SearchPlaces extends StatelessWidget {
                   //Price
                   Text.rich(TextSpan(children: [
                     TextSpan(
-                      text: "\$${destinationList[index].price}",
+                      text: "\$${destinationController.destinationList[index].price}",
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w500,
                           color: const Color.fromRGBO(13, 110, 253, 1),

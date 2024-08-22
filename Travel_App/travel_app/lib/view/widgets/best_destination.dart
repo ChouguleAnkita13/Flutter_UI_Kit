@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/model/destinationmodel.dart';
+import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/screens/details_screen.dart';
 
 class BestDestination extends StatelessWidget {
-  const BestDestination({super.key});
+   BestDestination({super.key});
+
+  //Initialize controller
+  final DestinationController initDestinationController=Get.put(DestinationController());
+  //using Get.find locates the controller that was created
+  final destinationController=Get.find<DestinationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +19,14 @@ class BestDestination extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
-        itemCount: destinationList.length,
+        itemCount:destinationController.destinationList.length,
         padding: const EdgeInsets.only(
           top: 30,
         ),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              Get.to(const DetailsScreen(), arguments: destinationList[index]);
+              Get.to(const DetailsScreen(), arguments: destinationController.destinationList[index]);
             },
             child: Container(
               padding: const EdgeInsets.all(15),
@@ -45,7 +50,7 @@ class BestDestination extends StatelessWidget {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Image.asset(
-                            destinationList[index].imgUrl,
+                            destinationController.destinationList[index].imgUrl,
                             height: Get.height / 3.5,
                             fit: BoxFit.cover,
                             width: 240,
@@ -67,7 +72,7 @@ class BestDestination extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        destinationList[index].title,
+                        destinationController.destinationList[index].title,
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w600,
                             color: const Color.fromRGBO(27, 30, 40, 1),
@@ -82,7 +87,7 @@ class BestDestination extends StatelessWidget {
                           ),
                           const SizedBox(width: 3),
                           Text(
-                            "${destinationList[index].rate}",
+                            "${destinationController.destinationList[index].rate}",
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                                 color: const Color.fromRGBO(27, 30, 40, 1),
@@ -101,7 +106,7 @@ class BestDestination extends StatelessWidget {
                       ),
                       const SizedBox(width: 2),
                       Text(
-                        destinationList[index].location,
+                        destinationController.destinationList[index].location,
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             color: const Color.fromRGBO(125, 132, 141, 1),
