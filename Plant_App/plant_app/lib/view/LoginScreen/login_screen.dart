@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plant_app/view/LoginScreen/widget/mobile_textfield.dart';
 import 'package:plant_app/view/custom_container.dart';
+import 'package:plant_app/view/VerificationScreen/verification_screen.dart';
 // import 'package:plantapp/verification.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -34,8 +35,8 @@ class LoginScreen extends StatelessWidget {
              //Log in Button
               GestureDetector(
                   onTap: () {
-                    // Navigator.of(context)
-                    //     .push(MaterialPageRoute(builder: (context) => const Verification()));
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) => const VerificationScreen()));
                   },
               //Called CustomContainer for common code
                   child: const CustomContainer(title: "Log in")), 
