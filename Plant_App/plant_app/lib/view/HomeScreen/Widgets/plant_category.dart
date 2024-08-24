@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plant_app/controller/plant_controller.dart';
+import 'package:provider/provider.dart';
 
 import '../../DetailsScreen/details_screen.dart';
 
 class PlantCategory extends StatelessWidget {
-  PlantCategory({super.key});
-  final List plantList = PlantController().plantList;
+  const PlantCategory({super.key});
   @override
   Widget build(BuildContext context) {
+  final List plantList = Provider.of<PlantController>(context).plantList;
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: SizedBox(

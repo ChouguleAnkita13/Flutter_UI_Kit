@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           //to display list of offers called OfferRow()
           OfferRow(),
           //to display category of plants called PlantCategory()
-          PlantCategory()
+          const PlantCategory()
           ],
       ),
     );
