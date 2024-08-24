@@ -4,7 +4,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OfferRow extends StatelessWidget {
   OfferRow({super.key});
-  final PageController controller = PageController();
+  final PageController _controller = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +12,14 @@ class OfferRow extends StatelessWidget {
       children: [
         SizedBox(
           height: 108,
-          child: ListView.builder(
+          child: PageView.builder(
+              controller: _controller,
               scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
               itemCount: 3,
               itemBuilder: (context, index) {
                 return Container(
-                  width: MediaQuery.sizeOf(context).width - 80,
-                  margin: const EdgeInsets.only(left: 20),
+                  width: MediaQuery.sizeOf(context).width - 100,
+                  margin: const EdgeInsets.only(left: 20,right: 20),
                   padding: const EdgeInsets.only(left: 30, right: 20),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -65,20 +65,23 @@ class OfferRow extends StatelessWidget {
               }),
         ),
         const SizedBox(height: 8),
-        //SmoothPageIndicator
+        //SmoothPageIndicator to scroll the offers pages with indicator
         SmoothPageIndicator(
-          controller: controller,
-          count: 3,
-          axisDirection: Axis.horizontal,
-          effect: const SlideEffect(
-            spacing: 8.0,
-            dotWidth: 8,
-            dotHeight: 8,
-            dotColor: Color.fromRGBO(197, 214, 181, 1),
-            activeDotColor: Color.fromRGBO(62, 102, 24, 1),
-          ),
-          onDotClicked: (index) {},
-        ),
+            controller: _controller,
+            count: 3,
+            axisDirection: Axis.horizontal,
+            effect: const SlideEffect(
+              spacing: 8.0,
+              dotWidth: 8,
+              dotHeight: 8,
+              dotColor: Color.fromRGBO(197, 214, 181, 1),
+              activeDotColor: Color.fromRGBO(62, 102, 24, 1),
+            ),
+            onDotClicked: (index) {
+              _controller.animateToPage(index,
+                  duration: const Duration(milliseconds: 350),
+                  curve: Curves.easeIn);
+            }),
       ],
     );
   }
