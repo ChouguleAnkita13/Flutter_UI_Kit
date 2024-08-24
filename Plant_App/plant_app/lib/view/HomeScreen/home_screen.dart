@@ -3,14 +3,8 @@ import 'package:plant_app/view/HomeScreen/Widgets/find_plants_row.dart';
 import 'package:plant_app/view/HomeScreen/Widgets/offer_row.dart';
 import 'package:plant_app/view/HomeScreen/Widgets/plant_category.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
           OfferRow(),
           //to display category of plants called PlantCategory()
           const PlantCategory()
-          ],
+        ],
       ),
     );
   }
