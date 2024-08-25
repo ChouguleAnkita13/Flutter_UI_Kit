@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
           const FindPlantsRow(),
           //to display list of offers called OfferRow()
           OfferRow(),
-          //to display category of plants called PlantCategory()
+          //to display List  of plants with category called PlantCategory()
           const PlantCategory()
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+/// A widget that displays additional details of plant.
 class PlantDetailsContainer extends StatelessWidget {
   const PlantDetailsContainer({super.key});
 

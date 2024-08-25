@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/model/plantdata_model.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+/// A widget that displays a scrollable carousel of plant images.
+///
+/// It includes a page indicator that allows users to navigate through the images.
 class PlantImageScroll extends StatelessWidget {
-  PlantImageScroll({super.key});
+  PlantImageScroll({super.key, required this.selectedPlant});
+  final PlantdataModel selectedPlant;
   final PageController _controller = PageController();
 
   @override
@@ -17,7 +23,7 @@ class PlantImageScroll extends StatelessWidget {
               itemCount: 3,
               itemBuilder: (context, snapshot) {
                 return Image.asset(
-                  "assets/images/snakePlant.png",
+                  selectedPlant.plantImg,
                   height: MediaQuery.sizeOf(context).height / 2,
                   width: MediaQuery.sizeOf(context).width,
                   fit: BoxFit.contain,

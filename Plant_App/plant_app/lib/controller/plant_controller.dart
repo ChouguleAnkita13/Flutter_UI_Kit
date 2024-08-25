@@ -1,7 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:plant_app/model/plant_model.dart';
 import 'package:plant_app/model/plantdata_model.dart';
 
-class PlantController {
+/// Controller for managing plant data and the selected plant.
+///
+/// This class extends [ChangeNotifier] to notify listeners when the selected item changes.
+class PlantController extends ChangeNotifier {
+  // List of plants with their categories
   final List<PlantModel> plantList = [
     const PlantModel(type: "Indoor", plantData: [
       PlantdataModel(
@@ -48,4 +53,16 @@ class PlantController {
           price: 350),
     ])
   ];
+
+  // Currently selected plant
+  PlantdataModel? _selectedPlant;
+
+  // Getter for the selected plant
+  PlantdataModel? get selectedPlant => _selectedPlant;
+
+  /// Sets the currently selected plant and notifies listeners.
+  void selectPlant(PlantdataModel plant) {
+    _selectedPlant = plant;
+    notifyListeners();
+  }
 }

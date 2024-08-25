@@ -2,17 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plant_app/view/DetailsScreen/Widgets/plant_details_container.dart';
 import 'package:plant_app/view/DetailsScreen/Widgets/plant_image_scroll.dart';
+import 'package:plant_app/controller/plant_controller.dart';
+import 'package:provider/provider.dart';
 
+/// A screen that displays detailed information about a selected plant.
+///
+/// It includes a scrolling image carousel and detailed plant information.
 class DetailScreen extends StatelessWidget {
   const DetailScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    // Retrieve the selected plant from the provider
+    final selectedPlant = Provider.of<PlantController>(context).selectedPlant;
+    // Check if a plant is selected
+    if (selectedPlant == null) {
+      return const Scaffold(
+        body: Center(child: Text('No plant selected')),
+      );
+    }
+
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //Backword arrow
+          // Backward arrow to navigate to the previous screen
           Padding(
             padding: const EdgeInsets.only(left: 30, top: 30),
             child: GestureDetector(
@@ -26,9 +40,9 @@ class DetailScreen extends StatelessWidget {
               ),
             ),
           ),
-        //Plant Image scroll 
-        PlantImageScroll(),
-        Expanded(
+          // Plant image carousel with the selected plant's images
+          PlantImageScroll(selectedPlant: selectedPlant),
+          Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
@@ -36,13 +50,13 @@ class DetailScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    "Snake Plants",
+                    selectedPlant.plantName,
                     style: GoogleFonts.poppins(
                         textStyle: const TextStyle(
                             fontSize: 22, fontWeight: FontWeight.w600)),
                   ),
                   SizedBox(
-                    width: MediaQuery.sizeOf(context).width/1.2,
+                    width: MediaQuery.sizeOf(context).width / 1.2,
                     child: Text(
                       "Plansts make your life with minimal and happy love the plants more and enjoy life.",
                       style: GoogleFonts.poppins(
@@ -52,9 +66,9 @@ class DetailScreen extends StatelessWidget {
                               fontWeight: FontWeight.w400)),
                     ),
                   ),
-                  // To Display details of plant ,PlantDetailsContainer() called
+                  // To Display additional details of plant ,PlantDetailsContainer() called
                   const PlantDetailsContainer()
-                  ],
+                ],
               ),
             ),
           ),
