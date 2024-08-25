@@ -9,6 +9,8 @@ class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    //GlobalKey(formKey) for validation
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return Scaffold(
       backgroundColor: const Color.fromRGBO(251, 247, 248, 1),
       body: SingleChildScrollView(
@@ -23,23 +25,32 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Image.asset("assets/images/Group1.png")),
               ),
-              
+
               Text(
                 "Log in",
                 style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
                         fontSize: 30, fontWeight: FontWeight.w600)),
               ),
-              //Mobile Number TextField
-             const MobileTextfield(),
-             //Log in Button
+              // Form for validation
+              Form(
+                key: formKey,
+                      //Mobile Number TextField
+                child: const MobileTextfield(),
+              ),
+              //Log in Button
               GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) => const VerificationScreen()));
+                    if (formKey.currentState!.validate()) {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const VerificationScreen(),
+                        ),
+                      );
+                    }
                   },
-              //Called CustomContainer for common code
-                  child: const CustomContainer(title: "Log in")), 
+                  //Called CustomContainer for common code
+                  child: const CustomContainer(title: "Log in")),
               Image.asset(
                 "assets/images/login.png",
                 height: MediaQuery.sizeOf(context).height / 2,

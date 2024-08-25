@@ -7,32 +7,57 @@ class MobileTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: MediaQuery.sizeOf(context).width,
+      // Container for box shadow
       margin: const EdgeInsets.only(left: 20, right: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: const Color.fromRGBO(204, 211, 196, 1)),
-        boxShadow: const [
+      decoration: const BoxDecoration(
+        boxShadow: [
           BoxShadow(
               color: Color.fromRGBO(0, 0, 0, 0.06),
-              offset: Offset(0, 8),
               blurRadius: 20)
         ],
-        color: Colors.white,
       ),
-      child: TextFormField(
+      child:TextFormField(
         keyboardType: TextInputType.phone,
         cursorColor: const Color.fromRGBO(164, 164, 164, 1),
         decoration: InputDecoration(
-            prefixIcon:Image.asset("assets/images/phone.png"),
-            hintText: "Mobile Number",
-            hintStyle: GoogleFonts.inter(
-                textStyle: const TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w400,
-                    color: Color.fromRGBO(164, 164, 164, 1))),
-            border: InputBorder.none),
+          prefixIcon: Image.asset("assets/images/phone.png"),
+          hintText: "Mobile Number",
+          hintStyle: GoogleFonts.inter(
+            textStyle: const TextStyle(
+              fontSize: 17,
+              fontWeight: FontWeight.w400,
+              color: Color.fromRGBO(164, 164, 164, 1),
+            ),
+          ),
+          // Rounded corners and border customization
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Color.fromRGBO(204, 211, 196, 1)),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Color.fromRGBO(204, 211, 196, 1)),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Color.fromRGBO(204, 211, 196, 1)),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(color: Colors.red),
+          ),
+          filled: true,
+          fillColor: Colors.white,
+        ),
+        //Validation
+         validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Please enter your mobile number';
+          } else if (!RegExp(r'^[0-9]{10}$').hasMatch(value)) {
+            return 'Please enter a valid 10-digit mobile number';
+          }
+          return null;
+        },
       ),
     );
   }
