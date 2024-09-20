@@ -37,10 +37,12 @@ class _CustomNavBarScreenState extends State<CustomNavBarScreen> {
         height: 100,
         child: BottomNavigationBar(
             items: [
-              BottomNavigationBarItem(
-                  icon: Image.asset("assets/icons/home.png"), label: "Home"),
-              BottomNavigationBarItem(
-                  icon: Image.asset("assets/icons/calender.png"),
+              const BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage("assets/icons/home.png")),
+                  // icon: Image.asset("assets/icons/home.png"),
+                  label: "Home"),
+              const BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage("assets/icons/calender.png")),
                   label: "Calender"),
               BottomNavigationBarItem(
                   icon: SizedBox(
@@ -52,11 +54,11 @@ class _CustomNavBarScreenState extends State<CustomNavBarScreen> {
                     ),
                   ),
                   label: ""),
-              BottomNavigationBarItem(
-                  icon: Image.asset("assets/icons/chat.png"),
+              const BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage("assets/icons/chat.png")),
                   label: "Messages"),
-              BottomNavigationBarItem(
-                  icon: Image.asset("assets/icons/person.png"),
+              const BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage("assets/icons/person.png")),
                   label: "Profile"),
             ],
             selectedItemColor: const Color.fromRGBO(13, 110, 253, 1),
