@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/LoginScreen/login_screen.dart';
+import 'package:travel_app/view/widgets/custom_container.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -143,29 +144,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 border: InputBorder.none),
                           ),
 
-                          ElevatedButton(
-                            onPressed: () {
-                              Get.to(const LoginScreen());
-                            },
-                            style: ElevatedButton.styleFrom(
-                              fixedSize: Size(Get.width, 56),
-                              backgroundColor:
-                                  const Color.fromRGBO(13, 110, 253, 1),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                                side: const BorderSide(
-                                  color: Color.fromRGBO(13, 110, 253, 1),
-                                ),
-                              ),
-                            ),
-                            child: Text(
-                              "Sign Up",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w600,
-                                  color: const Color.fromRGBO(255, 255, 255, 1),
-                                  fontSize: 16),
-                            ),
-                          ),
+                          GestureDetector(
+                              onTap: () {
+                                Get.to(const LoginScreen());
+                              },
+
+                              ///[CustomContainer] CALLED FOR CONTAINER DECORATION
+                              child: const CustomContainer(title: "Sign Up")),
                         ],
                       ),
                     )),

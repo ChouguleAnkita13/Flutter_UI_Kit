@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/customnavbar_screen.dart';
 import 'package:travel_app/view/screens/LoginScreen/signup_screen.dart';
+import 'package:travel_app/view/widgets/custom_container.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -132,28 +133,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ],
                           ),
-                          ElevatedButton(
-                            onPressed: () {
+                          GestureDetector(
+                            onTap: () {
                               Get.offAll(const CustomNavBarScreen());
                             },
-                            style: ElevatedButton.styleFrom(
-                              fixedSize: Size(Get.width, 56),
-                              backgroundColor:
-                                  const Color.fromRGBO(13, 110, 253, 1),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16),
-                                side: const BorderSide(
-                                  color: Color.fromRGBO(13, 110, 253, 1),
-                                ),
-                              ),
-                            ),
-                            child: Text(
-                              "Sign In",
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w600,
-                                  color: const Color.fromRGBO(255, 255, 255, 1),
-                                  fontSize: 16),
-                            ),
+
+                            ///[CustomContainer] CALLED FOR CONTAINER DECORATION
+                            child: const CustomContainer(title: "Sign In"),
                           ),
                           Text.rich(TextSpan(children: [
                             TextSpan(

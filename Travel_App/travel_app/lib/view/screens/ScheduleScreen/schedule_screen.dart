@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/view/widgets/notification.dart';
+import 'package:travel_app/view/Widgets/notification.dart';
 import 'package:travel_app/view/screens/ScheduleScreen/Widgets/custom_calender.dart';
 import 'package:travel_app/view/screens/ScheduleScreen/Widgets/myschedule.dart';
 

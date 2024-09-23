@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel_app/controller/onboard_controller.dart';
 import 'package:travel_app/view/screens/LoginScreen/login_screen.dart';
+import 'package:travel_app/view/widgets/custom_container.dart';
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});
@@ -153,22 +154,11 @@ class _OnboardScreenState extends State<OnboardScreen> {
                               setState(() {});
                             }
                           },
-                          child: Container(
-                            height: 56,
-                            width: Get.width,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: const Color.fromRGBO(13, 110, 253, 1),
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: Text(
-                              onboardController
-                                  .onboardModelList[pageIndex].btnName,
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w600,
-                                  color: const Color.fromRGBO(255, 255, 255, 1),
-                                  fontSize: 16),
-                            ),
+
+                          ///[CustomContainer] CALLED FOR CONTAINER DECORATION
+                          child: CustomContainer(
+                            title: onboardController
+                                .onboardModelList[pageIndex].btnName,
                           ),
                         ),
                       ),

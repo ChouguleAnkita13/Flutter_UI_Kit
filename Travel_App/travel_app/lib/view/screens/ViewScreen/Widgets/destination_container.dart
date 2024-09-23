@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/model/destinationmodel.dart';
+import 'package:travel_app/view/widgets/custom_container.dart';
 
 class DestinationContainer extends StatelessWidget {
   const DestinationContainer({super.key, required this.destination});
@@ -64,7 +65,7 @@ class DestinationContainer extends StatelessWidget {
                     size: 16,
                   ),
                   const SizedBox(width: 2),
-                  //Destination location       
+                  //Destination location
                   Text(
                     destination.location,
                     style: GoogleFonts.poppins(
@@ -74,9 +75,12 @@ class DestinationContainer extends StatelessWidget {
                   ),
                 ],
               ),
-               const Spacer(),
-              
-             Image.asset("assets/images/details/detail.png",height: 24,width: 24,),
+              const Spacer(),
+              Image.asset(
+                "assets/images/details/detail.png",
+                height: 24,
+                width: 24,
+              ),
             ],
           ),
           //3rd Row
@@ -104,21 +108,9 @@ class DestinationContainer extends StatelessWidget {
           //Button to See On The Map
           GestureDetector(
             onTap: () {},
-            child: Container(
-              height: 56,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: const Color.fromRGBO(13, 110, 253, 1),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Text(
-                "See On The Map",
-                style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w600,
-                    color: const Color.fromRGBO(255, 255, 255, 1),
-                    fontSize: 16),
-              ),
-            ),
+
+            ///[CustomContainer] CALLED FOR CONTAINER DECORATION
+            child: const CustomContainer(title: "See On The Map"),
           ),
         ],
       ),

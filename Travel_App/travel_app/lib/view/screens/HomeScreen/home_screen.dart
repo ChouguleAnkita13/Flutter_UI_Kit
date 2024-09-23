@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/HomeScreen/Widgets/best_destination.dart';
-import 'package:travel_app/view/widgets/notification.dart';
+import 'package:travel_app/view/Widgets/notification.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
