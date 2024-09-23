@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/view/widgets/search_places.dart';
+import 'package:travel_app/view/screens/SearchScreen/Widgets/search_places.dart';
+import 'package:travel_app/view/screens/SearchScreen/Widgets/search_textField.dart';
 
-class SearchScreen extends StatefulWidget {
+class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
-
-  @override
-  State<SearchScreen> createState() => _SearchScreenState();
-}
-
-class _SearchScreenState extends State<SearchScreen> {
-  final _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +31,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           fontSize: 18),
                     ),
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.back();
                       },
                       child: Text(
@@ -52,35 +46,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
                 const SizedBox(height: 20),
                 //Textfield for search
-                TextField(
-                  textAlign: TextAlign.start,
-                  controller: _textController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(16),
-                      borderSide: BorderSide.none,
-                    ),
-                    fillColor: const Color.fromRGBO(255, 255, 255, 1),
-                    filled: true,
-                    prefixIcon: Image.asset(
-                      "assets/icons/search.png",
-                      height: 24,
-                      width: 24,
-                      color: const Color.fromRGBO(125, 132, 141, 1),
-                    ),
-                    suffixIcon: Image.asset(
-                      "assets/icons/mike.png",
-                      height: 24,
-                      width: 24,
-                      color: const Color.fromRGBO(125, 132, 141, 1),
-                    ),
-                    hintStyle: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w400,
-                        color: const Color.fromRGBO(125, 132, 141, 1),
-                        fontSize: 16),
-                    hintText: 'Search',
-                  ),
-                ),
+                const SearchTextfield(),
                 const SizedBox(height: 20),
                 Text(
                   "Search Places ",

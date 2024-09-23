@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/controller/destination_controller.dart';
-import 'package:travel_app/view/screens/details_screen.dart';
+import 'package:travel_app/view/screens/DetailsScreen/details_screen.dart';
 
 class SearchPlaces extends StatelessWidget {
-   SearchPlaces({super.key});
+  SearchPlaces({super.key});
 
- //Initialize controller
-  final DestinationController initDestinationController=Get.put(DestinationController());
+  //Initialize controller
+  final DestinationController initDestinationController =
+      Get.put(DestinationController());
   //using Get.find locates the controller that was created
-  final destinationController=Get.find<DestinationController>();
+  final destinationController = Get.find<DestinationController>();
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +22,14 @@ class SearchPlaces extends StatelessWidget {
             crossAxisSpacing: 10,
             childAspectRatio: 0.84,
             mainAxisSpacing: 20),
-        itemCount:destinationController.destinationList.length,
+        itemCount: destinationController.destinationList.length,
         // reverse: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              Get.to(const DetailsScreen(), arguments: destinationController.destinationList[index]);
+              Get.to(const DetailsScreen(),
+                  arguments: destinationController.destinationList[index]);
             },
             child: Container(
               //white Container
@@ -86,7 +88,8 @@ class SearchPlaces extends StatelessWidget {
                   //Price
                   Text.rich(TextSpan(children: [
                     TextSpan(
-                      text: "\$${destinationController.destinationList[index].price}",
+                      text:
+                          "\$${destinationController.destinationList[index].price}",
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w500,
                           color: const Color.fromRGBO(13, 110, 253, 1),

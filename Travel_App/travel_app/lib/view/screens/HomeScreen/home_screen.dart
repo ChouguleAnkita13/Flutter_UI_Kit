@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/view/widgets/best_destination.dart';
+import 'package:travel_app/view/screens/HomeScreen/Widgets/best_destination.dart';
 import 'package:travel_app/view/widgets/notification.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                //To display notification icon called Notification custom widget
+                    //To display notification icon called Notification custom widget
                     const NotificationWidget()
                   ],
                 ),

@@ -6,17 +6,17 @@ class NotificationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GestureDetector(
-                      onTap: (){
-                        Get.back();
-                      },
-                      child:  const CircleAvatar(
-                      backgroundColor:  Color.fromRGBO(255, 255, 255, 1),
-                      child: Icon(
-                        Icons.notifications_none_rounded,
-                        size: 25,
-                      ),
-                    ),
-                    );
+    return GestureDetector(
+      onTap: () {
+        Get.back();
+      },
+      child: const CircleAvatar(
+        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+        child: Icon(
+          Icons.notifications_none_rounded,
+          size: 25,
+        ),
+      ),
+    );
   }
 }

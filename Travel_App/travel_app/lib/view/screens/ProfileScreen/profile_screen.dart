@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/view/widgets/profile/points.dart';
-import 'package:travel_app/view/widgets/profile/profile_options.dart';
+import 'package:travel_app/view/screens/ProfileScreen/Widgets/points.dart';
+import 'package:travel_app/view/screens/ProfileScreen/Widgets/profile_options.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

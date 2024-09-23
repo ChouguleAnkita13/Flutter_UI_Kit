@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/widgets/notification.dart';
-import 'package:travel_app/view/widgets/schedule/custom_calender.dart';
-import 'package:travel_app/view/widgets/schedule/myschedule.dart';
+import 'package:travel_app/view/screens/ScheduleScreen/Widgets/custom_calender.dart';
+import 'package:travel_app/view/screens/ScheduleScreen/Widgets/myschedule.dart';
 
 class ScheduleScreen extends StatelessWidget {
   const ScheduleScreen({super.key});
@@ -55,7 +55,7 @@ class ScheduleScreen extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             //To display all places called Search Place custom widget
             const SizedBox(height: 20),
             Expanded(child: Myschedule())

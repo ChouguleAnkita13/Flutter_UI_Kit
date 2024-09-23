@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/view/widgets/view/line_circle.dart';
+import 'package:travel_app/view/screens/ViewScreen/Widgets/line_circle.dart';
 
 class ViewContainer extends StatefulWidget {
   const ViewContainer({super.key, required this.title, required this.img});

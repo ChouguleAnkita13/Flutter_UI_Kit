@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/customnavbar_screen.dart';
-import 'package:travel_app/view/screens/signup_screen.dart';
+import 'package:travel_app/view/screens/LoginScreen/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

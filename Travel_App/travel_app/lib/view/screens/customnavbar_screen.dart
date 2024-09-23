@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/view/screens/home_screen.dart';
+import 'package:travel_app/view/screens/HomeScreen/home_screen.dart';
 import 'package:travel_app/view/screens/messages_screen.dart';
-import 'package:travel_app/view/screens/profile_screen.dart';
-import 'package:travel_app/view/screens/schedule_screen.dart';
-import 'package:travel_app/view/screens/search_screen.dart';
+import 'package:travel_app/view/screens/ProfileScreen/profile_screen.dart';
+import 'package:travel_app/view/screens/ScheduleScreen/schedule_screen.dart';
+import 'package:travel_app/view/screens/SearchScreen/search_screen.dart';
 
 class CustomNavBarScreen extends StatefulWidget {
   const CustomNavBarScreen({super.key});
@@ -39,7 +39,6 @@ class _CustomNavBarScreenState extends State<CustomNavBarScreen> {
             items: [
               const BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assets/icons/home.png")),
-                  // icon: Image.asset("assets/icons/home.png"),
                   label: "Home"),
               const BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assets/icons/calender.png")),

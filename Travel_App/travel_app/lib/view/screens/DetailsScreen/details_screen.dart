@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
-import 'package:travel_app/view/screens/view_screen.dart';
-import 'package:travel_app/view/widgets/detailsbar.dart';
+import 'package:travel_app/view/screens/ViewScreen/view_screen.dart';
+import 'package:travel_app/view/screens/DetailsScreen/Widgets/detailsbar.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -31,7 +31,7 @@ class DetailsScreen extends StatelessWidget {
                 color: Color.fromRGBO(255, 255, 255, 1),
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(55),
-                    topRight: Radius.circular(25))),
+                    topRight: Radius.circular(55))),
             child: ListView(
               scrollDirection: Axis.vertical,
               children: [
@@ -151,9 +151,13 @@ class DetailsScreen extends StatelessWidget {
                           ),
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                          onTap:(){
-        //Navigate to view screen
-                            Get.to(const ViewScreen(),arguments: {"destination":Get.arguments,"viewImg":"assets/images/details/d${index + 1}.png"});
+                          onTap: () {
+                            //Navigate to view screen
+                            Get.to(const ViewScreen(), arguments: {
+                              "destination": Get.arguments,
+                              "viewImg":
+                                  "assets/images/details/d${index + 1}.png"
+                            });
                           },
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12),
@@ -186,11 +190,11 @@ class DetailsScreen extends StatelessWidget {
                   trimExpandedText: " ...Read less",
                   trimLines: 5,
                   trimMode: TrimMode.Line,
-                   style: GoogleFonts.poppins(
+                  style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       color: const Color.fromRGBO(125, 132, 141, 1),
                       fontSize: 13),
-                    moreStyle:  GoogleFonts.poppins(
+                  moreStyle: GoogleFonts.poppins(
                       fontWeight: FontWeight.w400,
                       color: const Color.fromRGBO(255, 112, 41, 1),
                       fontSize: 13),
@@ -201,20 +205,22 @@ class DetailsScreen extends StatelessWidget {
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-     floatingActionButton: SizedBox(
-      width: Get.width-40,
-       child: FloatingActionButton(
-                      onPressed: () {},
-                      backgroundColor: const Color.fromRGBO(13, 110, 253, 1),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16)),
-                      child: Text("Book Now",style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w600,
-                        color: const Color.fromRGBO(255, 255, 255, 1),
-                        fontSize: 16),),
-                    ),
-     ),
-    
+      floatingActionButton: SizedBox(
+        width: Get.width - 40,
+        child: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: const Color.fromRGBO(13, 110, 253, 1),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          child: Text(
+            "Book Now",
+            style: GoogleFonts.poppins(
+                fontWeight: FontWeight.w600,
+                color: const Color.fromRGBO(255, 255, 255, 1),
+                fontSize: 16),
+          ),
+        ),
+      ),
     );
   }
 }
