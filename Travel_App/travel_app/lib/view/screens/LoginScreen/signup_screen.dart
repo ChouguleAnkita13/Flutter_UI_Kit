@@ -164,9 +164,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset("assets/images/twitter.png"),
-                    Image.asset("assets/images/insta.png"),
                     Image.asset("assets/images/facebook.png"),
+                    Image.asset("assets/images/insta.png"),
+                    Image.asset("assets/images/twitter.png"),
                   ],
                 ),
               ],
