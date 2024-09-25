@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+///WIDGET TO DISPLAY CONTAINER OF REWARD POINTS,TRAVEL TRIPS,BUCKET LIST
 class PointsWidget extends StatelessWidget {
   const PointsWidget({super.key});
 
@@ -20,7 +21,7 @@ class PointsWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          //Reward Points
+          ///REWARD POINTS
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -40,7 +41,8 @@ class PointsWidget extends StatelessWidget {
               ),
             ],
           ),
-          //Travel Trips
+
+          ///TRAVEL TRIPS
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -60,7 +62,8 @@ class PointsWidget extends StatelessWidget {
               ),
             ],
           ),
-          //Bucket List
+
+          ///BUCKET LIST
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

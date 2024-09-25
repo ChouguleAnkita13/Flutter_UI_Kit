@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/HomeScreen/Widgets/best_destination.dart';
-import 'package:travel_app/view/Widgets/notification.dart';
+import 'package:travel_app/view/screens/HomeScreen/Widgets/home_top_row.dart';
 
+///WIDGET TO DISPLAY HOME SCREEN
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -16,40 +17,16 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                width: Get.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(
-                          left: 5, right: 15, top: 5, bottom: 5),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(22),
-                          color: const Color.fromRGBO(255, 255, 255, 1)),
-                      child: Row(
-                        children: [
-                          Image.asset("assets/images/home/home_person.png"),
-                          const SizedBox(width: 3),
-                          Text(
-                            "Leonardo",
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w500,
-                                color: const Color.fromRGBO(27, 30, 40, 1),
-                                fontSize: 14),
-                          ),
-                        ],
-                      ),
-                    ),
-                    //To display notification icon called Notification custom widget
-                    const NotificationWidget()
-                  ],
-                ),
-              ),
-//Explore the beatiful world
+              ///TOP ROW WITH USER PROFILE IMAGE,NAME AND NOTIFICATION BUTTON
+              const HomeTopRow(),
+
               const SizedBox(height: 20),
+
+              ///EXPLORE THE BEATIFUL WORLD TEXT
               SizedBox(
                 width: Get.width / 1.3,
+
+                ///TEXTSPAN
                 child: Text.rich(
                   TextSpan(children: [
                     TextSpan(
@@ -76,11 +53,14 @@ class HomeScreen extends StatelessWidget {
                   ]),
                 ),
               ),
-//Best Destination
+
               const SizedBox(height: 40),
+
+              ///
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  ///BEST DESTINATION TEXT
                   Text(
                     "Best Destination",
                     style: GoogleFonts.poppins(
@@ -88,15 +68,22 @@ class HomeScreen extends StatelessWidget {
                         color: const Color.fromRGBO(27, 30, 40, 1),
                         fontSize: 20),
                   ),
-                  Text(
-                    "View all",
-                    style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w400,
-                        color: const Color.fromRGBO(13, 110, 253, 1),
-                        fontSize: 16),
+
+                  ///VIEW ALL DESTINATION BUTTON
+                  GestureDetector(
+                    onTap: () {},
+                    child: Text(
+                      "View all",
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w400,
+                          color: const Color.fromRGBO(13, 110, 253, 1),
+                          fontSize: 16),
+                    ),
                   ),
                 ],
               ),
+
+              ///[BestDestination()] WIDGET
               BestDestination()
             ],
           ),

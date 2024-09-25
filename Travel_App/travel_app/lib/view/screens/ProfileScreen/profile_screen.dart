@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/ProfileScreen/Widgets/points.dart';
+import 'package:travel_app/view/screens/ProfileScreen/Widgets/profile_details.dart';
 import 'package:travel_app/view/screens/ProfileScreen/Widgets/profile_options.dart';
 
+///WIDGET TO DISPLAY PROFILE SCREEN
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -14,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            ///TOP ROW
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -26,52 +29,17 @@ class ProfileScreen extends StatelessWidget {
                       fontSize: 18),
                 ),
                 GestureDetector(
-                  onTap: () {},
-                  child:Image.asset("assets/icons/edit.png")
-                )
-              ],
-            ),
-            //Profile details
-            Column(
-              children: [
-                Container(
-                  height: 96,
-                  width: 96,
-                  decoration: BoxDecoration(
-                      color: const Color.fromRGBO(255, 234, 223, 1),
-                      borderRadius: BorderRadius.circular(100)),
-                  child: Image.asset(
-                    "assets/images/home/home_person.png",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Leonardo",
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      color: const Color.fromRGBO(27, 30, 40, 1),
-                      fontSize: 24),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Leonardo@gmail.com",
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400,
-                      color: const Color.fromRGBO(125, 132, 141, 1),
-                      fontSize: 14),
-                ),
+                    onTap: () {}, child: Image.asset("assets/icons/edit.png"))
               ],
             ),
 
-            //reward points,travel trips,bucket list
+            ///PROFILE DETAILS
+            const ProfileDetails(),
+
+            ///REWARD POINTS,TRAVEL TRIPS,BUCKET LIST
             const PointsWidget(),
 
-            //Profile options:Bookmark,Setting,previous trips,versions
+            ///PROFILE OPTIONS:BOOKMARK,SETTING,PREVIOUS TRIPS,VERSIONS
             const ProfileOptions()
           ],
         ),

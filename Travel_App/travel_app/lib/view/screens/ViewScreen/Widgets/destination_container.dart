@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/model/destinationmodel.dart';
 import 'package:travel_app/view/widgets/custom_container.dart';
 
+///WIDGET TO SHOW CONTAINER WITH DESTIONATION DETAILS
 class DestinationContainer extends StatelessWidget {
   const DestinationContainer({super.key, required this.destination});
   final Destinationmodel destination;
@@ -20,10 +21,10 @@ class DestinationContainer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //1st Row
+          ///1ST ROW
           Row(
             children: [
-              //Destination title
+              ///DESTINATION TITLE
               Text(
                 destination.title,
                 style: GoogleFonts.poppins(
@@ -34,14 +35,15 @@ class DestinationContainer extends StatelessWidget {
               const Spacer(),
               Row(
                 children: [
-                  //star icon
+                  ///STAR ICON
                   const Icon(
                     Icons.star,
                     color: Color.fromRGBO(255, 211, 54, 1),
                     size: 18,
                   ),
                   const SizedBox(width: 3),
-                  //Rate
+
+                  ///RATE
                   Text(
                     "${destination.rate}",
                     style: GoogleFonts.poppins(
@@ -53,19 +55,21 @@ class DestinationContainer extends StatelessWidget {
               ),
             ],
           ),
-          //2nd Row
+
+          ///2ND ROW
           Row(
             children: [
               Row(
                 children: [
-                  //location icon
+                  ///LOCATION ICON
                   const Icon(
                     Icons.location_on_outlined,
                     color: Color.fromRGBO(255, 255, 255, 1),
                     size: 16,
                   ),
                   const SizedBox(width: 2),
-                  //Destination location
+
+                  ///DESTINATION LOCATION
                   Text(
                     destination.location,
                     style: GoogleFonts.poppins(
@@ -83,19 +87,19 @@ class DestinationContainer extends StatelessWidget {
               ),
             ],
           ),
-          //3rd Row
 
+          ///3RD ROW
           Row(
             children: [
-              //Timer icon
+              ///TIMER ICON
               const Icon(
                 Icons.access_time_rounded,
                 color: Color.fromRGBO(255, 255, 255, 1),
                 size: 16,
               ),
               const SizedBox(width: 3),
-              //Destination time
 
+              ///DESTINATION TIME
               Text(
                 " 45 Minutes",
                 style: GoogleFonts.poppins(
@@ -105,7 +109,8 @@ class DestinationContainer extends StatelessWidget {
               ),
             ],
           ),
-          //Button to See On The Map
+
+          ///BUTTON TO SEE ON THE MAP
           GestureDetector(
             onTap: () {},
 

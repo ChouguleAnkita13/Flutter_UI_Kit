@@ -2,20 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/ViewScreen/Widgets/line_circle.dart';
 
-class ViewContainer extends StatefulWidget {
+///WIDGET TO DISPLAY CONTAINERS ON VIEW SCREEN
+class ViewContainer extends StatelessWidget {
   const ViewContainer({super.key, required this.title, required this.img});
   final String title;
   final String img;
 
   @override
-  State<ViewContainer> createState() => _ViewContainerState();
-}
-
-class _ViewContainerState extends State<ViewContainer> {
-  @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: widget.title == "La-Hotel"
+      crossAxisAlignment: title == "La-Hotel"
           ? CrossAxisAlignment.end
           : CrossAxisAlignment.start,
       children: [
@@ -27,10 +23,11 @@ class _ViewContainerState extends State<ViewContainer> {
           ),
           child: Row(
             children: [
+              ///IMAGE
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.asset(
-                  widget.img,
+                  img,
                   width: 63,
                   height: 62,
                   fit: BoxFit.cover,
@@ -42,13 +39,16 @@ class _ViewContainerState extends State<ViewContainer> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  ///NAME
                   Text(
-                    widget.title,
+                    title,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         color: const Color.fromRGBO(255, 255, 255, 1),
                         fontSize: 16),
                   ),
+
+                  ///
                   Text(
                     "2.09 mi",
                     style: GoogleFonts.poppins(
@@ -61,6 +61,8 @@ class _ViewContainerState extends State<ViewContainer> {
             ],
           ),
         ),
+
+        ///[LineCircle()] TO SHOW LINE WITH CIRCLE BELOW THE THE CONTAINER
         const LineCircle()
       ],
     );

@@ -4,19 +4,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/screens/DetailsScreen/details_screen.dart';
 
+///WIDGET TO DISPLAY BEST DESTINATIONS
 class BestDestination extends StatelessWidget {
   BestDestination({super.key});
 
-  //Initialize controller
+  ///INITIALIZE CONTROLLER
   final DestinationController initDestinationController =
       Get.put(DestinationController());
-  //using Get.find locates the controller that was created
+
+  ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
   final destinationController = Get.find<DestinationController>();
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: Get.height / 2.3,
+
+      ///LISTVIEW BUILDER
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
@@ -25,6 +29,7 @@ class BestDestination extends StatelessWidget {
           top: 30,
         ),
         itemBuilder: (context, index) {
+          ///TO DECORATE DESTINATION CONTAINER
           return Container(
             padding: const EdgeInsets.all(15),
             margin: const EdgeInsets.only(right: 20),
@@ -50,6 +55,8 @@ class BestDestination extends StatelessWidget {
                             arguments:
                                 destinationController.destinationList[index]);
                       },
+
+                      ///DESTINATION IMAGE
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Image.asset(
@@ -59,6 +66,8 @@ class BestDestination extends StatelessWidget {
                             width: 240,
                           )),
                     ),
+
+                    ///BOOKMARKED ICON
                     Positioned(
                         top: 10,
                         right: 20,
@@ -78,9 +87,12 @@ class BestDestination extends StatelessWidget {
                         ))
                   ],
                 ),
+
+                ///DESTINATION NAME,RATEINGAND LOCATION
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    ///DESTINATION NAME
                     Text(
                       destinationController.destinationList[index].title,
                       style: GoogleFonts.poppins(
@@ -88,16 +100,20 @@ class BestDestination extends StatelessWidget {
                           color: const Color.fromRGBO(27, 30, 40, 1),
                           fontSize: 16),
                     ),
+
+                    ///
                     Row(
                       children: [
+                        ///STAR ICON
                         const Icon(
                           Icons.star,
                           color: Color.fromRGBO(255, 211, 54, 1),
                           size: 18,
                         ),
-                        const SizedBox(width: 3),
+
+                        ///RATING OF DESTINATION
                         Text(
-                          "${destinationController.destinationList[index].rate}",
+                          "  ${destinationController.destinationList[index].rate}",
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w600,
                               color: const Color.fromRGBO(27, 30, 40, 1),
@@ -107,16 +123,20 @@ class BestDestination extends StatelessWidget {
                     ),
                   ],
                 ),
+
+                ///
                 Row(
                   children: [
+                    ///LOCATION ICON
                     const Icon(
                       Icons.location_on_outlined,
                       color: Color.fromRGBO(125, 132, 141, 1),
                       size: 16,
                     ),
-                    const SizedBox(width: 2),
+
+                    ///LOCATION OF DESTINATION
                     Text(
-                      destinationController.destinationList[index].location,
+                      " ${destinationController.destinationList[index].location}",
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
                           color: const Color.fromRGBO(125, 132, 141, 1),

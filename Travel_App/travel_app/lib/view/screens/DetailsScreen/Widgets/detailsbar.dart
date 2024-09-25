@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+///WIDGET TO DISPLAY TOP ROW CONTAINING
+///BACK BUTTON,DETAILS TEXT AND BOOKMARKED ICON
+///FOR DEATILSSCREEN
 class Detailsbar extends StatelessWidget {
   const Detailsbar({super.key});
 
@@ -10,6 +13,7 @@ class Detailsbar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        ///BACK BUTTON
         GestureDetector(
           onTap: () => Get.back(),
           child: CircleAvatar(
@@ -22,6 +26,8 @@ class Detailsbar extends StatelessWidget {
             ),
           ),
         ),
+
+        ///DETAILS TEXT
         Text(
           "Details",
           style: GoogleFonts.poppins(
@@ -29,6 +35,8 @@ class Detailsbar extends StatelessWidget {
               color: const Color.fromRGBO(255, 255, 255, 1),
               fontSize: 18),
         ),
+
+        ///BOOKMARKED BUTTON
         GestureDetector(
           child: CircleAvatar(
             backgroundColor:

@@ -4,6 +4,7 @@ import 'package:travel_app/view/Widgets/notification.dart';
 import 'package:travel_app/view/screens/ScheduleScreen/Widgets/custom_calender.dart';
 import 'package:travel_app/view/screens/ScheduleScreen/Widgets/myschedule.dart';
 
+///WIDGET TO DISPLAY SCHEDULEDSCREEN WHICH SHOWS SCHEDULED DESTINATIONS
 class ScheduleScreen extends StatelessWidget {
   const ScheduleScreen({super.key});
 
@@ -19,7 +20,7 @@ class ScheduleScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(""),
+                const SizedBox(),
                 Text(
                   "Schedule",
                   style: GoogleFonts.poppins(
@@ -27,38 +28,19 @@ class ScheduleScreen extends StatelessWidget {
                       color: const Color.fromRGBO(27, 30, 40, 1),
                       fontSize: 18),
                 ),
-                //To display notification icon called Notification custom widget
+
+                ///TO DISPLAY NOTIFICATION ICON CALLED NOTIFICATION CUSTOM WIDGET
                 const NotificationWidget()
               ],
             ),
             const SizedBox(height: 20),
-            //Calender
+
+            ///CALENDER
             const CustomCalender(),
             const SizedBox(height: 20),
-            //MySchedule
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "My Schedule",
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      color: const Color.fromRGBO(27, 30, 40, 1),
-                      fontSize: 20),
-                ),
-                Text(
-                  "View all",
-                  style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w400,
-                      color: const Color.fromRGBO(13, 110, 253, 1),
-                      fontSize: 16),
-                ),
-              ],
-            ),
 
-            //To display all places called Search Place custom widget
-            const SizedBox(height: 20),
-            Expanded(child: Myschedule())
+            ///TO DISPLAY ALL PLACES CALLED SEARCH PLACE CUSTOM WIDGET
+            const Expanded(child: Myschedule())
           ],
         ),
       ),

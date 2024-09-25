@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/ViewScreen/Widgets/destination_container.dart';
 import 'package:travel_app/view/screens/ViewScreen/Widgets/view_container.dart';
 
+///WIDGET TO DISPLAY VIEWSCREEN FOR VIEWS OF DESTINATION
 class ViewScreen extends StatelessWidget {
   const ViewScreen({super.key});
 
@@ -12,6 +13,7 @@ class ViewScreen extends StatelessWidget {
     return Scaffold(
         body: Stack(
       children: [
+        ///VIEW IMAGE COVERS FULL SCREEN
         Image.asset(Get.arguments["viewImg"],
             height: double.infinity, width: double.infinity, fit: BoxFit.cover),
         Padding(
@@ -23,9 +25,12 @@ class ViewScreen extends StatelessWidget {
             children: [
               SizedBox(
                 width: Get.width / 2,
+
+                ///ROW CONTAINING BACK BUTTON AND VIEW TEXT
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    ///BACK BUTTON
                     GestureDetector(
                       onTap: () => Get.back(),
                       child: CircleAvatar(
@@ -48,20 +53,26 @@ class ViewScreen extends StatelessWidget {
                   ],
                 ),
               ),
+
+              ///
               const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  ///CONTAINER ON SCREEN
                   ViewContainer(
                       title: "La-Hotel", img: "assets/images/details/d5.png")
                 ],
               ),
               const Row(
                 children: [
+                  ///CONTAINER ON SCREEN
                   ViewContainer(
                       title: "Lemon Garden",
                       img: "assets/images/details/d2.png")
                 ],
               ),
+
+              ///[ DestinationContainer()] TO SHOW DETAILS OF DESTIONATION
               DestinationContainer(destination: Get.arguments["destination"])
             ],
           ),

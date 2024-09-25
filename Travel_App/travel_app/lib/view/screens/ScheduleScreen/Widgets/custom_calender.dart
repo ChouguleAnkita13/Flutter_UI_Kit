@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
+///WIDGET TO DISPLAY CUSTOM CALENDER
 class CustomCalender extends StatefulWidget {
   const CustomCalender({super.key});
 
