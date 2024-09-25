@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/view/screens/HomeScreen/home_screen.dart';
-import 'package:travel_app/view/screens/messages_screen.dart';
+import 'package:travel_app/view/screens/MessageScreen/messages_screen.dart';
 import 'package:travel_app/view/screens/ProfileScreen/profile_screen.dart';
 import 'package:travel_app/view/screens/ScheduleScreen/schedule_screen.dart';
 import 'package:travel_app/view/screens/SearchScreen/search_screen.dart';
 
+///WIDGET TO DISPLAY CUSTOM NAVIGATIONBAR
 class CustomNavBarScreen extends StatefulWidget {
   const CustomNavBarScreen({super.key});
 
