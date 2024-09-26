@@ -5,16 +5,13 @@ import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/screens/DetailsScreen/details_screen.dart';
 
 class SearchPlaces extends StatelessWidget {
-  SearchPlaces({super.key});
-
-  //Initialize controller
-  final DestinationController initDestinationController =
-      Get.put(DestinationController());
-  //using Get.find locates the controller that was created
-  final destinationController = Get.find<DestinationController>();
+  const SearchPlaces({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
+    final destinationController = Get.find<DestinationController>();
+
     return GridView.builder(
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
