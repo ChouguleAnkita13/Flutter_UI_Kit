@@ -5,17 +5,13 @@ import 'package:travel_app/controller/destination_controller.dart';
 
 ///WIDGET TO DISPLAY BEST DESTINATIONS
 class BestDestination extends StatelessWidget {
-  BestDestination({super.key});
-
-  ///INITIALIZE CONTROLLER
-  final DestinationController initDestinationController =
-      Get.put(DestinationController());
-
-  ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
-  final destinationController = Get.find<DestinationController>();
+  const BestDestination({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
+    final destinationController = Get.find<DestinationController>();
+
     return SizedBox(
       height: Get.height / 2.3,
 

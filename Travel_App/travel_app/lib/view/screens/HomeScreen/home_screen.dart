@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
               ),
 
               ///[BestDestination()] WIDGET
-              BestDestination()
+              const BestDestination()
             ],
           ),
         ),
