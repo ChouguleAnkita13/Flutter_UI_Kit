@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+///WIDGET TO SHOW SEARCH TEXTFIELD
 class SearchTextfield extends StatelessWidget {
   const SearchTextfield({super.key});
 

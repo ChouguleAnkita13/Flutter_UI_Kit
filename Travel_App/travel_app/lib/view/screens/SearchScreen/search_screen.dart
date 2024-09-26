@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/view/screens/SearchScreen/Widgets/search_places.dart';
 import 'package:travel_app/view/screens/SearchScreen/Widgets/search_textField.dart';
 
+///WIDGET TO SHOW SEARCH SCREEN
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
@@ -45,7 +46,8 @@ class SearchScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                //Textfield for search
+
+                ///TEXTFIELD FOR SEARCH
                 const SearchTextfield(),
                 const SizedBox(height: 20),
                 Text(
@@ -55,8 +57,10 @@ class SearchScreen extends StatelessWidget {
                       color: const Color.fromRGBO(27, 30, 40, 1),
                       fontSize: 20),
                 ),
-                //To display all places called Search Place custom widget
+
                 const SizedBox(height: 20),
+
+                ///TO DISPLAY ALL PLACES CALLED SEARCH PLACE CUSTOM WIDGET
                 const Expanded(child: SearchPlaces())
               ],
             ),

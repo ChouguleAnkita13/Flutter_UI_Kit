@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/screens/DetailsScreen/details_screen.dart';
 
+///WIDGET TO DISPLAY PLACES TO SEARCH
 class SearchPlaces extends StatelessWidget {
   const SearchPlaces({super.key});
 
@@ -20,7 +21,6 @@ class SearchPlaces extends StatelessWidget {
             childAspectRatio: 0.84,
             mainAxisSpacing: 20),
         itemCount: destinationController.destinationList.length,
-        // reverse: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return GestureDetector(
@@ -29,7 +29,7 @@ class SearchPlaces extends StatelessWidget {
                   arguments: destinationController.destinationList[index]);
             },
             child: Container(
-              //white Container
+              ///WHITE CONTAINER
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
@@ -45,7 +45,8 @@ class SearchPlaces extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                      //Image
+
+                      ///IMAGE
                       borderRadius: BorderRadius.circular(16),
                       child: Image.asset(
                         destinationController.destinationList[index].imgUrl,
@@ -53,7 +54,8 @@ class SearchPlaces extends StatelessWidget {
                         fit: BoxFit.cover,
                         width: Get.width / 2,
                       )),
-                  //Title
+
+                  ///TITLE
                   Text(
                     destinationController.destinationList[index].title,
                     style: GoogleFonts.poppins(
@@ -61,7 +63,8 @@ class SearchPlaces extends StatelessWidget {
                         color: const Color.fromRGBO(27, 30, 40, 1),
                         fontSize: 14),
                   ),
-                  //Location
+
+                  ///LOCATION
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -82,7 +85,8 @@ class SearchPlaces extends StatelessWidget {
                       ),
                     ],
                   ),
-                  //Price
+
+                  ///PRICE
                   Text.rich(TextSpan(children: [
                     TextSpan(
                       text:
