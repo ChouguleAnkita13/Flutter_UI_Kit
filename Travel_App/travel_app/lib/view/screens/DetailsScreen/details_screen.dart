@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
-import 'package:travel_app/view/screens/ViewScreen/view_screen.dart';
 import 'package:travel_app/view/screens/DetailsScreen/Widgets/detailsbar.dart';
 
 ///WIDGET TO DISPLAY DETAILS OF DESTINATION
@@ -170,7 +169,7 @@ class DetailsScreen extends StatelessWidget {
                           return GestureDetector(
                             onTap: () {
                               ///NAVIGATE TO VIEW SCREEN
-                              Get.to(const ViewScreen(), arguments: {
+                              Get.toNamed("/view", arguments: {
                                 "destination": Get.arguments,
                                 "viewImg":
                                     "assets/images/details/d${index + 1}.png"

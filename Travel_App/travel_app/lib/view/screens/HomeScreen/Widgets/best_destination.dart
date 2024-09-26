@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/controller/destination_controller.dart';
-import 'package:travel_app/view/screens/DetailsScreen/details_screen.dart';
 
 ///WIDGET TO DISPLAY BEST DESTINATIONS
 class BestDestination extends StatelessWidget {
@@ -51,7 +50,7 @@ class BestDestination extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Get.to(const DetailsScreen(),
+                        Get.toNamed("/details",
                             arguments:
                                 destinationController.destinationList[index]);
                       },

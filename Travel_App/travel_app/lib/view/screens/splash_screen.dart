@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/view/screens/onboard_screen.dart';
 
 ///WIDGET TO DISPLAY SPLASHSCREEN
 class SplashScreen extends StatelessWidget {
@@ -11,8 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ///FUTURE DELAYED IS USED WITH DURATION FOR THE PURPOSE OF
     ///AFTER 2 SECONDS NAVIGATE TO ONBOARDSCREEN
-    Future.delayed(
-        const Duration(seconds: 2), () => Get.off(const OnboardScreen()));
+    Future.delayed(const Duration(seconds: 2), () => Get.offNamed("/onboard"));
     return Scaffold(
       body: Container(
         height: double.infinity,

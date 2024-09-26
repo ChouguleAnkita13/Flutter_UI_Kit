@@ -5,8 +5,6 @@ import 'package:travel_app/view/screens/LoginScreen/Widgets/email_textfield.dart
 import 'package:travel_app/view/screens/LoginScreen/Widgets/or_connect.dart';
 import 'package:travel_app/view/screens/LoginScreen/Widgets/password_textfield.dart';
 import 'package:travel_app/view/screens/LoginScreen/Widgets/sign_text.dart';
-import 'package:travel_app/view/screens/customnavbar_screen.dart';
-import 'package:travel_app/view/screens/LoginScreen/signup_screen.dart';
 import 'package:travel_app/view/widgets/custom_container.dart';
 
 ///WIDGET TO DISPLAY LOGIN SCREEN
@@ -63,7 +61,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Get.offAll(const CustomNavBarScreen());
+                              Get.offAllNamed("/navbar");
                             },
 
                             ///[CustomContainer] CALLED FOR CONTAINER DECORATION
@@ -82,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                             WidgetSpan(
                                 child: GestureDetector(
                               onTap: () {
-                                Get.to(const SignUpScreen());
+                                Get.toNamed("/signup");
                               },
                               child: Text(
                                 "  Sign up",
