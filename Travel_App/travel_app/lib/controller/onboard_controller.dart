@@ -1,7 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:travel_app/model/onboardmodel.dart';
 
+///GETX CONTROLLER FOR ONBOARD SCREEN
 class OnboardController extends GetxController {
+  ///PAGE CONTROLLER
+  final PageController pageController = PageController();
+
+  ///INDEX VAIABLE TO CHANGE VALUE OF VARIBLE .OBS USED
+  final index = 0.obs;
+
+  ///LIST OF ONBOARDMODELS
   final List<OnboardModel> onboardModelList = [
     const OnboardModel(
         imgUrl: "assets/images/onboard1.png",
@@ -25,10 +34,4 @@ class OnboardController extends GetxController {
             "To get the best of your adventure you just need to leave and go where you like. we are waiting for you",
         btnName: "Next"),
   ];
-  final index = 0.obs;
-
-  updateIndex(int idx) {
-    index.value = idx;
-    update();
-  }
 }
