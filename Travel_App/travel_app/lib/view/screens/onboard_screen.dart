@@ -6,29 +6,40 @@ import 'package:travel_app/controller/onboard_controller.dart';
 import 'package:travel_app/view/screens/LoginScreen/login_screen.dart';
 import 'package:travel_app/view/widgets/custom_container.dart';
 
+/// ONBOARD SCREEN CLASS - THE MAIN SCREEN FOR ONBOARDING USERS
 class OnboardScreen extends StatelessWidget {
   const OnboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
+    /// USING GET.FIND TO LOCATE THE ONBOARD CONTROLLER
     final onboardController = Get.find<OnboardController>();
+
     return Scaffold(
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         body: Obx(() {
+          /// IF THE CURRENT INDEX IS LESS THAN THE LENGTH OF ONBOARD LIST, SHOW THE PAGEVIEW
           return onboardController.index <
                   onboardController.onboardModelList.length
               ? PageView.builder(
+                  /// CONTROLLER THAT CONTROLS PAGE CHANGES
                   controller: onboardController.pageController,
+
+                  /// UPDATING THE CURRENT PAGE INDEX ON PAGE CHANGE
                   onPageChanged: (newIndex) {
                     onboardController.index.value = newIndex;
                   },
+
+                  /// NUMBER OF PAGES IN THE PAGEVIEW BASED ON ONBOARD MODEL LIST LENGTH
                   itemCount: onboardController.onboardModelList.length,
+
+                  /// ITEM BUILDER FUNCTION FOR EACH PAGE
                   itemBuilder: (context, pageIndex) {
                     return Column(
                       children: [
                         Stack(
                           children: [
+                            /// DISPLAYING THE IMAGE FROM THE ONBOARD MODEL
                             ClipRRect(
                               borderRadius: const BorderRadius.only(
                                   bottomLeft: Radius.circular(30),
@@ -41,6 +52,8 @@ class OnboardScreen extends StatelessWidget {
                                 fit: BoxFit.cover,
                               ),
                             ),
+
+                            /// 'SKIP' BUTTON TO SKIP THE ONBOARDING PAGES
                             Positioned(
                               top: 40,
                               right: 20,
@@ -61,6 +74,8 @@ class OnboardScreen extends StatelessWidget {
                             )
                           ],
                         ),
+
+                        /// DISPLAYING THE TITLE AND DESCRIPTION OF THE CURRENT ONBOARD PAGE
                         Padding(
                           padding: const EdgeInsets.all(30),
                           child: Column(
@@ -68,6 +83,7 @@ class OnboardScreen extends StatelessWidget {
                               Text.rich(
                                 textAlign: TextAlign.center,
                                 TextSpan(children: [
+                                  /// MAIN TITLE OF THE ONBOARD SCREEN
                                   TextSpan(
                                     text: onboardController
                                         .onboardModelList[pageIndex].title,
@@ -77,6 +93,8 @@ class OnboardScreen extends StatelessWidget {
                                             const Color.fromRGBO(27, 30, 40, 1),
                                         fontSize: 26),
                                   ),
+
+                                  /// SECONDARY TITLE WITH A DIFFERENT COLOR
                                   TextSpan(
                                     text: onboardController
                                         .onboardModelList[pageIndex].titleLast,
@@ -91,6 +109,8 @@ class OnboardScreen extends StatelessWidget {
                               const SizedBox(
                                 height: 10,
                               ),
+
+                              /// DESCRIPTION TEXT FOR THE ONBOARD PAGE
                               Text(
                                 onboardController
                                     .onboardModelList[pageIndex].description,
@@ -104,6 +124,8 @@ class OnboardScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+
+                        /// PAGE INDICATOR SHOWING CURRENT POSITION IN ONBOARDING PAGES
                         SmoothPageIndicator(
                           controller: onboardController.pageController,
                           count: onboardController.onboardModelList.length,
@@ -123,6 +145,8 @@ class OnboardScreen extends StatelessWidget {
                           ),
                         ),
                         const Spacer(),
+
+                        /// 'NEXT' BUTTON OR PROCEED BUTTON
                         Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: GestureDetector(
@@ -135,12 +159,13 @@ class OnboardScreen extends StatelessWidget {
                                   curve: Curves.easeIn,
                                 );
                               } else {
+                                /// IF ON THE LAST PAGE, MOVE TO THE LOGIN SCREEN
                                 onboardController.index.value =
                                     onboardController.onboardModelList.length;
                               }
                             },
 
-                            ///[CustomContainer] CALLED FOR CONTAINER DECORATION
+                            /// [CustomContainer] CALLED FOR CONTAINER DECORATION AND BUTTON
                             child: CustomContainer(
                               title: onboardController
                                   .onboardModelList[pageIndex].btnName,
@@ -151,6 +176,8 @@ class OnboardScreen extends StatelessWidget {
                     );
                   },
                 )
+
+              /// ONCE ONBOARDING IS DONE, NAVIGATE TO LOGIN SCREEN
               : const LoginScreen();
         }));
   }

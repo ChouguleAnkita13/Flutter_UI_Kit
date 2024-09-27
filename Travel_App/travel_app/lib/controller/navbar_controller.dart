@@ -6,10 +6,12 @@ import 'package:travel_app/view/screens/ProfileScreen/profile_screen.dart';
 import 'package:travel_app/view/screens/ScheduleScreen/schedule_screen.dart';
 import 'package:travel_app/view/screens/SearchScreen/search_screen.dart';
 
+/// NAVBAR CONTROLLER TO MANAGE BOTTOM NAVIGATION BAR SELECTION
 class NavbarController extends GetxController {
+  /// PRIVATE VARIABLE TO TRACK THE CURRENTLY SELECTED INDEX
   int _selectedIndex = 0;
 
-  ///LIST OF WIDGETS
+  /// LIST OF WIDGETS THAT WILL BE DISPLAYED WHEN CORRESPONDING NAV ITEM IS SELECTED
   final List<Widget> widgetOptions = [
     const HomeScreen(),
     const ScheduleScreen(),
@@ -18,12 +20,15 @@ class NavbarController extends GetxController {
     const ProfileScreen(),
   ];
 
-  ///GETTER FOR SELECTEDINDEX
+  /// GETTER TO ACCESS THE SELECTED INDEX FROM OUTSIDE THE CLASS
   get selectedIndex => _selectedIndex;
 
-  ///FUNCTION TO SET SELECTEDINDEX
+  /// FUNCTION TO HANDLE ITEM SELECTION IN THE NAVIGATION BAR
   void onItemTapped(int index) {
+    /// UPDATING THE SELECTED INDEX BASED ON USER SELECTION
     _selectedIndex = index;
+
+    /// CALLING UPDATE METHOD TO REFLECT THE CHANGES IN THE UI
     update();
   }
 }
