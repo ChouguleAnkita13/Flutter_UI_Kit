@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:travel_app/model/destinationmodel.dart';
 
 class DestinationController extends GetxController {
+  ///LIST OF DESTINATIONMODEL
   final List<Destinationmodel> destinationList = [
     const Destinationmodel(
         imgUrl: "assets/images/home/niladri.png",
@@ -52,4 +53,15 @@ class DestinationController extends GetxController {
         reviews: 2498,
         isBookMarked: false),
   ];
+
+  ///VAIABLE
+  Destinationmodel? _selectedDestination;
+
+  ///GETTER FOR SELECTED DESTINATION
+  Destinationmodel? get selectedDestination => _selectedDestination;
+
+  ///SET CURRENT DESTINATION
+  void selectDestination(Destinationmodel destination) {
+    _selectedDestination = destination;
+  }
 }
