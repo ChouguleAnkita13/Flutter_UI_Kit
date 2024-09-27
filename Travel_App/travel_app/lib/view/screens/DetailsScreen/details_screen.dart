@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
+import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/screens/DetailsScreen/Widgets/detailsbar.dart';
 
 ///WIDGET TO DISPLAY DETAILS OF DESTINATION
@@ -10,13 +11,17 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
+    ///GET SELECTEDDESTINATION USING DESTINATION GETX CONTROLLER
+    final selectedDestination =
+        Get.find<DestinationController>().selectedDestination;
     return Scaffold(
       body: Column(
         children: [
           ///DESTINATION IMAGE
           Stack(
             children: [
-              Image.asset(Get.arguments.imgUrl,
+              Image.asset(selectedDestination!.imgUrl,
                   width: Get.width,
                   fit: BoxFit.cover,
                   height: Get.height / 2.2),
@@ -56,7 +61,7 @@ class DetailsScreen extends StatelessWidget {
                         children: [
                           ///DESTINATION NAME
                           Text(
-                            Get.arguments.title,
+                            selectedDestination.title,
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w600,
                                 color: const Color.fromRGBO(27, 30, 40, 1),
@@ -65,7 +70,7 @@ class DetailsScreen extends StatelessWidget {
 
                           ///DESTINATION ADDRESS
                           Text(
-                            Get.arguments.location,
+                            selectedDestination.location,
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w400,
                                 color: const Color.fromRGBO(125, 132, 141, 1),
@@ -116,14 +121,14 @@ class DetailsScreen extends StatelessWidget {
                           ),
                           const SizedBox(width: 3),
                           Text(
-                            "${Get.arguments.rate}",
+                            "${selectedDestination.rate}",
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w500,
                                 color: const Color.fromRGBO(27, 30, 40, 1),
                                 fontSize: 15),
                           ),
                           Text(
-                            "(${Get.arguments.reviews})",
+                            "(${selectedDestination.reviews})",
                             style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w400,
                                 color: const Color.fromRGBO(125, 132, 141, 1),
@@ -135,7 +140,7 @@ class DetailsScreen extends StatelessWidget {
                       ///DESTINATION CHARGES PER PERSON
                       Text.rich(TextSpan(children: [
                         TextSpan(
-                          text: "\$${Get.arguments.price}",
+                          text: "\$${selectedDestination.price}",
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w400,
                               color: const Color.fromRGBO(13, 110, 253, 1),
@@ -170,7 +175,7 @@ class DetailsScreen extends StatelessWidget {
                             onTap: () {
                               ///NAVIGATE TO VIEW SCREEN
                               Get.toNamed("/view", arguments: {
-                                "destination": Get.arguments,
+                                "destination": selectedDestination,
                                 "viewImg":
                                     "assets/images/details/d${index + 1}.png"
                               });

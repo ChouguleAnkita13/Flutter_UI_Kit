@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/controller/destination_controller.dart';
 
 ///WIDGET TO DISPLAY TOP ROW CONTAINING
-///BACK BUTTON,DETAILS TEXT AND BOOKMARKED ICON
-///FOR DEATILSSCREEN
+///BACK BUTTON,DETAILS TEXT AND BOOKMARKED ICON FOR DEATILSSCREEN
 class Detailsbar extends StatelessWidget {
   const Detailsbar({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
+    final destinationController = Get.find<DestinationController>();
+
+    ///GET SELECTEDDESTINATION USING DESTINATION GETX CONTROLLER
+    final selectedDestination = destinationController.selectedDestination;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -38,14 +43,21 @@ class Detailsbar extends StatelessWidget {
 
         ///BOOKMARKED BUTTON
         GestureDetector(
+          onTap: () {},
           child: CircleAvatar(
             backgroundColor:
                 const Color.fromRGBO(27, 30, 40, 1).withOpacity(0.16),
-            child: const Icon(
-              Icons.bookmark_outline,
-              color: Color.fromRGBO(255, 255, 255, 1),
-              size: 18,
-            ),
+            child: selectedDestination!.isBookMarked
+                ? const Icon(
+                    Icons.bookmark,
+                    color: Color.fromRGBO(0, 0, 0, 1),
+                    size: 18,
+                  )
+                : const Icon(
+                    Icons.bookmark_outline,
+                    color: Color.fromRGBO(255, 255, 255, 1),
+                    size: 18,
+                  ),
           ),
         ),
       ],
