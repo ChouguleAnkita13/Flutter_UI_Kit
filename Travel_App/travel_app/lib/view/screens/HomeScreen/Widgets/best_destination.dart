@@ -46,9 +46,12 @@ class BestDestination extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Get.toNamed("/details",
-                            arguments:
-                                destinationController.destinationList[index]);
+                        ///SET DESTINATION USING DESTINATION CONTROLLER
+                        destinationController.selectDestination(
+                            destinationController.destinationList[index]);
+
+                        ///NAVIGATE TO DETAILS SCREEN
+                        Get.toNamed("/details");
                       },
 
                       ///DESTINATION IMAGE
