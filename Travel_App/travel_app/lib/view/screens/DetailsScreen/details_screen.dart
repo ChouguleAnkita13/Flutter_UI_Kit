@@ -174,11 +174,9 @@ class DetailsScreen extends StatelessWidget {
                           return GestureDetector(
                             onTap: () {
                               ///NAVIGATE TO VIEW SCREEN
-                              Get.toNamed("/view", arguments: {
-                                "destination": selectedDestination,
-                                "viewImg":
-                                    "assets/images/details/d${index + 1}.png"
-                              });
+                              Get.toNamed("/view",
+                                  arguments:
+                                      "assets/images/details/d${index + 1}.png");
                             },
 
                             ///VIEWS IN IMAGES

@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:travel_app/model/destinationmodel.dart';
+import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/widgets/custom_container.dart';
 
 ///WIDGET TO SHOW CONTAINER WITH DESTIONATION DETAILS
 class DestinationContainer extends StatelessWidget {
-  const DestinationContainer({super.key, required this.destination});
-  final Destinationmodel destination;
+  const DestinationContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ///GET SELECTEDDESTINATION USING DESTINATION GETX CONTROLLER
+    final selectedDestination =
+        Get.find<DestinationController>().selectedDestination;
     return Container(
       padding: const EdgeInsets.all(15),
       height: Get.height / 4.6,
@@ -26,7 +28,7 @@ class DestinationContainer extends StatelessWidget {
             children: [
               ///DESTINATION TITLE
               Text(
-                destination.title,
+                selectedDestination!.title,
                 style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
                     color: const Color.fromRGBO(255, 255, 255, 1),
@@ -45,7 +47,7 @@ class DestinationContainer extends StatelessWidget {
 
                   ///RATE
                   Text(
-                    "${destination.rate}",
+                    "${selectedDestination.rate}",
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         color: const Color.fromRGBO(255, 255, 255, 1),
@@ -71,7 +73,7 @@ class DestinationContainer extends StatelessWidget {
 
                   ///DESTINATION LOCATION
                   Text(
-                    destination.location,
+                    selectedDestination.location,
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w400,
                         color: const Color.fromRGBO(255, 255, 255, 1),

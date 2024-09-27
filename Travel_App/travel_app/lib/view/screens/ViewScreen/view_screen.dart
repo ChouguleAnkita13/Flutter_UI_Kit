@@ -14,7 +14,7 @@ class ViewScreen extends StatelessWidget {
         body: Stack(
       children: [
         ///VIEW IMAGE COVERS FULL SCREEN
-        Image.asset(Get.arguments["viewImg"],
+        Image.asset(Get.arguments,
             height: double.infinity, width: double.infinity, fit: BoxFit.cover),
         Padding(
           padding:
@@ -73,7 +73,7 @@ class ViewScreen extends StatelessWidget {
               ),
 
               ///[ DestinationContainer()] TO SHOW DETAILS OF DESTIONATION
-              DestinationContainer(destination: Get.arguments["destination"])
+              const DestinationContainer()
             ],
           ),
         )
