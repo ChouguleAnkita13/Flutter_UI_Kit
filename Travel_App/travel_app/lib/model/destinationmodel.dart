@@ -5,9 +5,9 @@ class Destinationmodel {
   final int price;
   final double rate;
   final int reviews;
-  final bool isBookMarked;
+  bool isBookMarked;
 
-  const Destinationmodel(
+  Destinationmodel(
       {required this.imgUrl,
       required this.title,
       required this.location,

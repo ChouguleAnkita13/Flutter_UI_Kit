@@ -4,7 +4,7 @@ import 'package:travel_app/model/destinationmodel.dart';
 class DestinationController extends GetxController {
   ///LIST OF DESTINATIONMODEL
   final List<Destinationmodel> destinationList = [
-    const Destinationmodel(
+    Destinationmodel(
         imgUrl: "assets/images/home/niladri.png",
         title: "Niladri Reservoir",
         location: "Tekergat, Sunamgnj",
@@ -12,7 +12,7 @@ class DestinationController extends GetxController {
         rate: 4.7,
         reviews: 2498,
         isBookMarked: true),
-    const Destinationmodel(
+    Destinationmodel(
         imgUrl: "assets/images/home/casalas.png",
         title: "Casalas Tirtugas",
         location: "Av Damero, Mexico",
@@ -20,7 +20,7 @@ class DestinationController extends GetxController {
         rate: 4.8,
         reviews: 4551,
         isBookMarked: false),
-    const Destinationmodel(
+    Destinationmodel(
         imgUrl: "assets/images/home/darma.png",
         title: "Darma Reservoir",
         location: "Darma, Kuningan",
@@ -28,7 +28,7 @@ class DestinationController extends GetxController {
         rate: 4.8,
         reviews: 3351,
         isBookMarked: false),
-    const Destinationmodel(
+    Destinationmodel(
         imgUrl: "assets/images/home/aonang.png",
         title: "Aonang Villa",
         location: "Bastola, Islampur",
@@ -36,7 +36,7 @@ class DestinationController extends GetxController {
         rate: 4.7,
         reviews: 5104,
         isBookMarked: true),
-    const Destinationmodel(
+    Destinationmodel(
         imgUrl: "assets/images/details/d4.png",
         title: "Rangauti Resort",
         location: "Sylhet, Airport Road",
@@ -44,7 +44,7 @@ class DestinationController extends GetxController {
         rate: 4.9,
         reviews: 6225,
         isBookMarked: false),
-    const Destinationmodel(
+    Destinationmodel(
         imgUrl: "assets/images/details/d5.png",
         title: "High Rech Park",
         location: "Zeero Point, Sylhet",
@@ -54,7 +54,7 @@ class DestinationController extends GetxController {
         isBookMarked: false),
   ];
 
-  ///VAIABLE
+  ///VARIABLE
   Destinationmodel? _selectedDestination;
 
   ///GETTER FOR SELECTED DESTINATION
