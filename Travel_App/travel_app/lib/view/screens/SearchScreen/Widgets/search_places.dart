@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/controller/destination_controller.dart';
-import 'package:travel_app/view/screens/DetailsScreen/details_screen.dart';
 
 ///WIDGET TO DISPLAY PLACES TO SEARCH
 class SearchPlaces extends StatelessWidget {
@@ -25,8 +24,12 @@ class SearchPlaces extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              Get.to(const DetailsScreen(),
-                  arguments: destinationController.destinationList[index]);
+              ///SET DESTINATION USING DESTINATION CONTROLLER
+              destinationController.selectDestination(
+                  destinationController.destinationList[index]);
+
+              ///NAVIGATE TO DETAILS SCREEN
+              Get.toNamed("/details");
             },
             child: Container(
               ///WHITE CONTAINER
