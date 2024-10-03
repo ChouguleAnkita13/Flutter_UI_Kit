@@ -73,6 +73,7 @@ class DetailsScreen extends StatelessWidget {
 
                   ///DESTINATIO NAME AND LOCATION
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,20 +99,7 @@ class DetailsScreen extends StatelessWidget {
                       ),
 
                       ///IMAGE STACK
-                      const Spacer(),
-                      Expanded(
-                        child: Stack(children: [
-                          Image.asset("assets/images/details/detail.png"),
-                          Positioned(
-                              top: 0,
-                              bottom: 0,
-                              right: 0,
-                              left: deviceWidth * 0.0009,
-                              child: Image.asset(
-                                "assets/images/details/detail.png",
-                              )),
-                        ]),
-                      ),
+                      Image.asset("assets/images/details/detail.png"),
                     ],
                   ),
                   const SizedBox(
