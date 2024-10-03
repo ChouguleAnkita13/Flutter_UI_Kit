@@ -18,6 +18,21 @@ class DetailsScreen extends StatelessWidget {
     final selectedDestination =
         Get.find<DestinationController>().selectedDestination;
 
+    /// CHECK IF SELECTEDDESTINATION IS NULL
+    if (selectedDestination == null) {
+      return Scaffold(
+        body: Center(
+          child: GestureDetector(
+            onTap: () => Get.toNamed("/navbar"),
+            child: const Text(
+              'No destination selected.',
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ),
+      );
+    }
+
     /// IF SELECTEDDESTINATION IS NOT NULL
     return Scaffold(
       body: Column(
@@ -25,7 +40,7 @@ class DetailsScreen extends StatelessWidget {
           ///DESTINATION IMAGE
           Stack(
             children: [
-              Image.asset(selectedDestination!.imgUrl,
+              Image.asset(selectedDestination.imgUrl,
                   width: deviceWidth,
                   fit: BoxFit.cover,
                   height: Get.height / 2.2),
