@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:travel_app/controller/destination_controller.dart';
 import 'package:travel_app/view/screens/ViewScreen/Widgets/destination_container.dart';
 import 'package:travel_app/view/screens/ViewScreen/Widgets/view_container.dart';
 
@@ -10,6 +11,24 @@ class ViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///GET SELECTEDDESTINATION USING DESTINATION GETX CONTROLLER
+    final selectedDestination =
+        Get.find<DestinationController>().selectedDestination;
+
+    /// CHECK IF SELECTEDDESTINATION IS NULL
+    if (selectedDestination == null) {
+      return Scaffold(
+        body: Center(
+          child: GestureDetector(
+            onTap: () => Get.toNamed("/navbar"),
+            child: const Text(
+              'No view selected.',
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ),
+      );
+    }
     return Scaffold(
         body: Stack(
       children: [
