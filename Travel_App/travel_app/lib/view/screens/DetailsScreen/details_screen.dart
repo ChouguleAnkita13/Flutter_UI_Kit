@@ -11,10 +11,14 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = Get.width;
+
     ///USING GET.FIND LOCATES THE CONTROLLER THAT WAS CREATED
     ///GET SELECTEDDESTINATION USING DESTINATION GETX CONTROLLER
     final selectedDestination =
         Get.find<DestinationController>().selectedDestination;
+
+    /// IF SELECTEDDESTINATION IS NOT NULL
     return Scaffold(
       body: Column(
         children: [
@@ -22,7 +26,7 @@ class DetailsScreen extends StatelessWidget {
           Stack(
             children: [
               Image.asset(selectedDestination!.imgUrl,
-                  width: Get.width,
+                  width: deviceWidth,
                   fit: BoxFit.cover,
                   height: Get.height / 2.2),
               const Positioned(
@@ -31,7 +35,7 @@ class DetailsScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              width: Get.width,
+              width: deviceWidth,
               padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(255, 255, 255, 1),
@@ -54,7 +58,6 @@ class DetailsScreen extends StatelessWidget {
 
                   ///DESTINATIO NAME AND LOCATION
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,8 +82,21 @@ class DetailsScreen extends StatelessWidget {
                         ],
                       ),
 
-                      ///IMAGE
-                      Image.asset("assets/images/details/detail.png")
+                      ///IMAGE STACK
+                      const Spacer(),
+                      Expanded(
+                        child: Stack(children: [
+                          Image.asset("assets/images/details/detail.png"),
+                          Positioned(
+                              top: 0,
+                              bottom: 0,
+                              right: 0,
+                              left: deviceWidth * 0.0009,
+                              child: Image.asset(
+                                "assets/images/details/detail.png",
+                              )),
+                        ]),
+                      ),
                     ],
                   ),
                   const SizedBox(
