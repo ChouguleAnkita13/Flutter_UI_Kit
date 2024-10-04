@@ -36,7 +36,6 @@ class DetailsScreen extends StatelessWidget {
 
     /// IF SELECTEDDESTINATION IS NOT NULL
     return Scaffold(
-      // backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
       body: Column(
         children: [
           ///DESTINATION IMAGE
