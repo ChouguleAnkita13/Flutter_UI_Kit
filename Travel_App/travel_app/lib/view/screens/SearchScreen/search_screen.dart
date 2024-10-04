@@ -11,6 +11,7 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(247, 247, 249, 1),
       body: SingleChildScrollView(
         child: SizedBox(
           height: Get.height,

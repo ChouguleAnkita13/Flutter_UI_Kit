@@ -13,7 +13,7 @@ class CustomNavBarScreen extends StatelessWidget {
       /// INITIALIZE GETX NAVBARCONTROLLER
       init: NavbarController(),
       builder: (navbarController) => Scaffold(
-        backgroundColor: const Color.fromRGBO(175, 184, 198, 0.12),
+        backgroundColor: const Color.fromRGBO(247, 247, 249, 1),
         body: navbarController.widgetOptions
             .elementAt(navbarController.selectedIndex),
 
