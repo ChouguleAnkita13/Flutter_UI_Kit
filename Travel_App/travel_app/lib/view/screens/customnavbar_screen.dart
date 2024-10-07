@@ -9,6 +9,7 @@ class CustomNavBarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceHeight = Get.height;
     return GetBuilder(
       /// INITIALIZE GETX NAVBARCONTROLLER
       init: NavbarController(),
@@ -23,7 +24,7 @@ class CustomNavBarScreen extends StatelessWidget {
 
           /// FOR OVAL SHAPE BORDER AT TOP
           child: SizedBox(
-            height: Get.height * 0.12,
+            height: deviceHeight * 0.12,
             child: BottomNavigationBar(
               items: [
                 const BottomNavigationBarItem(

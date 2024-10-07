@@ -15,8 +15,8 @@ class OnboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceWidth = Get.width;
     final deviceHeight = Get.height;
-    log("${deviceWidth * 0.072}");
-    log("${deviceHeight * 0.072}");
+    log("${deviceWidth * 0.015}");
+    log("${deviceHeight * 0.008}");
 
     /// USING GET.FIND TO LOCATE THE ONBOARD CONTROLLER
     final onboardController = Get.find<OnboardController>();
@@ -55,16 +55,16 @@ class OnboardScreen extends StatelessWidget {
                               child: Image.asset(
                                 onboardController
                                     .onboardModelList[pageIndex].imgUrl,
-                                height: Get.height / 1.6,
-                                width: Get.width,
+                                height: deviceHeight / 1.7,
+                                width: deviceWidth,
                                 fit: BoxFit.cover,
                               ),
                             ),
 
                             /// 'SKIP' BUTTON TO SKIP THE ONBOARDING PAGES
                             Positioned(
-                              top: 40,
-                              right: 20,
+                              top: deviceHeight * 0.044,
+                              right: deviceWidth * 0.05,
                               child: GestureDetector(
                                 onTap: () {
                                   onboardController.index.value =
@@ -76,7 +76,7 @@ class OnboardScreen extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       color: const Color.fromRGBO(
                                           202, 234, 255, 1),
-                                      fontSize: 18),
+                                      fontSize: deviceWidth * 0.044),
                                 ),
                               ),
                             )
@@ -85,7 +85,7 @@ class OnboardScreen extends StatelessWidget {
 
                         /// DISPLAYING THE TITLE AND DESCRIPTION OF THE CURRENT ONBOARD PAGE
                         Padding(
-                          padding: const EdgeInsets.all(30),
+                          padding: EdgeInsets.all(deviceWidth * 0.072),
                           child: Column(
                             children: [
                               Text.rich(
@@ -99,7 +99,7 @@ class OnboardScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                         color:
                                             const Color.fromRGBO(27, 30, 40, 1),
-                                        fontSize: 26),
+                                        fontSize: deviceWidth * 0.065),
                                   ),
 
                                   /// SECONDARY TITLE WITH A DIFFERENT COLOR
@@ -110,12 +110,12 @@ class OnboardScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w500,
                                         color: const Color.fromRGBO(
                                             255, 112, 41, 1),
-                                        fontSize: 26),
+                                        fontSize: deviceWidth * 0.065),
                                   )
                                 ]),
                               ),
-                              const SizedBox(
-                                height: 10,
+                              SizedBox(
+                                height: deviceHeight * 0.011,
                               ),
 
                               /// DESCRIPTION TEXT FOR THE ONBOARD PAGE
@@ -127,7 +127,7 @@ class OnboardScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     color:
                                         const Color.fromRGBO(125, 132, 141, 1),
-                                    fontSize: 16),
+                                    fontSize: deviceWidth * 0.04),
                               ),
                             ],
                           ),
@@ -137,13 +137,14 @@ class OnboardScreen extends StatelessWidget {
                         SmoothPageIndicator(
                           controller: onboardController.pageController,
                           count: onboardController.onboardModelList.length,
-                          effect: const ExpandingDotsEffect(
-                            spacing: 6.0,
-                            radius: 6.0,
-                            dotHeight: 7,
-                            dotWidth: 14,
-                            dotColor: Color.fromRGBO(202, 234, 255, 1),
-                            activeDotColor: Color.fromRGBO(13, 110, 253, 1),
+                          effect: ExpandingDotsEffect(
+                            spacing: deviceWidth * 0.015,
+                            radius: deviceWidth * 0.015,
+                            dotHeight: deviceHeight * 0.008,
+                            dotWidth: deviceWidth * 0.035,
+                            dotColor: const Color.fromRGBO(202, 234, 255, 1),
+                            activeDotColor:
+                                const Color.fromRGBO(13, 110, 253, 1),
                           ),
                           onDotClicked: (newIndex) =>
                               onboardController.pageController.animateToPage(
@@ -156,7 +157,7 @@ class OnboardScreen extends StatelessWidget {
 
                         /// 'NEXT' BUTTON OR PROCEED BUTTON
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: EdgeInsets.all(deviceWidth * 0.05),
                           child: GestureDetector(
                             onTap: () {
                               if (onboardController.index <
