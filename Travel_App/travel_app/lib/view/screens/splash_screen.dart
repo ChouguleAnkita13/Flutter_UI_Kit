@@ -8,6 +8,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = Get.width;
+
     ///FUTURE DELAYED IS USED WITH DURATION FOR THE PURPOSE OF
     ///AFTER 2 SECONDS NAVIGATE TO ONBOARDSCREEN
     Future.delayed(const Duration(seconds: 2), () => Get.offNamed("/onboard"));
@@ -20,7 +22,7 @@ class SplashScreen extends StatelessWidget {
         child: Text(
           "Travenor",
           style: GoogleFonts.aclonica(
-            fontSize: 34,
+            fontSize: deviceWidth * 0.082,
             fontWeight: FontWeight.w400,
             color: const Color.fromRGBO(255, 255, 255, 1),
           ),

@@ -5,6 +5,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel_app/controller/onboard_controller.dart';
 import 'package:travel_app/view/screens/LoginScreen/login_screen.dart';
 import 'package:travel_app/view/widgets/custom_container.dart';
+import 'dart:developer';
 
 /// ONBOARD SCREEN CLASS - THE MAIN SCREEN FOR ONBOARDING USERS
 class OnboardScreen extends StatelessWidget {
@@ -12,6 +13,11 @@ class OnboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final deviceWidth = Get.width;
+    final deviceHeight = Get.height;
+    log("${deviceWidth * 0.072}");
+    log("${deviceHeight * 0.072}");
+
     /// USING GET.FIND TO LOCATE THE ONBOARD CONTROLLER
     final onboardController = Get.find<OnboardController>();
 
@@ -41,9 +47,11 @@ class OnboardScreen extends StatelessWidget {
                           children: [
                             /// DISPLAYING THE IMAGE FROM THE ONBOARD MODEL
                             ClipRRect(
-                              borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(30),
-                                  bottomRight: Radius.circular(30)),
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft:
+                                      Radius.circular(deviceWidth * 0.072),
+                                  bottomRight:
+                                      Radius.circular(deviceWidth * 0.072)),
                               child: Image.asset(
                                 onboardController
                                     .onboardModelList[pageIndex].imgUrl,
