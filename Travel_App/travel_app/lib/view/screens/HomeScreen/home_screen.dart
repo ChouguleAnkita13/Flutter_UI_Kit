@@ -35,27 +35,27 @@ class HomeScreen extends StatelessWidget {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
                           color: const Color.fromRGBO(27, 30, 40, 1),
-                          fontSize: 38),
+                          fontSize: 36),
                     ),
                     TextSpan(
                       text: " Beautiful",
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w600,
                           color: const Color.fromRGBO(27, 30, 40, 1),
-                          fontSize: 38),
+                          fontSize: 36),
                     ),
                     TextSpan(
                       text: " world!",
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w600,
                           color: const Color.fromRGBO(255, 112, 41, 1),
-                          fontSize: 38),
+                          fontSize: 36),
                     )
                   ]),
                 ),
               ),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 15),
 
               ///
               Row(
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                     style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         color: const Color.fromRGBO(27, 30, 40, 1),
-                        fontSize: 20),
+                        fontSize: 18),
                   ),
 
                   ///VIEW ALL DESTINATION BUTTON
@@ -78,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w400,
                           color: const Color.fromRGBO(13, 110, 253, 1),
-                          fontSize: 16),
+                          fontSize: 15),
                     ),
                   ),
                 ],

@@ -24,7 +24,7 @@ class CustomNavBarScreen extends StatelessWidget {
 
           /// FOR OVAL SHAPE BORDER AT TOP
           child: SizedBox(
-            height: deviceHeight * 0.12,
+            height: deviceHeight * 0.132,
             child: BottomNavigationBar(
               items: [
                 const BottomNavigationBarItem(

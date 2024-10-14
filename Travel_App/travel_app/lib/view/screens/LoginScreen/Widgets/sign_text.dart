@@ -30,7 +30,7 @@ class SignText extends StatelessWidget {
             style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400,
                 color: const Color.fromRGBO(125, 132, 141, 1),
-                fontSize: 16),
+                fontSize: 15),
           ),
         ],
       ),

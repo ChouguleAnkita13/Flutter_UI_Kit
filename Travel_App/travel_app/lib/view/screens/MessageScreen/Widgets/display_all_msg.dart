@@ -13,11 +13,11 @@ class DisplayAllMsg extends StatelessWidget {
       itemCount: 9,
       itemBuilder: (context, index) {
         return ListTile(
-          minVerticalPadding: 10.0,
+          minVerticalPadding: 6.0,
           isThreeLine: true,
           leading: Container(
-            height: 52,
-            width: 52,
+            height: 45,
+            width: 45,
             alignment: Alignment.center,
             decoration: const BoxDecoration(
                 color: Color.fromRGBO(255, 234, 223, 1),
@@ -26,8 +26,8 @@ class DisplayAllMsg extends StatelessWidget {
             ///PROFILE IMAGE OF MESSANGER
             child: Image.asset(
               "assets/images/home/home_person.png",
-              width: 30,
-              height: 30,
+              width: 25,
+              height: 25,
               fit: BoxFit.cover,
             ),
           ),
@@ -38,7 +38,7 @@ class DisplayAllMsg extends StatelessWidget {
             style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w500,
                 color: const Color.fromRGBO(27, 30, 40, 1),
-                fontSize: 18),
+                fontSize: 16),
           ),
 
           ///RECENT MESSAGE
@@ -47,7 +47,7 @@ class DisplayAllMsg extends StatelessWidget {
             style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400,
                 color: const Color.fromRGBO(125, 132, 141, 1),
-                fontSize: 13),
+                fontSize: 11),
           ),
 
           ///MESSAGE TIME
@@ -56,7 +56,7 @@ class DisplayAllMsg extends StatelessWidget {
             style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400,
                 color: const Color.fromRGBO(125, 132, 141, 1),
-                fontSize: 13),
+                fontSize: 11),
           ),
         );
       },

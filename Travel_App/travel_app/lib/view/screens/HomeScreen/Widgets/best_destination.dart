@@ -21,7 +21,7 @@ class BestDestination extends StatelessWidget {
         shrinkWrap: true,
         itemCount: destinationController.destinationList.length,
         padding: const EdgeInsets.only(
-          top: 30,
+          top: 20,
         ),
         itemBuilder: (context, index) {
           ///TO DECORATE DESTINATION CONTAINER

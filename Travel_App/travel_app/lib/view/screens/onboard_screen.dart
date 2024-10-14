@@ -55,7 +55,7 @@ class OnboardScreen extends StatelessWidget {
                               child: Image.asset(
                                 onboardController
                                     .onboardModelList[pageIndex].imgUrl,
-                                height: deviceHeight / 1.7,
+                                height: deviceHeight / 1.72,
                                 width: deviceWidth,
                                 fit: BoxFit.cover,
                               ),

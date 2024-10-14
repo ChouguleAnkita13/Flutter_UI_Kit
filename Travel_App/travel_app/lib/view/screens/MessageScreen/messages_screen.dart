@@ -59,7 +59,7 @@ class MessagesScreen extends StatelessWidget {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w600,
                           color: const Color.fromRGBO(27, 30, 40, 1),
-                          fontSize: 21),
+                          fontSize: 20),
                     ),
 
                     ///EDIT BUTTON
@@ -73,7 +73,7 @@ class MessagesScreen extends StatelessWidget {
                 ///TEXTFIELD FOR SEARCH
                 const SearchTextfield(),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 5),
 
                 ///TO DISPLAY ALL MESSAGES
                 const Expanded(child: DisplayAllMsg())
