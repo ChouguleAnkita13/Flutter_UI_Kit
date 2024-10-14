@@ -9,27 +9,16 @@ class ProfileOptions extends StatefulWidget {
 }
 
 class _ProfileOptionsState extends State<ProfileOptions> {
-  final _profileOptionsList=[
-    {
-      "iconUrl":"assets/icons/bookmark.png",
-      "title":"Bookmarked"
-    },
-     {
-      "iconUrl":"assets/icons/trips.png",
-      "title":"Previous Trips"
-    },
-     {
-      "iconUrl":"assets/icons/settings.png",
-      "title":"Settings"
-    },
-     {
-      "iconUrl":"assets/icons/version.png",
-      "title":"Version"
-    }
+  final _profileOptionsList = [
+    {"iconUrl": "assets/icons/bookmark.png", "title": "Bookmarked"},
+    {"iconUrl": "assets/icons/trips.png", "title": "Previous Trips"},
+    {"iconUrl": "assets/icons/settings.png", "title": "Settings"},
+    {"iconUrl": "assets/icons/version.png", "title": "Version"}
   ];
   @override
   Widget build(BuildContext context) {
     return Container(
+        padding: const EdgeInsets.only(bottom: 12),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: const Color.fromRGBO(255, 255, 255, 1),
@@ -45,8 +34,9 @@ class _ProfileOptionsState extends State<ProfileOptions> {
           itemBuilder: (context, index) {
             return GestureDetector(
               child: ListTile(
-                minVerticalPadding: 25.0,
-                leading: Image.asset("${_profileOptionsList[index]["iconUrl"]}"),
+                minVerticalPadding: 15.0,
+                leading:
+                    Image.asset("${_profileOptionsList[index]["iconUrl"]}"),
                 title: Text(
                   "${_profileOptionsList[index]["title"]}",
                   style: GoogleFonts.poppins(

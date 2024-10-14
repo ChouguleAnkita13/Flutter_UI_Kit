@@ -141,7 +141,7 @@ class OnboardScreen extends StatelessWidget {
                             spacing: deviceWidth * 0.015,
                             radius: deviceWidth * 0.015,
                             dotHeight: deviceHeight * 0.008,
-                            dotWidth: deviceWidth * 0.035,
+                            dotWidth: deviceWidth * 0.033,
                             dotColor: const Color.fromRGBO(202, 234, 255, 1),
                             activeDotColor:
                                 const Color.fromRGBO(13, 110, 253, 1),

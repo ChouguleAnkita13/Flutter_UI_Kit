@@ -37,7 +37,7 @@ class ViewScreen extends StatelessWidget {
             height: double.infinity, width: double.infinity, fit: BoxFit.cover),
         Padding(
           padding:
-              const EdgeInsets.only(right: 25, bottom: 30, top: 50, left: 25),
+              const EdgeInsets.only(right: 25, bottom: 30, top: 35, left: 25),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,

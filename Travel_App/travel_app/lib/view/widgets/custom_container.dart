@@ -9,7 +9,7 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 56,
+      height: 52,
       width: Get.width,
       alignment: Alignment.center,
       decoration: BoxDecoration(

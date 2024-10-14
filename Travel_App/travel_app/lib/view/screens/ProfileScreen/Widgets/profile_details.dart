@@ -10,8 +10,8 @@ class ProfileDetails extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 96,
-          width: 96,
+          height: 92,
+          width: 92,
           decoration: BoxDecoration(
               color: const Color.fromRGBO(255, 234, 223, 1),
               borderRadius: BorderRadius.circular(100)),
@@ -21,24 +21,24 @@ class ProfileDetails extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 7,
         ),
         Text(
           "Leonardo",
           style: GoogleFonts.poppins(
               fontWeight: FontWeight.w600,
               color: const Color.fromRGBO(27, 30, 40, 1),
-              fontSize: 24),
+              fontSize: 22),
         ),
         const SizedBox(
-          height: 10,
+          height: 5,
         ),
         Text(
           "Leonardo@gmail.com",
           style: GoogleFonts.poppins(
               fontWeight: FontWeight.w400,
               color: const Color.fromRGBO(125, 132, 141, 1),
-              fontSize: 14),
+              fontSize: 12),
         ),
       ],
     );

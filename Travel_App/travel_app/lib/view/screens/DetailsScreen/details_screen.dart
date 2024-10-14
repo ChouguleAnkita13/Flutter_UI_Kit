@@ -51,7 +51,7 @@ class DetailsScreen extends StatelessWidget {
           ),
           Expanded(
             child: Transform.translate(
-              offset: const Offset(0, -50),
+              offset: const Offset(0, -35),
               child: ClipPath(
                 clipper: OvalTopBorderClipper(),
                 child: Container(
@@ -83,7 +83,7 @@ class DetailsScreen extends StatelessWidget {
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600,
                                     color: const Color.fromRGBO(27, 30, 40, 1),
-                                    fontSize: 24),
+                                    fontSize: 23),
                               ),
 
                               ///DESTINATION ADDRESS
@@ -93,7 +93,7 @@ class DetailsScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     color:
                                         const Color.fromRGBO(125, 132, 141, 1),
-                                    fontSize: 15),
+                                    fontSize: 14),
                               ),
                             ],
                           ),
@@ -116,7 +116,7 @@ class DetailsScreen extends StatelessWidget {
                               const Icon(
                                 Icons.location_on_outlined,
                                 color: Color.fromRGBO(125, 132, 141, 1),
-                                size: 16,
+                                size: 15,
                               ),
                               const SizedBox(width: 2),
                               Text(
@@ -126,7 +126,7 @@ class DetailsScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     color:
                                         const Color.fromRGBO(125, 132, 141, 1),
-                                    fontSize: 15),
+                                    fontSize: 14),
                               ),
                             ],
                           ),
@@ -137,7 +137,7 @@ class DetailsScreen extends StatelessWidget {
                               const Icon(
                                 Icons.star,
                                 color: Color.fromRGBO(255, 211, 54, 1),
-                                size: 18,
+                                size: 17,
                               ),
                               const SizedBox(width: 3),
                               Text(
@@ -145,7 +145,7 @@ class DetailsScreen extends StatelessWidget {
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w500,
                                     color: const Color.fromRGBO(27, 30, 40, 1),
-                                    fontSize: 15),
+                                    fontSize: 14),
                               ),
                               Text(
                                 "(${selectedDestination.reviews})",
@@ -153,7 +153,7 @@ class DetailsScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     color:
                                         const Color.fromRGBO(125, 132, 141, 1),
-                                    fontSize: 15),
+                                    fontSize: 14),
                               ),
                             ],
                           ),
@@ -165,14 +165,14 @@ class DetailsScreen extends StatelessWidget {
                               style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w400,
                                   color: const Color.fromRGBO(13, 110, 253, 1),
-                                  fontSize: 15),
+                                  fontSize: 14),
                             ),
                             TextSpan(
                               text: "/Person",
                               style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w400,
                                   color: const Color.fromRGBO(125, 132, 141, 1),
-                                  fontSize: 15),
+                                  fontSize: 14),
                             )
                           ])),
                         ],
@@ -222,7 +222,7 @@ class DetailsScreen extends StatelessWidget {
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w500,
                             color: const Color.fromRGBO(27, 30, 40, 1),
-                            fontSize: 20),
+                            fontSize: 18),
                       ),
                       const SizedBox(
                         height: 10,
@@ -233,16 +233,16 @@ class DetailsScreen extends StatelessWidget {
                         "You will get a complete travel package on the beaches.Packages in the form of airline tickets, recommended Hotel rooms, Have you ever been on holiday. Packages in the form of airline tickets, recommended Hotel rooms, Have you ever been on holiday. Packages in the form of airline tickets, recommended Hotel rooms, Have you ever been on holiday to the Greek ETC",
                         trimCollapsedText: "Read More",
                         trimExpandedText: " ...Read less",
-                        trimLines: 5,
+                        trimLines: 2,
                         trimMode: TrimMode.Line,
                         style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             color: const Color.fromRGBO(125, 132, 141, 1),
-                            fontSize: 13),
+                            fontSize: 12),
                         moreStyle: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             color: const Color.fromRGBO(255, 112, 41, 1),
-                            fontSize: 13),
+                            fontSize: 12),
                       ),
                     ],
                   ),
@@ -267,7 +267,7 @@ class DetailsScreen extends StatelessWidget {
             style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w600,
                 color: const Color.fromRGBO(255, 255, 255, 1),
-                fontSize: 16),
+                fontSize: 15),
           ),
         ),
       ),
