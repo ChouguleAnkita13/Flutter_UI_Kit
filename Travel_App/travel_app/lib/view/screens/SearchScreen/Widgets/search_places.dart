@@ -20,7 +20,7 @@ class SearchPlaces extends StatelessWidget {
             childAspectRatio: 0.84,
             mainAxisSpacing: 20),
         itemCount: destinationController.destinationList.length,
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {

@@ -59,8 +59,6 @@ class SearchScreen extends StatelessWidget {
                       fontSize: 20),
                 ),
 
-                const SizedBox(height: 20),
-
                 ///TO DISPLAY ALL PLACES CALLED SEARCH PLACE CUSTOM WIDGET
                 const Expanded(child: SearchPlaces())
               ],
