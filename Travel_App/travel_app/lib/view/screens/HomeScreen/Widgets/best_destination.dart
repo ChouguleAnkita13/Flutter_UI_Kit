@@ -144,27 +144,13 @@ class BestDestination extends StatelessWidget {
                           color: const Color.fromRGBO(125, 132, 141, 1),
                           fontSize: 13),
                     ),
+                    const Spacer(),
 
-                    ///IMAGE STACK
-                    Expanded(
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            "assets/images/details/detail.png",
-                            height: Get.width * 0.07,
-                            width: Get.width * 0.07,
-                          ),
-                          Positioned(
-                              top: 0,
-                              bottom: 0,
-                              right: Get.width * 0.04,
-                              child: Image.asset(
-                                height: Get.width * 0.07,
-                                width: Get.width * 0.07,
-                                "assets/images/details/detail.png",
-                              )),
-                        ],
-                      ),
+                    ///IMAGE
+                    Image.asset(
+                      "assets/images/details/detail.png",
+                      height: Get.width * 0.07,
+                      width: Get.width * 0.07,
                     ),
                   ],
                 ),
