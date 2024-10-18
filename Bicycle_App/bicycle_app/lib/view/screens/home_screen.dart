@@ -198,7 +198,12 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.asset(bicycles[index]['img'], height: 140, width: 170,fit: BoxFit.cover,),
+                  Image.asset(
+                    bicycles[index]['img'],
+                    height: 140,
+                    width: 170,
+                    fit: BoxFit.cover,
+                  ),
                   Text(
                     bicycles[index]['type'],
                     style: Theme.of(context).textTheme.bodyLarge,
