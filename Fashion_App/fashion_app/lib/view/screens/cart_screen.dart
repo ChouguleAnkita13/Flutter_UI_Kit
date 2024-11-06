@@ -52,43 +52,41 @@ class CartScreen extends StatelessWidget {
                           closeOnScroll: true,
                           endActionPane: ActionPane(
                             extentRatio: 0.23,
-                            motion: const DrawerMotion(),
+                            motion: const ScrollMotion(),
                             children: [
-                              Expanded(
-                                child: Container(
-                                  height:
-                                      140, // Set height to match Slidable child
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: const BoxDecoration(
-                                    color: AppTheme.primaryLightColor,
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(40),
-                                      bottomLeft: Radius.circular(40),
+                              Container(
+                                height:
+                                    55, // Set height to match Slidable child
+                                padding: const EdgeInsets.all(8),
+                                decoration: const BoxDecoration(
+                                  color: AppTheme.primaryLightColor,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(40),
+                                    bottomLeft: Radius.circular(40),
+                                  ),
+                                ),
+                                alignment: Alignment.center,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {},
+                                      child: const Icon(
+                                        Icons.favorite_border,
+                                        color: Colors.white,
+                                        size: 18,
+                                      ),
                                     ),
-                                  ),
-                                  alignment: Alignment.center,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      GestureDetector(
-                                        onTap: () {},
-                                        child: const Icon(
-                                          Icons.favorite_border,
-                                          color: Colors.white,
-                                          size: 18,
-                                        ),
+                                    const SizedBox(width: 10),
+                                    GestureDetector(
+                                      onTap: () {},
+                                      child: const Icon(
+                                        Icons.delete_outline,
+                                        color: Colors.white,
+                                        size: 20,
                                       ),
-                                      const SizedBox(width: 10),
-                                      GestureDetector(
-                                        onTap: () {},
-                                        child: const Icon(
-                                          Icons.delete_outline,
-                                          color: Colors.white,
-                                          size: 20,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
