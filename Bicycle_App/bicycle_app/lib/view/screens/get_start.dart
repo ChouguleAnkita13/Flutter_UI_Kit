@@ -35,7 +35,8 @@ class GetStart extends StatelessWidget {
                   const Spacer(),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const HomeScreen()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const HomeScreen()));
                     },
                     child: Container(
                       width: 270,
