@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(
             height: 20,
           ),
-      //FashionList Items
+          //FashionList Items
           Expanded(
               child: GridView.custom(
             gridDelegate: SliverWovenGridDelegate.count(
@@ -100,8 +100,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     GestureDetector(
-                      onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailsScreen(fashionItem:fashionItemList[index])));
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => DetailsScreen(
+                                fashionItem: fashionItemList[index])));
                       },
                       child: Stack(
                         children: [
@@ -119,8 +121,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   width: 30,
                                   height: 30,
                                   decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Colors.white, width: 4),
+                                    border: Border.all(
+                                        color: Colors.white, width: 4),
                                     borderRadius: BorderRadius.circular(100),
                                     color: AppTheme.primaryColor,
                                   ),
@@ -152,3 +154,70 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+// MasonryGridView.builder(
+//       gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+//         crossAxisCount: 2, // Two columns
+//       ),
+//       mainAxisSpacing: 15, // Vertical spacing
+//       crossAxisSpacing: 15, // Horizontal spacing
+//       itemCount: fashionItemList.length,
+//       itemBuilder: (context, index) {
+//         return Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             GestureDetector(
+//               onTap: () {
+//                 Navigator.of(context).push(
+//                   MaterialPageRoute(
+//                     builder: (context) => DetailsScreen(
+//                       fashionItem: fashionItemList[index],
+//                     ),
+//                   ),
+//                 );
+//               },
+//               child: Stack(
+//                 children: [
+//                   ClipRRect(
+//                     borderRadius: BorderRadius.circular(15),
+//                     child: Image.asset(
+//                       fashionItemList[index].imgUrl,
+//                       fit: BoxFit.cover,
+//                     ),
+//                   ),
+//                   Positioned(
+//                     right: 10,
+//                     bottom: 0,
+//                     child: Transform.translate(
+//                       offset: const Offset(0, 11),
+//                       child: Container(
+//                         width: 30,
+//                         height: 30,
+//                         decoration: BoxDecoration(
+//                           border: Border.all(color: Colors.white, width: 4),
+//                           borderRadius: BorderRadius.circular(100),
+//                           color: AppTheme.primaryColor,
+//                         ),
+//                         child: const Icon(
+//                           Icons.shopping_bag_outlined,
+//                           color: Colors.white,
+//                           size: 15,
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             Text(
+//               "\$${fashionItemList[index].price}",
+//               style: Theme.of(context).textTheme.bodyLarge,
+//             ),
+//             Text(
+//               fashionItemList[index].brandName,
+//               style: Theme.of(context).textTheme.labelLarge,
+//             ),
+//           ],
+//         );
+//       },
+//     );
